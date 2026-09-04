@@ -26,3 +26,8 @@ jobs = [job1, job2, job3]
 scheduled_jobs = schedule_jobs(jobs)
 metrics = evaluate_schedule(scheduled_jobs)
 print(metrics)
+
+jobs2 = [job2, job1, job3]
+scheduled_jobs2 = schedule_jobs(jobs2)
+metrics2 = evaluate_schedule(scheduled_jobs2)
+print(metrics2)
