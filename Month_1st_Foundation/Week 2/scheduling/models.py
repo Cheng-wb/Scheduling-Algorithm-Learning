@@ -82,6 +82,7 @@ class Schedule:
         """检查重复任务、机器编号与同机重叠，允许不同机器同时加工。"""
         if type(self.machine_count) is not int or self.machine_count <= 0:
             raise ValueError("machine_count must be a positive integer")
+
         seen = set()
         machine_end = {}
         for item in sorted(self.assignments, key=lambda item: item.start_time):
