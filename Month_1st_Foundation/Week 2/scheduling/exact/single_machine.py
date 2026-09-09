@@ -1,35 +1,12 @@
-"""单机、不可抢占、允许释放时间的两两排序 Big-M 模型。"""
+"""Single-machine Big-M models with separate functions for each scheduling goal."""
 
 from math import isclose, isfinite
-
-from ..models import Job, ScheduledJob, Schedule
 from ortools.linear_solver import pywraplp
-
-def solve_single_machine_milp(
-        jobs: list[Job],
-        time_limit_ms: int = 30_000,
-        objective: str = "makespan",
-        *,
-        big_m: float | None = None,
-) -> Schedule:
-    """返回已证明最优的排程。big_m 覆盖值仅用于建模敏感性实验。
-
-    默认 M=H 安全；自定义 M 太小时，求解的可能是错误收紧的模型。
-    交期、权重不参与这两个目标。
-    """
-
-    valid_objectives = {
-    "makespan",
-    "total_completion_time",
-    }
-
-    if objective not in valid_objectives:
-        raise ValueError(
-            f"Unsupported objective: {objective}. "
-            f"Expected one of {sorted(valid_objectives)}."
-        )
+from ..models import Job, ScheduledJob, Schedule
+from .. import metrics
 
 
+def _build_model(jobs, time_limit_ms, big_m):
     if type(time_limit_ms) is not int or time_limit_ms <= 0:
         raise ValueError("time_limit_ms must be a positive integer")
     if len({job.job_id for job in jobs}) != len(jobs):
@@ -39,13 +16,10 @@ def solve_single_machine_milp(
         or not isfinite(big_m) or big_m <= 0
     ):
         raise ValueError("big_m must be a positive finite number")
-    if not jobs:
-        return Schedule([], algorithm=f"single_machine_milp_{objective}")
-
     # 1. 创建 Solver
     solver = pywraplp.Solver.CreateSolver("CBC")
     if solver is None:
-        raise RuntimeError("SCIP backend is unavailable in this OR-Tools installation")
+        raise RuntimeError("CBC backend is unavailable in this OR-Tools installation")
 
     solver.SetTimeLimit(time_limit_ms)
 
@@ -53,7 +27,7 @@ def solve_single_machine_milp(
     # 2. 创建变量，S, y
     n_jobs = len(jobs)
     # 所有任务释放后串行加工，给出一个安全的完工时间上界。
-    horizon = max(job.release_time for job in jobs) + sum(job.processing_time for job in jobs)
+    horizon = max((job.release_time for job in jobs), default=0) + sum(job.processing_time for job in jobs)
     if not isfinite(horizon):
         raise ValueError("time horizon must be finite")
     start = {}
@@ -65,12 +39,6 @@ def solve_single_machine_milp(
         for j in range(i+1, n_jobs):
             order[i, j] = solver.BoolVar( f"y_{i}_{j}" )
 
-    # 3. 每个 Job 的完成时间 <= cmax
-    if objective == "makespan":
-        cmax = solver.NumVar(0.0, horizon, "cmax")
-        for i, job in enumerate(jobs):
-            solver.Add(start[i] + job.processing_time <= cmax)
-
     # 4. 每对 Job 的顺序约束
     M = horizon if big_m is None else big_m
     for i in range(n_jobs-1):
@@ -79,17 +47,10 @@ def solve_single_machine_milp(
             solver.Add(start[i] + jobs[i].processing_time <= start[j] + (1 - y) * M)
             solver.Add(start[j] + jobs[j].processing_time <= start[i] + y * M)
 
-    # 5. 选择优化目标
-    if objective == "makespan":
-        solver.Minimize(cmax)
-    elif objective == "total_completion_time":
-        solver.Minimize(
-            solver.Sum(
-                start[i] + jobs[i].processing_time
-                for i in range(n_jobs)
-            )
-        )
+    return solver, start, horizon
 
+
+def _solve_and_extract(solver, start, jobs, algorithm, measure):
     # 6. solve
     status = solver.Solve()
     if status == pywraplp.Solver.INFEASIBLE:
@@ -114,6 +75,7 @@ def solve_single_machine_milp(
     # 7. 读取结果
     # 数值求解可能产生 1e-12 量级的相邻重叠。仅修正容差内的误差，
     # 不对开始时刻取整，也不掩盖实质重叠或提前释放。
+    n_jobs = len(jobs)
     scheduled_jobs = []
     current_time = 0.0
     for i in sorted(range(n_jobs), key=lambda i: start[i].solution_value()):
@@ -125,19 +87,63 @@ def solve_single_machine_milp(
         scheduled_jobs.append(ScheduledJob(job, 0, s, s + job.processing_time))
         current_time = s + job.processing_time
 
-    schedule = Schedule(scheduled_jobs, algorithm=f"single_machine_milp_{objective}")
+    schedule = Schedule(scheduled_jobs, algorithm=algorithm)
     schedule.validate()
-    actual_objective = (
-        scheduled_jobs[-1].completion_time if objective == "makespan"
-        else sum(item.completion_time for item in scheduled_jobs)
-    )
-    if not isclose(actual_objective, solver.Objective().Value(), rel_tol=1e-7, abs_tol=1e-6):
-        raise RuntimeError("extracted schedule does not match the solver objective")
+    if not isclose(measure(schedule), solver.Objective().Value(), rel_tol=1e-7, abs_tol=1e-6):
+        raise RuntimeError("extracted schedule does not match the solver value")
     return schedule
 
 
+def _add_tardiness(solver, start, jobs, horizon):
+    delays = []
+    for i, job in enumerate(jobs):
+        upper = max(0, horizon - job.due_date) if job.due_date is not None else 0
+        delay = solver.NumVar(0, upper, f"tardiness_{i}")
+        if job.due_date is not None:
+            solver.Add(delay >= start[i] + job.processing_time - job.due_date)
+        delays.append(delay)
+    return delays
+
+
 def solve_single_machine_makespan(
-    jobs: list[Job], time_limit_ms: int = 30_000, objective: str = "makespan",
+    jobs: list[Job], time_limit_ms: int = 30_000, *, big_m: float | None = None,
 ) -> Schedule:
-    """保留原调用入口；新代码使用支持两个目标的 solve_single_machine_milp。"""
-    return solve_single_machine_milp(jobs, time_limit_ms, objective)
+    """Minimize maximum completion time; due dates and weights are not optimized."""
+    solver, start, horizon = _build_model(jobs, time_limit_ms, big_m)
+    cmax = solver.NumVar(0, horizon, "cmax")
+    for i, job in enumerate(jobs):
+        solver.Add(cmax >= start[i] + job.processing_time)
+    solver.Minimize(cmax)
+    return _solve_and_extract(solver, start, jobs, "single_machine_makespan", metrics.makespan)
+
+
+def solve_single_machine_total_completion(
+    jobs: list[Job], time_limit_ms: int = 30_000, *, big_m: float | None = None,
+) -> Schedule:
+    """Minimize the sum of completion times."""
+    solver, start, _ = _build_model(jobs, time_limit_ms, big_m)
+    solver.Minimize(solver.Sum(start[i] + job.processing_time for i, job in enumerate(jobs)))
+    return _solve_and_extract(solver, start, jobs, "single_machine_total_completion",
+                              metrics.total_completion_time)
+
+
+def solve_single_machine_total_tardiness(
+    jobs: list[Job], time_limit_ms: int = 30_000, *, big_m: float | None = None,
+) -> Schedule:
+    """Minimize total tardiness; jobs without due dates contribute zero."""
+    solver, start, horizon = _build_model(jobs, time_limit_ms, big_m)
+    delays = _add_tardiness(solver, start, jobs, horizon)
+    solver.Minimize(solver.Sum(delays))
+    return _solve_and_extract(solver, start, jobs, "single_machine_total_tardiness",
+                              metrics.total_tardiness)
+
+
+def solve_single_machine_weighted_tardiness(
+    jobs: list[Job], time_limit_ms: int = 30_000, *, big_m: float | None = None,
+) -> Schedule:
+    """Minimize weighted tardiness; zero-weight jobs carry no delay penalty."""
+    solver, start, horizon = _build_model(jobs, time_limit_ms, big_m)
+    delays = _add_tardiness(solver, start, jobs, horizon)
+    solver.Minimize(solver.Sum(job.weight * delays[i] for i, job in enumerate(jobs)))
+    return _solve_and_extract(solver, start, jobs, "single_machine_weighted_tardiness",
+                              metrics.weighted_tardiness)

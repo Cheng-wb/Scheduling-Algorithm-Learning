@@ -1,0 +1,63 @@
+{
+  "parameters": {
+    "n_jobs": 6,
+    "processing_time_range": [
+      1,
+      20
+    ],
+    "seed": 4,
+    "due_date_range": [
+      10,
+      40
+    ],
+    "weight_range": [
+      1,
+      10
+    ]
+  },
+  "machine_count": 1,
+  "jobs": [
+    {
+      "job_id": "J1",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 13,
+      "weight": 7
+    },
+    {
+      "job_id": "J2",
+      "processing_time": 16,
+      "release_time": 0,
+      "due_date": 12,
+      "weight": 2
+    },
+    {
+      "job_id": "J3",
+      "processing_time": 1,
+      "release_time": 0,
+      "due_date": 27,
+      "weight": 5
+    },
+    {
+      "job_id": "J4",
+      "processing_time": 2,
+      "release_time": 0,
+      "due_date": 26,
+      "weight": 9
+    },
+    {
+      "job_id": "J5",
+      "processing_time": 12,
+      "release_time": 0,
+      "due_date": 34,
+      "weight": 3
+    },
+    {
+      "job_id": "J6",
+      "processing_time": 4,
+      "release_time": 0,
+      "due_date": 16,
+      "weight": 1
+    }
+  ]
+}

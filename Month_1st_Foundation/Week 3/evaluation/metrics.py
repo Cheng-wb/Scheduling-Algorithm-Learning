@@ -1,6 +1,6 @@
 """纯指标函数；直接调用时要求 Schedule 可行，可先调用 validate()。"""
 
-from .models import Schedule, ScheduledJob
+from scheduling.schedule import Schedule, ScheduledJob
 
 def _lateness_value(item: ScheduledJob) -> float:
     value = item.lateness
@@ -17,6 +17,17 @@ def makespan(schedule: Schedule) -> float:
 
 def total_completion_time(schedule: Schedule) -> float:
     return sum(item.completion_time for item in schedule.assignments)
+
+
+def average_completion_time(schedule: Schedule) -> float:
+    count = len(schedule.assignments)
+    return total_completion_time(schedule) / count if count else 0
+
+
+def max_lateness(schedule: Schedule) -> float:
+    """只统计有交期的任务，保留负值；无有效交期时约定返回 0。"""
+    return max((item.lateness for item in schedule.assignments
+                if item.job.due_date is not None), default=0)
 
 
 def weighted_completion_time(schedule: Schedule) -> float:

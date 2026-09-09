@@ -1,7 +1,7 @@
 """统一评价入口：校验排程并组织指标，公式由 metrics 实现。"""
 
 from . import metrics
-from .models import Schedule
+from scheduling.schedule import Schedule
 
 
 def evaluate(schedule: Schedule) -> dict[str, float | int]:
@@ -9,6 +9,8 @@ def evaluate(schedule: Schedule) -> dict[str, float | int]:
     return {
         "makespan": metrics.makespan(schedule),
         "total_completion_time": metrics.total_completion_time(schedule),
+        "average_completion_time": metrics.average_completion_time(schedule),
+        "max_lateness": metrics.max_lateness(schedule),
         "weighted_completion_time": metrics.weighted_completion_time(schedule),
         "total_tardiness": metrics.total_tardiness(schedule),
         "max_tardiness": metrics.max_tardiness(schedule),

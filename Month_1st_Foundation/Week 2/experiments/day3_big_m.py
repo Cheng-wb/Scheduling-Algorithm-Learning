@@ -8,7 +8,9 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scheduling.models import Job
-from scheduling.exact.single_machine import solve_single_machine_milp
+from scheduling.exact.single_machine import (
+    solve_single_machine_makespan, solve_single_machine_total_completion,
+)
 from scheduling.evaluator import evaluate
 
 def generate_jobs(processing_times, release_times=None):
@@ -16,14 +18,14 @@ def generate_jobs(processing_times, release_times=None):
         release_times = [0] * len(processing_times)
     return [Job(f"J{i}", p, r) for i, (p, r) in enumerate(zip(processing_times, release_times), start=1)]
 
-def run_case(title, jobs, objective="makespan", big_m=None, show_schedule=True):
+def run_case(title, jobs, solve=solve_single_machine_makespan, big_m=None, show_schedule=True):
     horizon = max((job.release_time for job in jobs), default=0) + sum(
         job.processing_time for job in jobs
     )
-    print(f"{title}: objective={objective}, H={horizon:g}, M={big_m if big_m is not None else horizon:g}")
+    print(f"{title}: solver={solve.__name__}, H={horizon:g}, M={big_m if big_m is not None else horizon:g}")
     start = perf_counter()
     try:
-        schedule = solve_single_machine_milp(jobs, objective=objective, big_m=big_m)
+        schedule = solve(jobs, big_m=big_m)
     except RuntimeError as error:
         print(f"{error} Runtime={perf_counter() - start:.4f}s\n")
         return
@@ -41,13 +43,13 @@ def run_case(title, jobs, objective="makespan", big_m=None, show_schedule=True):
 def main():
     jobs = generate_jobs([3, 6, 2, 7, 4])
     run_case("1. Makespan", jobs)
-    run_case("2. Total completion", jobs, "total_completion_time")
+    run_case("2. Total completion", jobs, solve_single_machine_total_completion)
     for big_m in (5, 22, 100, 10000):
-        run_case("3. M sensitivity", jobs, "total_completion_time", big_m, False)
+        run_case("3. M sensitivity", jobs, solve_single_machine_total_completion, big_m, False)
     run_case("4. Two jobs", generate_jobs([3, 5]))
     run_case("5. Release time", generate_jobs([3, 2], [0, 10]))
     # 有释放时间时，最小化总完工时间可能需要主动等待短任务。
-    run_case("6. Intentional idle", generate_jobs([10, 1], [0, 1]), "total_completion_time")
+    run_case("6. Intentional idle", generate_jobs([10, 1], [0, 1]), solve_single_machine_total_completion)
 
 
 

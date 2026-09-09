@@ -1,77 +1,91 @@
-# Week 2：调度建模与评价框架
+# Week 2：调度建模与实验框架
 
-本周围绕“理解调度问题 → 数学建模 → 生成排程 → 评价与比较”，逐步建立可复用的调度项目。
+围绕任务分配、任务排序和时间安排，学习 MILP 与调度规则，并通过统一的校验、指标和实验流程比较算法。
 
-## 学习内容
+## 学习大纲
 
-| 学习日 | 主题 | 实践内容 |
-| --- | --- | --- |
-| Day 1 | 调度基本概念与数学描述 | 理解任务、资源、时间、约束和目标，建立数据模型与评价体系 |
-| Day 2 | MILP 基础 | 学习决策变量、约束和目标函数，建立简单并行机模型 |
-| Day 3 | Big-M 与排序决策 | 表达任务先后关系和单机不重叠约束 |
-| Day 4 | 交期与延期目标 | 学习总延期、加权延期等目标，比较调度结果 |
-| Day 5 | 启发式调度规则 | 实现和比较 FCFS、SPT、LPT、EDD、WSPT |
-| Day 6 | 并行机调度 | 学习任务分配，比较贪心、LPT 与精确方法 |
-| Day 7 | 综合实验 | 生成可复现的数据，汇总指标与运行时间，绘制甘特图 |
+| 学习日 | 主题 |
+| --- | --- |
+| [Day 1](note/Day1.md) | 调度的数学描述、数据模型与核心指标 |
+| [Day 2](note/Day2.md) | MILP 基础与相同并行机任务分配 |
+| [Day 3](note/Day3.md) | 单机排序、Big-M 与总完工时间 |
+| [Day 4](note/Day4.md) | 交期、总延期与加权延期 |
+| [Day 5](note/Day5.md) | FCFS、SPT、LPT、EDD、WSPT 与释放时间 |
+| [Day 6](note/Day6.md) | 并行机 Greedy、LPT 与 MILP 比较 |
+| [Day 7](note/Day7.md) | 可复现实例、批量 Benchmark、甘特图与总结 |
 
 ## 项目结构
 
 ```text
 Week 2/
 ├── README.md
-├── requirements.txt          # Python 依赖
-├── note/                     # 学习笔记与手算过程
-│   ├── Day1.md
-│   ├── Day2.md
-│   └── Day3.md
-├── scheduling/               # 可复用的调度核心代码
-│   ├── __init__.py
-│   ├── models.py             # Job、ScheduledJob、Schedule 数据模型
-│   ├── scheduler.py          # 根据给定顺序生成单机排程
-│   ├── metrics.py            # 计算各项调度指标
-│   ├── evaluator.py          # 校验排程并汇总评价结果
-│   └── exact/                # 精确优化模型
-│       ├── __init__.py
-│       ├── parallel_machine.py  # 相同并行机 MILP
-│       └── single_machine.py    # 单机排序与 Big-M
-└── experiments/              # 每日题目、实验与结果输出
-    ├── __init__.py
+├── requirements.txt
+├── note/                         # Day1.md ～ Day7.md
+├── data/generated/               # 按运行批次保存实例与生成参数
+├── results/                      # CSV、配置、排程 JSON、甘特图
+├── scheduling/
+│   ├── models.py                 # Job / ScheduledJob / Schedule
+│   ├── scheduler.py              # 按指定顺序生成单机排程
+│   ├── validation.py             # 排程与原始任务核对
+│   ├── metrics.py                # 单项指标
+│   ├── evaluator.py              # 汇总指标
+│   ├── bounds.py                 # 并行机 Makespan 下界
+│   ├── benchmark.py              # 算法接口、统一运行与分组统计
+│   ├── exact/
+│   │   ├── single_machine.py     # 单机各目标的独立 MILP 函数
+│   │   └── parallel_machine.py   # 相同并行机 MILP
+│   ├── heuristics/
+│   │   ├── rules.py              # 排序键
+│   │   ├── single_machine.py     # 静态与动态调度规则
+│   │   └── parallel_machine.py   # 列表扫描实现 Greedy / LPT
+│   ├── generators/
+│   │   └── job_generator.py      # 带随机种子的数据生成
+│   └── visualization/
+│       └── gantt.py              # 算法无关的甘特图
+└── experiments/
     ├── day1_basics.py
     ├── day2_milp.py
-    └── day3_big_m.py
+    ├── day3_big_m.py
+    ├── day4_tardiness.py
+    ├── day5_dispatching_rules.py
+    ├── day6_parallel_machine.py
+    └── day7_benchmark.py
 ```
 
-核心数据流：
-
-```text
-任务数据 → 调度算法 → Schedule → Evaluator → 指标结果
-```
-
-所有算法统一输出 `Schedule`，共用指标计算与评价模块。`experiments` 负责准备数据、调用算法和输出结果，`note` 记录概念、公式和分析。
-
-扩展模块按职责划分为 `heuristics/`（启发式）、`exact/`（精确求解）、`generators/`（数据生成）和 `visualization/`（可视化），每日实验统一放在 `experiments/`。
+核心接口：`algorithm(jobs) → Schedule`，之后调用 `validate_schedule(schedule, jobs)`、`evaluate(schedule)` 和 `plot_gantt(schedule)`。核心模块返回数据，实验入口负责配置、打印与保存结果。
 
 ## 运行
 
-使用 Python 3.10+；MILP 实验依赖 OR-Tools 和其 SCIP 后端。在 Week 2 目录安装依赖并运行：
+在仓库根目录使用项目虚拟环境安装依赖，再运行实验；IDE 也应选择同一解释器：
 
 ```powershell
-python -m pip install -r requirements.txt
-python -m experiments.day1_basics
-python -m experiments.day2_milp
-python -m experiments.day2_milp --scale
-python -m experiments.day3_big_m
+.\.venv\Scripts\python.exe -m pip install -r "Month_1st_Foundation/Week 2/requirements.txt"
+.\.venv\Scripts\python.exe "Month_1st_Foundation/Week 2/experiments/day7_benchmark.py"
 ```
 
-从仓库根目录先进入本目录，再运行实验：
+也可以进入 Week 2，在已安装依赖的 Python 环境中使用模块入口：
 
 ```powershell
 cd "Month_1st_Foundation/Week 2"
 python -m experiments.day1_basics
+python -m experiments.day2_milp
+python -m experiments.day3_big_m
+python -m experiments.day4_tardiness
+python -m experiments.day5_dispatching_rules
+python -m experiments.day6_parallel_machine --scale
+python -m experiments.day7_benchmark --scale --seeds 20
 ```
 
-Day 1 实验输出给定方案的调度指标；Day 2 实验求解三个并行机题目，`--scale` 增加固定随机种子的规模实验。IDE 应选择已安装依赖的解释器；使用仓库虚拟环境时选择 `.venv/Scripts/python.exe`。
+第七天默认运行固定实例和种子 1～5 的批量比较；单机规则组使用 20 个任务，单机 MILP 组使用 6 个任务，并行机使用 20 个任务、3 台机器。不同组分别统计，不互相计算 Gap。
 
-Day 3 实验比较单机的 Makespan 与总完工时间目标，并观察 Big-M 取值、释放时间和主动空闲的影响。
+| 参数 | 作用 |
+| --- | --- |
+| `--seeds N` | 批量使用种子 1～N，默认 5 |
+| `--scale` | 增加 10/20/50/100 个任务、5 台机器的并行机实验 |
+| `--time-limit-ms N` | 每次 MILP 的时间上限，默认 5000 毫秒 |
+| `--skip-milp` | 仅运行规则与启发式，无最优基准时 Gap 留空 |
+| `--no-plots` | 不生成图片；与 `--skip-milp` 一起使用时只需标准库 |
 
-详细概念、数学模型和实验分析见 [Day 1 笔记](note/Day1.md)、[Day 2 笔记](note/Day2.md) 与 [Day 3 笔记](note/Day3.md)。
+每次运行创建独立目录。`data/generated/day7_时间戳/` 保存输入；`results/day7_时间戳/` 保存明细表、汇总表、环境配置、排程和 PNG 甘特图。
+
+`benchmark.csv` 包含指标、运行时间、状态和错误原因；`summary.csv` 包含均值、最大 Gap、成功数及 Gap 样本数。MILP 未证明最优时记录失败，保留其他算法结果，最优值 Gap 留空。单机 MILP 的比较目标是加权延期，并行机为 Makespan。
