@@ -31,7 +31,7 @@ Solution 是任务排列，例如 `[J3, J1, J2]`；Schedule 是解码后的任�
 | `experiments/tables.py` | 终端表格与结果文件输出 |
 | `experiments/day7_integration.py` | 组织完整实验、比较方法、展示最好排程 |
 
-实验入口承担资料中 `main.py` 的编排职责。搜索逻辑留在 `search/`，指标公式留在 `evaluation/`，不在入口复制算法。按天保留的实验展示各自学习内容，公共报表与 Runner 供整合实验复用。
+实验入口负责配置数据、调用算法和展示结果。搜索逻辑位于 `search/`，指标公式位于 `evaluation/`。每日实验展示对应知识，整合实验复用公共报表与 Runner。
 
 ## 函数式 Solver 与组件组合
 

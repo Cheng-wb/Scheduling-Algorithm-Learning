@@ -4,9 +4,8 @@
 
 ## 学习入口
 
-- [六个月总计划](LEARNING_PLAN.md)：范围、已有内容折算、工具与学习规则。
+- [六个月总计划](LEARNING_PLAN.md)：学习目标、知识主线、工具与任务安排。
 - [代码项目](projects/README.md)：长期项目边界、运行方式与后续扩展。
-- [旧材料迁移表](MIGRATION.md)：原三周笔记和代码的新位置。
 
 | 月份 | 任务大纲 |
 | --- | --- |
@@ -16,10 +15,6 @@
 | 第 4 月 · 第 13～16 周 | [网络优化与车辆路径](Month_04_图优化与车辆调度/README.md) |
 | 第 5 月 · 第 17～20 周 | [邻域设计与混合优化](Month_05_启发式与大规模优化/README.md) |
 | 第 6 月 · 第 21～24 周 | [动态优化与综合交付](Month_06_动态调度与工程化/README.md) |
-
-## 已有内容如何接续
-
-原三周约折合三周主题学习量，重新分配到第一个月：规则与指标、MILP、基础搜索、评测四个主题。移除基础 Python 练习与旧版副本，保留整理后的算法；补齐 LP 松弛、限时求解语义和硬预算实验后进入后续内容。
 
 ## 目录
 
@@ -36,14 +31,13 @@ Month_06_动态调度与工程化/
     Week_3/README.md
     Week_4/README.md
 projects/      # 后续领域项目的任务框架及实验注册表
-run.py         # 按项目隔离运行已有实验
+run.py         # 按周隔离运行实验
 LEARNING_PLAN.md # 六个月总计划
-MIGRATION.md   # 旧位置与新位置映射
 ```
 
-六个月都使用相同的 `Week_1`～`Week_4` 层级。月度 README 展开每周的学习、实践、实验与验收要求；每周 README 列出 Day 1～Day 7 的具体任务和交付标准。前三周的已学笔记按天放在各周 `note/`，代码与每日实验也在相应周目录；其余周仅保留计划，不预写每日笔记。命名参考 [AI_Infra_Learning](https://github.com/Cheng-wb/AI_Infra_Learning)。
+六个月都使用相同的 `Week_1`～`Week_4` 层级。月度 README 展开每周的学习、实践、实验与验收要求；每周 README 列出 Day 1～Day 7 的具体任务和交付标准。笔记按天放在各周 `note/`，代码与每日实验也在相应周目录。
 
-## 运行已有项目
+## 运行实验
 
 ```powershell
 python run.py --list
@@ -51,4 +45,4 @@ python run.py week1 day6_bounds
 python run.py week3 day7_integration
 ```
 
-使用现有虚拟环境时将 `python` 换为 `.\.venv\Scripts\python.exe`。MILP/绘图依赖按 [基础项目说明](Month_01_调度基础与算法/Week_2/README.md) 安装；搜索项目仅依赖标准库。未来月份先提供明确任务与项目说明，未实现的算法不放空壳，也不出现在可运行列表。
+使用仓库虚拟环境时将 `python` 换为 `.\.venv\Scripts\python.exe`。MILP/绘图依赖按 [基础项目说明](Month_01_调度基础与算法/Week_2/README.md) 安装；搜索项目仅依赖标准库。未来月份先提供明确任务与项目说明，未实现的算法不放空壳，也不出现在可运行列表。

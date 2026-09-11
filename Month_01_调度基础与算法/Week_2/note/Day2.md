@@ -35,7 +35,7 @@ $$
 原始模型有 $nm$ 个二进制变量、1 个连续变量，以及 $n+m$ 条主要约束，不计变量界。求解器预处理后的规模可能不同。
 ## 从数学模型到项目代码
 
-算法位于 [parallel_machine.py](../scheduling/exact/parallel_machine.py)，沿用原先的建模步骤：
+算法位于 [parallel_machine.py](../scheduling/exact/parallel_machine.py)，建模步骤如下：
 
 | 数学或工程步骤 | 对应代码 |
 | --- | --- |
@@ -51,7 +51,7 @@ $$
 
 提取方案时用 `solution_value() > 0.5` 判断二进制分配，避免直接比较浮点数是否等于 1，并核对每个任务恰好选中一台机器。每台机器上的任务按原输入顺序从 0 串行展开，生成 `ScheduledJob`。最后检查排程可行性，并核对实际最大完工时间与求解器目标值一致。
 
-`ScheduledJob` 的单任务时间指标仍使用你写的属性；没有交期时，属性返回 None，指标汇总层将其视为零贡献。这里只表示没有交期评价要求。
+`ScheduledJob` 的单任务时间指标通过属性计算；没有交期时，属性返回 None，指标汇总层将其视为零贡献。这里只表示没有交期评价要求。
 
 算法不打印结果，不测量整体运行时间；[day2_parallel_milp.py](../experiments/day2_parallel_milp.py) 负责实例、求解调用、评价和输出。实验的 Runtime 用 `perf_counter()` 包围整个算法调用，包含建模、求解、提取和内部校验，不包含后续评价与打印。
 ## 实验与结果
