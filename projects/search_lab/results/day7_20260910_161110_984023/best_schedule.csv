@@ -1,0 +1,4 @@
+﻿job,machine,start,completion,due,tardiness
+J1,0,0,5,137,0
+J2,0,5,20,64,0
+J3,0,20,33,109,0

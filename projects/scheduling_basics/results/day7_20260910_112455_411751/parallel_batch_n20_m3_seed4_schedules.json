@@ -1,0 +1,740 @@
+{
+  "Greedy": {
+    "assignments": [
+      {
+        "job": {
+          "job_id": "J1",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 0.0,
+        "completion_time": 8.0
+      },
+      {
+        "job": {
+          "job_id": "J2",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 0.0,
+        "completion_time": 13.0
+      },
+      {
+        "job": {
+          "job_id": "J3",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 0.0,
+        "completion_time": 3.0
+      },
+      {
+        "job": {
+          "job_id": "J4",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 3.0,
+        "completion_time": 16.0
+      },
+      {
+        "job": {
+          "job_id": "J5",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 8.0,
+        "completion_time": 16.0
+      },
+      {
+        "job": {
+          "job_id": "J6",
+          "processing_time": 6,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 13.0,
+        "completion_time": 19.0
+      },
+      {
+        "job": {
+          "job_id": "J7",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 16.0,
+        "completion_time": 23.0
+      },
+      {
+        "job": {
+          "job_id": "J8",
+          "processing_time": 9,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 16.0,
+        "completion_time": 25.0
+      },
+      {
+        "job": {
+          "job_id": "J9",
+          "processing_time": 10,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 19.0,
+        "completion_time": 29.0
+      },
+      {
+        "job": {
+          "job_id": "J10",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 23.0,
+        "completion_time": 26.0
+      },
+      {
+        "job": {
+          "job_id": "J11",
+          "processing_time": 17,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 25.0,
+        "completion_time": 42.0
+      },
+      {
+        "job": {
+          "job_id": "J12",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 26.0,
+        "completion_time": 34.0
+      },
+      {
+        "job": {
+          "job_id": "J13",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 29.0,
+        "completion_time": 32.0
+      },
+      {
+        "job": {
+          "job_id": "J14",
+          "processing_time": 10,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 32.0,
+        "completion_time": 42.0
+      },
+      {
+        "job": {
+          "job_id": "J15",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 34.0,
+        "completion_time": 48.0
+      },
+      {
+        "job": {
+          "job_id": "J16",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 42.0,
+        "completion_time": 56.0
+      },
+      {
+        "job": {
+          "job_id": "J17",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 42.0,
+        "completion_time": 50.0
+      },
+      {
+        "job": {
+          "job_id": "J18",
+          "processing_time": 2,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 48.0,
+        "completion_time": 50.0
+      },
+      {
+        "job": {
+          "job_id": "J19",
+          "processing_time": 15,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 50.0,
+        "completion_time": 65.0
+      },
+      {
+        "job": {
+          "job_id": "J20",
+          "processing_time": 11,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 50.0,
+        "completion_time": 61.0
+      }
+    ],
+    "algorithm": "greedy_list_scheduling",
+    "machine_count": 3
+  },
+  "LPT": {
+    "assignments": [
+      {
+        "job": {
+          "job_id": "J11",
+          "processing_time": 17,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 0.0,
+        "completion_time": 17.0
+      },
+      {
+        "job": {
+          "job_id": "J19",
+          "processing_time": 15,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 0.0,
+        "completion_time": 15.0
+      },
+      {
+        "job": {
+          "job_id": "J15",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 0.0,
+        "completion_time": 14.0
+      },
+      {
+        "job": {
+          "job_id": "J16",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 14.0,
+        "completion_time": 28.0
+      },
+      {
+        "job": {
+          "job_id": "J2",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 15.0,
+        "completion_time": 28.0
+      },
+      {
+        "job": {
+          "job_id": "J4",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 17.0,
+        "completion_time": 30.0
+      },
+      {
+        "job": {
+          "job_id": "J20",
+          "processing_time": 11,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 28.0,
+        "completion_time": 39.0
+      },
+      {
+        "job": {
+          "job_id": "J14",
+          "processing_time": 10,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 28.0,
+        "completion_time": 38.0
+      },
+      {
+        "job": {
+          "job_id": "J9",
+          "processing_time": 10,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 30.0,
+        "completion_time": 40.0
+      },
+      {
+        "job": {
+          "job_id": "J8",
+          "processing_time": 9,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 38.0,
+        "completion_time": 47.0
+      },
+      {
+        "job": {
+          "job_id": "J1",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 39.0,
+        "completion_time": 47.0
+      },
+      {
+        "job": {
+          "job_id": "J12",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 40.0,
+        "completion_time": 48.0
+      },
+      {
+        "job": {
+          "job_id": "J17",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 47.0,
+        "completion_time": 55.0
+      },
+      {
+        "job": {
+          "job_id": "J5",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 47.0,
+        "completion_time": 55.0
+      },
+      {
+        "job": {
+          "job_id": "J7",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 48.0,
+        "completion_time": 55.0
+      },
+      {
+        "job": {
+          "job_id": "J6",
+          "processing_time": 6,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 55.0,
+        "completion_time": 61.0
+      },
+      {
+        "job": {
+          "job_id": "J10",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 55.0,
+        "completion_time": 58.0
+      },
+      {
+        "job": {
+          "job_id": "J13",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 55.0,
+        "completion_time": 58.0
+      },
+      {
+        "job": {
+          "job_id": "J3",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 58.0,
+        "completion_time": 61.0
+      },
+      {
+        "job": {
+          "job_id": "J18",
+          "processing_time": 2,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 58.0,
+        "completion_time": 60.0
+      }
+    ],
+    "algorithm": "lpt_list_scheduling",
+    "machine_count": 3
+  },
+  "MILP": {
+    "assignments": [
+      {
+        "job": {
+          "job_id": "J9",
+          "processing_time": 10,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 0,
+        "completion_time": 10
+      },
+      {
+        "job": {
+          "job_id": "J10",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 10,
+        "completion_time": 13
+      },
+      {
+        "job": {
+          "job_id": "J11",
+          "processing_time": 17,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 13,
+        "completion_time": 30
+      },
+      {
+        "job": {
+          "job_id": "J15",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 30,
+        "completion_time": 44
+      },
+      {
+        "job": {
+          "job_id": "J18",
+          "processing_time": 2,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 44,
+        "completion_time": 46
+      },
+      {
+        "job": {
+          "job_id": "J19",
+          "processing_time": 15,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 46,
+        "completion_time": 61
+      },
+      {
+        "job": {
+          "job_id": "J1",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 0,
+        "completion_time": 8
+      },
+      {
+        "job": {
+          "job_id": "J2",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 8,
+        "completion_time": 21
+      },
+      {
+        "job": {
+          "job_id": "J6",
+          "processing_time": 6,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 21,
+        "completion_time": 27
+      },
+      {
+        "job": {
+          "job_id": "J12",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 27,
+        "completion_time": 35
+      },
+      {
+        "job": {
+          "job_id": "J16",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 35,
+        "completion_time": 49
+      },
+      {
+        "job": {
+          "job_id": "J20",
+          "processing_time": 11,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 1,
+        "start_time": 49,
+        "completion_time": 60
+      },
+      {
+        "job": {
+          "job_id": "J3",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 0,
+        "completion_time": 3
+      },
+      {
+        "job": {
+          "job_id": "J4",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 3,
+        "completion_time": 16
+      },
+      {
+        "job": {
+          "job_id": "J5",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 16,
+        "completion_time": 24
+      },
+      {
+        "job": {
+          "job_id": "J7",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 24,
+        "completion_time": 31
+      },
+      {
+        "job": {
+          "job_id": "J8",
+          "processing_time": 9,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 31,
+        "completion_time": 40
+      },
+      {
+        "job": {
+          "job_id": "J13",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 40,
+        "completion_time": 43
+      },
+      {
+        "job": {
+          "job_id": "J14",
+          "processing_time": 10,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 43,
+        "completion_time": 53
+      },
+      {
+        "job": {
+          "job_id": "J17",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": null,
+          "weight": 1
+        },
+        "machine_id": 2,
+        "start_time": 53,
+        "completion_time": 61
+      }
+    ],
+    "algorithm": "parallel_machine_milp",
+    "machine_count": 3
+  }
+}

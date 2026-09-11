@@ -1,0 +1,986 @@
+{
+  "FCFS": {
+    "assignments": [
+      {
+        "job": {
+          "job_id": "J1",
+          "processing_time": 4,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 0,
+        "completion_time": 4
+      },
+      {
+        "job": {
+          "job_id": "J2",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": 33,
+          "weight": 9
+        },
+        "machine_id": 0,
+        "start_time": 4,
+        "completion_time": 12
+      },
+      {
+        "job": {
+          "job_id": "J3",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": 24,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 12,
+        "completion_time": 15
+      },
+      {
+        "job": {
+          "job_id": "J4",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": 49,
+          "weight": 9
+        },
+        "machine_id": 0,
+        "start_time": 15,
+        "completion_time": 18
+      },
+      {
+        "job": {
+          "job_id": "J5",
+          "processing_time": 20,
+          "release_time": 0,
+          "due_date": 91,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 18,
+        "completion_time": 38
+      },
+      {
+        "job": {
+          "job_id": "J6",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 48,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 38,
+        "completion_time": 56
+      },
+      {
+        "job": {
+          "job_id": "J7",
+          "processing_time": 19,
+          "release_time": 0,
+          "due_date": 20,
+          "weight": 3
+        },
+        "machine_id": 0,
+        "start_time": 56,
+        "completion_time": 75
+      },
+      {
+        "job": {
+          "job_id": "J8",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 3
+        },
+        "machine_id": 0,
+        "start_time": 75,
+        "completion_time": 89
+      },
+      {
+        "job": {
+          "job_id": "J9",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": 33,
+          "weight": 2
+        },
+        "machine_id": 0,
+        "start_time": 89,
+        "completion_time": 96
+      },
+      {
+        "job": {
+          "job_id": "J10",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": 65,
+          "weight": 6
+        },
+        "machine_id": 0,
+        "start_time": 96,
+        "completion_time": 109
+      },
+      {
+        "job": {
+          "job_id": "J11",
+          "processing_time": 20,
+          "release_time": 0,
+          "due_date": 25,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 109,
+        "completion_time": 129
+      },
+      {
+        "job": {
+          "job_id": "J12",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 68,
+          "weight": 2
+        },
+        "machine_id": 0,
+        "start_time": 129,
+        "completion_time": 147
+      },
+      {
+        "job": {
+          "job_id": "J13",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 100,
+          "weight": 10
+        },
+        "machine_id": 0,
+        "start_time": 147,
+        "completion_time": 165
+      },
+      {
+        "job": {
+          "job_id": "J14",
+          "processing_time": 12,
+          "release_time": 0,
+          "due_date": 28,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 165,
+        "completion_time": 177
+      },
+      {
+        "job": {
+          "job_id": "J15",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": 30,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 177,
+        "completion_time": 185
+      },
+      {
+        "job": {
+          "job_id": "J16",
+          "processing_time": 4,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 185,
+        "completion_time": 189
+      },
+      {
+        "job": {
+          "job_id": "J17",
+          "processing_time": 12,
+          "release_time": 0,
+          "due_date": 67,
+          "weight": 6
+        },
+        "machine_id": 0,
+        "start_time": 189,
+        "completion_time": 201
+      },
+      {
+        "job": {
+          "job_id": "J18",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": 29,
+          "weight": 10
+        },
+        "machine_id": 0,
+        "start_time": 201,
+        "completion_time": 208
+      },
+      {
+        "job": {
+          "job_id": "J19",
+          "processing_time": 6,
+          "release_time": 0,
+          "due_date": 40,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 208,
+        "completion_time": 214
+      },
+      {
+        "job": {
+          "job_id": "J20",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": 91,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 214,
+        "completion_time": 227
+      }
+    ],
+    "algorithm": "static_fcfs",
+    "machine_count": 1
+  },
+  "SPT": {
+    "assignments": [
+      {
+        "job": {
+          "job_id": "J3",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": 24,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 0,
+        "completion_time": 3
+      },
+      {
+        "job": {
+          "job_id": "J4",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": 49,
+          "weight": 9
+        },
+        "machine_id": 0,
+        "start_time": 3,
+        "completion_time": 6
+      },
+      {
+        "job": {
+          "job_id": "J1",
+          "processing_time": 4,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 6,
+        "completion_time": 10
+      },
+      {
+        "job": {
+          "job_id": "J16",
+          "processing_time": 4,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 10,
+        "completion_time": 14
+      },
+      {
+        "job": {
+          "job_id": "J19",
+          "processing_time": 6,
+          "release_time": 0,
+          "due_date": 40,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 14,
+        "completion_time": 20
+      },
+      {
+        "job": {
+          "job_id": "J18",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": 29,
+          "weight": 10
+        },
+        "machine_id": 0,
+        "start_time": 20,
+        "completion_time": 27
+      },
+      {
+        "job": {
+          "job_id": "J9",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": 33,
+          "weight": 2
+        },
+        "machine_id": 0,
+        "start_time": 27,
+        "completion_time": 34
+      },
+      {
+        "job": {
+          "job_id": "J15",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": 30,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 34,
+        "completion_time": 42
+      },
+      {
+        "job": {
+          "job_id": "J2",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": 33,
+          "weight": 9
+        },
+        "machine_id": 0,
+        "start_time": 42,
+        "completion_time": 50
+      },
+      {
+        "job": {
+          "job_id": "J14",
+          "processing_time": 12,
+          "release_time": 0,
+          "due_date": 28,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 50,
+        "completion_time": 62
+      },
+      {
+        "job": {
+          "job_id": "J17",
+          "processing_time": 12,
+          "release_time": 0,
+          "due_date": 67,
+          "weight": 6
+        },
+        "machine_id": 0,
+        "start_time": 62,
+        "completion_time": 74
+      },
+      {
+        "job": {
+          "job_id": "J10",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": 65,
+          "weight": 6
+        },
+        "machine_id": 0,
+        "start_time": 74,
+        "completion_time": 87
+      },
+      {
+        "job": {
+          "job_id": "J20",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": 91,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 87,
+        "completion_time": 100
+      },
+      {
+        "job": {
+          "job_id": "J8",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 3
+        },
+        "machine_id": 0,
+        "start_time": 100,
+        "completion_time": 114
+      },
+      {
+        "job": {
+          "job_id": "J12",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 68,
+          "weight": 2
+        },
+        "machine_id": 0,
+        "start_time": 114,
+        "completion_time": 132
+      },
+      {
+        "job": {
+          "job_id": "J13",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 100,
+          "weight": 10
+        },
+        "machine_id": 0,
+        "start_time": 132,
+        "completion_time": 150
+      },
+      {
+        "job": {
+          "job_id": "J6",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 48,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 150,
+        "completion_time": 168
+      },
+      {
+        "job": {
+          "job_id": "J7",
+          "processing_time": 19,
+          "release_time": 0,
+          "due_date": 20,
+          "weight": 3
+        },
+        "machine_id": 0,
+        "start_time": 168,
+        "completion_time": 187
+      },
+      {
+        "job": {
+          "job_id": "J11",
+          "processing_time": 20,
+          "release_time": 0,
+          "due_date": 25,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 187,
+        "completion_time": 207
+      },
+      {
+        "job": {
+          "job_id": "J5",
+          "processing_time": 20,
+          "release_time": 0,
+          "due_date": 91,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 207,
+        "completion_time": 227
+      }
+    ],
+    "algorithm": "static_spt",
+    "machine_count": 1
+  },
+  "EDD": {
+    "assignments": [
+      {
+        "job": {
+          "job_id": "J7",
+          "processing_time": 19,
+          "release_time": 0,
+          "due_date": 20,
+          "weight": 3
+        },
+        "machine_id": 0,
+        "start_time": 0,
+        "completion_time": 19
+      },
+      {
+        "job": {
+          "job_id": "J3",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": 24,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 19,
+        "completion_time": 22
+      },
+      {
+        "job": {
+          "job_id": "J11",
+          "processing_time": 20,
+          "release_time": 0,
+          "due_date": 25,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 22,
+        "completion_time": 42
+      },
+      {
+        "job": {
+          "job_id": "J14",
+          "processing_time": 12,
+          "release_time": 0,
+          "due_date": 28,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 42,
+        "completion_time": 54
+      },
+      {
+        "job": {
+          "job_id": "J18",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": 29,
+          "weight": 10
+        },
+        "machine_id": 0,
+        "start_time": 54,
+        "completion_time": 61
+      },
+      {
+        "job": {
+          "job_id": "J15",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": 30,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 61,
+        "completion_time": 69
+      },
+      {
+        "job": {
+          "job_id": "J2",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": 33,
+          "weight": 9
+        },
+        "machine_id": 0,
+        "start_time": 69,
+        "completion_time": 77
+      },
+      {
+        "job": {
+          "job_id": "J9",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": 33,
+          "weight": 2
+        },
+        "machine_id": 0,
+        "start_time": 77,
+        "completion_time": 84
+      },
+      {
+        "job": {
+          "job_id": "J19",
+          "processing_time": 6,
+          "release_time": 0,
+          "due_date": 40,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 84,
+        "completion_time": 90
+      },
+      {
+        "job": {
+          "job_id": "J6",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 48,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 90,
+        "completion_time": 108
+      },
+      {
+        "job": {
+          "job_id": "J4",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": 49,
+          "weight": 9
+        },
+        "machine_id": 0,
+        "start_time": 108,
+        "completion_time": 111
+      },
+      {
+        "job": {
+          "job_id": "J1",
+          "processing_time": 4,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 111,
+        "completion_time": 115
+      },
+      {
+        "job": {
+          "job_id": "J16",
+          "processing_time": 4,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 115,
+        "completion_time": 119
+      },
+      {
+        "job": {
+          "job_id": "J8",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 3
+        },
+        "machine_id": 0,
+        "start_time": 119,
+        "completion_time": 133
+      },
+      {
+        "job": {
+          "job_id": "J10",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": 65,
+          "weight": 6
+        },
+        "machine_id": 0,
+        "start_time": 133,
+        "completion_time": 146
+      },
+      {
+        "job": {
+          "job_id": "J17",
+          "processing_time": 12,
+          "release_time": 0,
+          "due_date": 67,
+          "weight": 6
+        },
+        "machine_id": 0,
+        "start_time": 146,
+        "completion_time": 158
+      },
+      {
+        "job": {
+          "job_id": "J12",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 68,
+          "weight": 2
+        },
+        "machine_id": 0,
+        "start_time": 158,
+        "completion_time": 176
+      },
+      {
+        "job": {
+          "job_id": "J20",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": 91,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 176,
+        "completion_time": 189
+      },
+      {
+        "job": {
+          "job_id": "J5",
+          "processing_time": 20,
+          "release_time": 0,
+          "due_date": 91,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 189,
+        "completion_time": 209
+      },
+      {
+        "job": {
+          "job_id": "J13",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 100,
+          "weight": 10
+        },
+        "machine_id": 0,
+        "start_time": 209,
+        "completion_time": 227
+      }
+    ],
+    "algorithm": "static_edd",
+    "machine_count": 1
+  },
+  "WSPT": {
+    "assignments": [
+      {
+        "job": {
+          "job_id": "J4",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": 49,
+          "weight": 9
+        },
+        "machine_id": 0,
+        "start_time": 0,
+        "completion_time": 3
+      },
+      {
+        "job": {
+          "job_id": "J16",
+          "processing_time": 4,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 3,
+        "completion_time": 7
+      },
+      {
+        "job": {
+          "job_id": "J18",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": 29,
+          "weight": 10
+        },
+        "machine_id": 0,
+        "start_time": 7,
+        "completion_time": 14
+      },
+      {
+        "job": {
+          "job_id": "J19",
+          "processing_time": 6,
+          "release_time": 0,
+          "due_date": 40,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 14,
+        "completion_time": 20
+      },
+      {
+        "job": {
+          "job_id": "J2",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": 33,
+          "weight": 9
+        },
+        "machine_id": 0,
+        "start_time": 20,
+        "completion_time": 28
+      },
+      {
+        "job": {
+          "job_id": "J1",
+          "processing_time": 4,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 28,
+        "completion_time": 32
+      },
+      {
+        "job": {
+          "job_id": "J13",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 100,
+          "weight": 10
+        },
+        "machine_id": 0,
+        "start_time": 32,
+        "completion_time": 50
+      },
+      {
+        "job": {
+          "job_id": "J15",
+          "processing_time": 8,
+          "release_time": 0,
+          "due_date": 30,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 50,
+        "completion_time": 58
+      },
+      {
+        "job": {
+          "job_id": "J17",
+          "processing_time": 12,
+          "release_time": 0,
+          "due_date": 67,
+          "weight": 6
+        },
+        "machine_id": 0,
+        "start_time": 58,
+        "completion_time": 70
+      },
+      {
+        "job": {
+          "job_id": "J10",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": 65,
+          "weight": 6
+        },
+        "machine_id": 0,
+        "start_time": 70,
+        "completion_time": 83
+      },
+      {
+        "job": {
+          "job_id": "J6",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 48,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 83,
+        "completion_time": 101
+      },
+      {
+        "job": {
+          "job_id": "J11",
+          "processing_time": 20,
+          "release_time": 0,
+          "due_date": 25,
+          "weight": 8
+        },
+        "machine_id": 0,
+        "start_time": 101,
+        "completion_time": 121
+      },
+      {
+        "job": {
+          "job_id": "J3",
+          "processing_time": 3,
+          "release_time": 0,
+          "due_date": 24,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 121,
+        "completion_time": 124
+      },
+      {
+        "job": {
+          "job_id": "J20",
+          "processing_time": 13,
+          "release_time": 0,
+          "due_date": 91,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 124,
+        "completion_time": 137
+      },
+      {
+        "job": {
+          "job_id": "J9",
+          "processing_time": 7,
+          "release_time": 0,
+          "due_date": 33,
+          "weight": 2
+        },
+        "machine_id": 0,
+        "start_time": 137,
+        "completion_time": 144
+      },
+      {
+        "job": {
+          "job_id": "J8",
+          "processing_time": 14,
+          "release_time": 0,
+          "due_date": 55,
+          "weight": 3
+        },
+        "machine_id": 0,
+        "start_time": 144,
+        "completion_time": 158
+      },
+      {
+        "job": {
+          "job_id": "J5",
+          "processing_time": 20,
+          "release_time": 0,
+          "due_date": 91,
+          "weight": 4
+        },
+        "machine_id": 0,
+        "start_time": 158,
+        "completion_time": 178
+      },
+      {
+        "job": {
+          "job_id": "J7",
+          "processing_time": 19,
+          "release_time": 0,
+          "due_date": 20,
+          "weight": 3
+        },
+        "machine_id": 0,
+        "start_time": 178,
+        "completion_time": 197
+      },
+      {
+        "job": {
+          "job_id": "J12",
+          "processing_time": 18,
+          "release_time": 0,
+          "due_date": 68,
+          "weight": 2
+        },
+        "machine_id": 0,
+        "start_time": 197,
+        "completion_time": 215
+      },
+      {
+        "job": {
+          "job_id": "J14",
+          "processing_time": 12,
+          "release_time": 0,
+          "due_date": 28,
+          "weight": 1
+        },
+        "machine_id": 0,
+        "start_time": 215,
+        "completion_time": 227
+      }
+    ],
+    "algorithm": "static_wspt",
+    "machine_count": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "basics": {
+    "directory": "scheduling_basics",
+    "experiments": [
+      "model_basics",
+      "parallel_milp",
+      "single_machine_milp",
+      "tardiness",
+      "dispatching_rules",
+      "parallel_comparison",
+      "benchmark_suite"
+    ]
+  },
+  "search": {
+    "directory": "search_lab",
+    "experiments": [
+      "initial_solutions",
+      "neighborhoods",
+      "local_search_comparison",
+      "multi_start",
+      "annealing",
+      "algorithm_comparison",
+      "integrated_demo"
+    ]
+  }
+}

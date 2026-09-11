@@ -1,0 +1,428 @@
+{
+  "10": [
+    {
+      "job_id": "J1",
+      "processing_time": 4,
+      "release_time": 0,
+      "due_date": 26,
+      "weight": 1
+    },
+    {
+      "job_id": "J2",
+      "processing_time": 9,
+      "release_time": 0,
+      "due_date": 82,
+      "weight": 1
+    },
+    {
+      "job_id": "J3",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 55,
+      "weight": 1
+    },
+    {
+      "job_id": "J4",
+      "processing_time": 4,
+      "release_time": 0,
+      "due_date": 42,
+      "weight": 1
+    },
+    {
+      "job_id": "J5",
+      "processing_time": 19,
+      "release_time": 0,
+      "due_date": 128,
+      "weight": 1
+    },
+    {
+      "job_id": "J6",
+      "processing_time": 2,
+      "release_time": 0,
+      "due_date": 27,
+      "weight": 1
+    },
+    {
+      "job_id": "J7",
+      "processing_time": 3,
+      "release_time": 0,
+      "due_date": 75,
+      "weight": 1
+    },
+    {
+      "job_id": "J8",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 149,
+      "weight": 1
+    },
+    {
+      "job_id": "J9",
+      "processing_time": 20,
+      "release_time": 0,
+      "due_date": 26,
+      "weight": 1
+    },
+    {
+      "job_id": "J10",
+      "processing_time": 18,
+      "release_time": 0,
+      "due_date": 70,
+      "weight": 1
+    }
+  ],
+  "20": [
+    {
+      "job_id": "J1",
+      "processing_time": 4,
+      "release_time": 0,
+      "due_date": 26,
+      "weight": 1
+    },
+    {
+      "job_id": "J2",
+      "processing_time": 9,
+      "release_time": 0,
+      "due_date": 82,
+      "weight": 1
+    },
+    {
+      "job_id": "J3",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 55,
+      "weight": 1
+    },
+    {
+      "job_id": "J4",
+      "processing_time": 4,
+      "release_time": 0,
+      "due_date": 42,
+      "weight": 1
+    },
+    {
+      "job_id": "J5",
+      "processing_time": 19,
+      "release_time": 0,
+      "due_date": 128,
+      "weight": 1
+    },
+    {
+      "job_id": "J6",
+      "processing_time": 2,
+      "release_time": 0,
+      "due_date": 27,
+      "weight": 1
+    },
+    {
+      "job_id": "J7",
+      "processing_time": 3,
+      "release_time": 0,
+      "due_date": 75,
+      "weight": 1
+    },
+    {
+      "job_id": "J8",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 149,
+      "weight": 1
+    },
+    {
+      "job_id": "J9",
+      "processing_time": 20,
+      "release_time": 0,
+      "due_date": 26,
+      "weight": 1
+    },
+    {
+      "job_id": "J10",
+      "processing_time": 18,
+      "release_time": 0,
+      "due_date": 70,
+      "weight": 1
+    },
+    {
+      "job_id": "J11",
+      "processing_time": 18,
+      "release_time": 0,
+      "due_date": 127,
+      "weight": 1
+    },
+    {
+      "job_id": "J12",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 134,
+      "weight": 1
+    },
+    {
+      "job_id": "J13",
+      "processing_time": 19,
+      "release_time": 0,
+      "due_date": 91,
+      "weight": 1
+    },
+    {
+      "job_id": "J14",
+      "processing_time": 1,
+      "release_time": 0,
+      "due_date": 60,
+      "weight": 1
+    },
+    {
+      "job_id": "J15",
+      "processing_time": 14,
+      "release_time": 0,
+      "due_date": 107,
+      "weight": 1
+    },
+    {
+      "job_id": "J16",
+      "processing_time": 9,
+      "release_time": 0,
+      "due_date": 59,
+      "weight": 1
+    },
+    {
+      "job_id": "J17",
+      "processing_time": 7,
+      "release_time": 0,
+      "due_date": 106,
+      "weight": 1
+    },
+    {
+      "job_id": "J18",
+      "processing_time": 4,
+      "release_time": 0,
+      "due_date": 43,
+      "weight": 1
+    },
+    {
+      "job_id": "J19",
+      "processing_time": 13,
+      "release_time": 0,
+      "due_date": 44,
+      "weight": 1
+    },
+    {
+      "job_id": "J20",
+      "processing_time": 12,
+      "release_time": 0,
+      "due_date": 108,
+      "weight": 1
+    }
+  ],
+  "30": [
+    {
+      "job_id": "J1",
+      "processing_time": 4,
+      "release_time": 0,
+      "due_date": 26,
+      "weight": 1
+    },
+    {
+      "job_id": "J2",
+      "processing_time": 9,
+      "release_time": 0,
+      "due_date": 82,
+      "weight": 1
+    },
+    {
+      "job_id": "J3",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 55,
+      "weight": 1
+    },
+    {
+      "job_id": "J4",
+      "processing_time": 4,
+      "release_time": 0,
+      "due_date": 42,
+      "weight": 1
+    },
+    {
+      "job_id": "J5",
+      "processing_time": 19,
+      "release_time": 0,
+      "due_date": 128,
+      "weight": 1
+    },
+    {
+      "job_id": "J6",
+      "processing_time": 2,
+      "release_time": 0,
+      "due_date": 27,
+      "weight": 1
+    },
+    {
+      "job_id": "J7",
+      "processing_time": 3,
+      "release_time": 0,
+      "due_date": 75,
+      "weight": 1
+    },
+    {
+      "job_id": "J8",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 149,
+      "weight": 1
+    },
+    {
+      "job_id": "J9",
+      "processing_time": 20,
+      "release_time": 0,
+      "due_date": 26,
+      "weight": 1
+    },
+    {
+      "job_id": "J10",
+      "processing_time": 18,
+      "release_time": 0,
+      "due_date": 70,
+      "weight": 1
+    },
+    {
+      "job_id": "J11",
+      "processing_time": 18,
+      "release_time": 0,
+      "due_date": 127,
+      "weight": 1
+    },
+    {
+      "job_id": "J12",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 134,
+      "weight": 1
+    },
+    {
+      "job_id": "J13",
+      "processing_time": 19,
+      "release_time": 0,
+      "due_date": 91,
+      "weight": 1
+    },
+    {
+      "job_id": "J14",
+      "processing_time": 1,
+      "release_time": 0,
+      "due_date": 60,
+      "weight": 1
+    },
+    {
+      "job_id": "J15",
+      "processing_time": 14,
+      "release_time": 0,
+      "due_date": 107,
+      "weight": 1
+    },
+    {
+      "job_id": "J16",
+      "processing_time": 9,
+      "release_time": 0,
+      "due_date": 59,
+      "weight": 1
+    },
+    {
+      "job_id": "J17",
+      "processing_time": 7,
+      "release_time": 0,
+      "due_date": 106,
+      "weight": 1
+    },
+    {
+      "job_id": "J18",
+      "processing_time": 4,
+      "release_time": 0,
+      "due_date": 43,
+      "weight": 1
+    },
+    {
+      "job_id": "J19",
+      "processing_time": 13,
+      "release_time": 0,
+      "due_date": 44,
+      "weight": 1
+    },
+    {
+      "job_id": "J20",
+      "processing_time": 12,
+      "release_time": 0,
+      "due_date": 108,
+      "weight": 1
+    },
+    {
+      "job_id": "J21",
+      "processing_time": 20,
+      "release_time": 0,
+      "due_date": 87,
+      "weight": 1
+    },
+    {
+      "job_id": "J22",
+      "processing_time": 2,
+      "release_time": 0,
+      "due_date": 137,
+      "weight": 1
+    },
+    {
+      "job_id": "J23",
+      "processing_time": 18,
+      "release_time": 0,
+      "due_date": 51,
+      "weight": 1
+    },
+    {
+      "job_id": "J24",
+      "processing_time": 13,
+      "release_time": 0,
+      "due_date": 40,
+      "weight": 1
+    },
+    {
+      "job_id": "J25",
+      "processing_time": 18,
+      "release_time": 0,
+      "due_date": 95,
+      "weight": 1
+    },
+    {
+      "job_id": "J26",
+      "processing_time": 20,
+      "release_time": 0,
+      "due_date": 112,
+      "weight": 1
+    },
+    {
+      "job_id": "J27",
+      "processing_time": 19,
+      "release_time": 0,
+      "due_date": 69,
+      "weight": 1
+    },
+    {
+      "job_id": "J28",
+      "processing_time": 3,
+      "release_time": 0,
+      "due_date": 31,
+      "weight": 1
+    },
+    {
+      "job_id": "J29",
+      "processing_time": 8,
+      "release_time": 0,
+      "due_date": 94,
+      "weight": 1
+    },
+    {
+      "job_id": "J30",
+      "processing_time": 3,
+      "release_time": 0,
+      "due_date": 79,
+      "weight": 1
+    }
+  ]
+}

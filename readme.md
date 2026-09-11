@@ -1,257 +1,54 @@
-# 调度算法工程师 · 6个月学习路线
+# 通用调度算法与运筹优化 · 六个月学习框架
 
-> **目标：** 用 6 个月建立「编程基础 → 运筹优化 → 调度建模 → 求解器 → 启发式算法 → 工程化」的完整知识体系，并完成可用于实践和求职的调度算法项目。
+默认掌握 Python、数据结构与基本开发工具。以“问题定义 → 数学建模 → 求解算法 → 合法性校验 → 实验评测 → 项目交付”为主线，按 6 个月、24 个主题周组织。
 
-## 学习路线
+## 学习入口
 
-```text
-Python & 算法基础
-        ↓
-运筹学 & MILP
-        ↓
-JSP / FJSP
-        ↓
-TSP / VRP
-        ↓
-LNS / ALNS
-        ↓
-动态调度 & 工程化
-```
+- [六个月总计划](LEARNING_PLAN.md)：范围、已有内容折算、工具与学习规则。
+- [代码项目](projects/README.md)：长期项目边界、运行方式与后续扩展。
+- [旧材料迁移表](MIGRATION.md)：原三周笔记和代码的新位置。
 
----
+| 月份 | 任务大纲 |
+| --- | --- |
+| 第 1 月 · 第 01～04 周 | [调度基础、建模与搜索闭环](Month_01_调度基础与算法/README.md) |
+| 第 2 月 · 第 05～08 周 | [运筹优化与精确求解](Month_02_运筹优化与数学建模/README.md) |
+| 第 3 月 · 第 09～12 周 | [JSP / FJSP 生产调度](Month_03_JSP与FJSP生产调度/README.md) |
+| 第 4 月 · 第 13～16 周 | [网络优化与车辆路径](Month_04_图优化与车辆调度/README.md) |
+| 第 5 月 · 第 17～20 周 | [邻域设计与混合优化](Month_05_启发式与大规模优化/README.md) |
+| 第 6 月 · 第 21～24 周 | [动态优化与综合交付](Month_06_动态调度与工程化/README.md) |
 
-## Month 1：Python 与算法基础
+## 已有内容如何接续
 
-### 学习内容
+原三周约折合三周主题学习量，重新分配到第一个月：规则与指标、MILP、基础搜索、评测四个主题。移除基础 Python 练习与旧版副本，保留整理后的算法；补齐 LP 松弛、限时求解语义和硬预算实验后进入后续内容。
 
-* Python 基础与面向对象
-* NumPy / Pandas / Matplotlib
-* 常见数据结构：栈、队列、哈希表、堆、图
-* 常见算法：排序、二分、DFS、BFS、贪心、动态规划
-* 图算法：最短路、拓扑排序
-* 调度基本概念：Job、Operation、Machine、Makespan、Due Date
-
-### 实践
-
-* 实现 FCFS / SPT / EDD 等简单调度规则
-* 使用 Matplotlib 绘制甘特图
-
-**目标：能够使用 Python 独立实现基础算法和简单调度程序。**
-
----
-
-## Month 2：运筹优化与数学建模
-
-### 学习内容
-
-* 线性规划 LP
-* 整数规划 IP
-* 混合整数规划 MILP
-* 决策变量、目标函数、约束条件
-* 0-1 变量与 Big-M
-* Branch & Bound 基本原理
-* Gurobi / OR-Tools 基础
-
-### 实践
-
-完成几个经典优化模型：
-
-* Knapsack Problem
-* Assignment Problem
-* Transportation Problem
-* 简单生产计划模型
-
-**目标：能够把简单业务问题转换成数学优化模型并使用 Solver 求解。**
-
----
-
-## Month 3：JSP / FJSP 生产调度
-
-### 学习内容
-
-重点学习生产调度：
-
-* Job Shop Scheduling Problem（JSP）
-* Flexible Job Shop Scheduling Problem（FJSP）
-* 工序先后约束
-* 机器互斥约束
-* Makespan Optimization
-* Constraint Programming
-* OR-Tools CP-SAT
-
-### 项目
-
-**Project 01：JSP / FJSP 生产排程**
+## 目录
 
 ```text
-订单数据
-   ↓
-调度模型
-   ↓
-CP-SAT
-   ↓
-排程结果
-   ↓
-Gantt Chart
+Month_01_调度基础与算法/
+Month_02_运筹优化与数学建模/
+Month_03_JSP与FJSP生产调度/
+Month_04_图优化与车辆调度/
+Month_05_启发式与大规模优化/
+Month_06_动态调度与工程化/
+    README.md  # 每个月的主题、目标与里程碑
+    Week_1/README.md
+    Week_2/README.md
+    Week_3/README.md
+    Week_4/README.md
+projects/      # 可运行实验与持续扩展的领域项目
+run.py         # 按项目隔离运行已有实验
+LEARNING_PLAN.md # 六个月总计划
+MIGRATION.md   # 旧位置与新位置映射
 ```
 
-**目标：能够独立建立并求解一个基本的生产调度模型。**
+六个月都使用相同的 `Week_1`～`Week_4` 层级。每周 README 写学习内容、代码任务、实验与完成标准；只保留已学内容的主题笔记，不预建每日笔记。命名参考 [AI_Infra_Learning](https://github.com/Cheng-wb/AI_Infra_Learning)。
 
----
+## 运行已有项目
 
-## Month 4：图优化与车辆调度
-
-### 学习内容
-
-图优化：
-
-* Shortest Path
-* Bipartite Matching
-* Maximum Flow
-* Minimum Cost Flow
-
-车辆调度：
-
-* TSP
-* VRP
-* CVRP
-* VRPTW
-* Capacity Constraint
-* Time Window
-
-### 项目
-
-**Project 02：VRPTW 车辆调度**
-
-实现：
-
-* 多车辆
-* 容量约束
-* 客户时间窗
-* 路径优化
-* 调度结果可视化
-
-**目标：理解物流调度问题，并能够使用 OR-Tools 求解 VRP/VRPTW。**
-
----
-
-## Month 5：启发式与大规模优化
-
-### 学习内容
-
-* Greedy
-* Local Search
-* Simulated Annealing
-* Tabu Search
-* Genetic Algorithm
-* Large Neighborhood Search（LNS）
-* Adaptive Large Neighborhood Search（ALNS）
-
-重点学习：
-
-```text
-Initial Solution
-      ↓
-Local Search
-      ↓
-Destroy
-      ↓
-Repair
-      ↓
-Acceptance
-      ↓
-Repeat
+```powershell
+python run.py --list
+python run.py basics parallel_comparison
+python run.py search integrated_demo
 ```
 
-### 实践
-
-选择 JSP / FJSP / VRPTW 中的一个问题：
-
-* 实现 Greedy 初始解
-* 实现 Local Search
-* 实现 LNS / ALNS
-* 与 CP-SAT / MILP 进行效果和求解时间对比
-
-**目标：能够处理 Solver 难以快速求解的大规模组合优化问题。**
-
----
-
-## Month 6：工业调度与工程化
-
-### 学习内容
-
-工业调度：
-
-* 订单约束
-* 设备约束
-* 人员 / 物料约束
-* Setup / 换型
-* Due Date
-* 多目标优化
-* 紧急插单
-* 机器故障
-* 动态重调度
-
-工程能力：
-
-* Git
-* Linux
-* SQL
-* FastAPI
-* Docker
-
-### 项目
-
-**Project 03：动态生产调度系统**
-
-```text
-订单
- ↓
-初始排程
- ↓
-CP-SAT / MILP / ALNS
- ↓
-机器故障 / 紧急插单
- ↓
-动态重调度
- ↓
-Gantt Chart / API
-```
-
-**目标：从“会写调度算法”提升到“能够实现一个完整的调度系统”。**
-
----
-
-# 6个月项目成果
-
-| 项目         | 核心内容            |
-| ---------- | --------------- |
-| Project 01 | JSP / FJSP 生产排程 |
-| Project 02 | VRPTW 车辆调度      |
-| Project 03 | 动态生产调度系统        |
-
-最终形成以下能力：
-
-```text
-数学建模
-   +
-LP / MILP / CP
-   +
-Gurobi / OR-Tools
-   +
-JSP / FJSP / VRP
-   +
-Local Search / LNS / ALNS
-   +
-动态调度
-   +
-工程化
-```
-
-## 最终目标
-
-6个月后能够：
-
-> 面对一个实际调度问题，分析业务规则，建立数学模型，选择合适的 MILP / CP-SAT / 启发式算法进行求解，并完成结果可视化与基础工程化。
-
-**核心原则：不要只学算法，要持续完成「理论 → 建模 → 编码 → 实验 → 项目」的闭环。**
+使用现有虚拟环境时将 `python` 换为 `.\.venv\Scripts\python.exe`。MILP/绘图依赖按 [基础项目说明](projects/scheduling_basics/README.md) 安装；搜索项目仅依赖标准库。未来月份先提供明确任务与项目说明，未实现的算法不放空壳，也不出现在可运行列表。
