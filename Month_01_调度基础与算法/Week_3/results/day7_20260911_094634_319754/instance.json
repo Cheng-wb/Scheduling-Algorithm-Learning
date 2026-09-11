@@ -1,0 +1,44 @@
+[
+  {
+    "job_id": "J1",
+    "processing_time": 5,
+    "release_time": 0,
+    "due_date": 137,
+    "weight": 1
+  },
+  {
+    "job_id": "J2",
+    "processing_time": 15,
+    "release_time": 0,
+    "due_date": 64,
+    "weight": 1
+  },
+  {
+    "job_id": "J3",
+    "processing_time": 13,
+    "release_time": 0,
+    "due_date": 109,
+    "weight": 1
+  },
+  {
+    "job_id": "J4",
+    "processing_time": 14,
+    "release_time": 0,
+    "due_date": 149,
+    "weight": 1
+  },
+  {
+    "job_id": "J5",
+    "processing_time": 4,
+    "release_time": 0,
+    "due_date": 51,
+    "weight": 1
+  },
+  {
+    "job_id": "J6",
+    "processing_time": 3,
+    "release_time": 0,
+    "due_date": 136,
+    "weight": 1
+  }
+]

@@ -1,6 +1,6 @@
 # 调度实验框架与周总结
 
-[周任务](../README.md) · [对应项目](../../../projects/scheduling_basics/README.md)
+[周任务](../README.md) · [对应项目](../../Week_2/README.md)
 
 > 来源：原第二周 Day 7。按主题归档；旧实验数字仍对应文中配置，不代表新计划的未完成验收已通过。
 

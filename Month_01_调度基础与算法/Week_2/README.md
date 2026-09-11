@@ -18,13 +18,13 @@
 | Day 6 | 求解状态与 M 的影响 | 比较合理 M 与过松 M；记录限时状态、可行解及 best bound | 超时有解与无解分别表达，不伪称最优 |
 | Day 7 | 枚举核对与模型复盘 | 对 4～7 任务枚举合法方案，交叉核对 MILP 并整理假设 | 小实例最优值一致，模型限制明确 |
 
-按上述顺序推进；已有实现用于复核和补缺，不重复编写。每日交付记录在相应实验或主题笔记中，本计划不预建每日笔记文件。
+按上述顺序推进；已有实现用于复核和补缺，不重复编写。每日交付记录在相应实验或主题笔记中，笔记已按每日主题整理到 `note/`。
 
 ## 项目任务
 
 整理并行机分配、单机排序和加权延期模型；补一例 LP 松弛；分别保留不同目标的求解函数。
 
-代码归属：scheduling_basics、search_lab。项目目录见 [projects](../../projects/README.md)。
+代码位于本周目录，模型和算法按功能命名；实验按 Day 编号组织。
 
 ## 实验任务
 
@@ -38,10 +38,30 @@
 
 ## 材料衔接
 
-已有单机/并行机 MILP 与 Big-M 代码；仍需补 LP 松弛、M 的紧度实验和限时可行解/下界的完整结果表达。
+单机/并行机 MILP 与 Big-M 代码按天整理；Day 5～7 补充 LP 松弛、M 与限时状态、小实例枚举核对。原精确求解函数只返回最优排程，分析接口另行保留限时状态与界，二者不混用。
 
-## 主题笔记
 
-- [MILP 基础与相同并行机调度](notes/parallel_milp.md)
-- [任务排序、非重叠约束与 Big-M](notes/single_machine_milp.md)
-- [交期、延期与加权延期](notes/tardiness.md)
+## 本周目录与运行
+
+```text
+Week_2/
+├── README.md
+├── note/          # Day1.md～Day7.md
+├── experiments/   # 每日实验和公共输出工具
+├── scheduling/    # 模型、指标、规则与 MILP
+└── results/       # 需要保存的运行产物
+```
+
+| 日期 | 笔记 | 实验 |
+| --- | --- | --- |
+| Day 1 | [Day1.md](note/Day1.md) | [day1_formulation.py](experiments/day1_formulation.py) |
+| Day 2 | [Day2.md](note/Day2.md) | [day2_parallel_milp.py](experiments/day2_parallel_milp.py) |
+| Day 3 | [Day3.md](note/Day3.md) | [day3_big_m.py](experiments/day3_big_m.py) |
+| Day 4 | [Day4.md](note/Day4.md) | [day4_tardiness.py](experiments/day4_tardiness.py) |
+| Day 5 | [Day5.md](note/Day5.md) | [day5_lp_relaxation.py](experiments/day5_lp_relaxation.py) |
+| Day 6 | [Day6.md](note/Day6.md) | [day6_solver_status.py](experiments/day6_solver_status.py) |
+| Day 7 | [Day7.md](note/Day7.md) | [day7_enumeration.py](experiments/day7_enumeration.py) |
+
+在本周目录运行 `python -m experiments.day1_formulation`，或在仓库根目录运行 `python run.py week2 day1_formulation`。支持 IDE 直接运行实验文件。
+
+MILP 实验依赖 `requirements.txt`，在本周目录执行 `python -m pip install -r requirements.txt`。

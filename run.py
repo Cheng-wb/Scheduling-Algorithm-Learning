@@ -1,4 +1,4 @@
-"""在独立进程中运行领域项目实验：python run.py --list。"""
+"""在独立进程中运行每周实验：python run.py --list。"""
 
 import argparse
 import json
@@ -28,7 +28,7 @@ def main():
     project = registry[args.project]
     if args.experiment not in project["experiments"]:
         parser.error(f"未知实验 {args.experiment!r}；使用 --list 查看可运行入口")
-    directory = ROOT / "projects" / project["directory"]
+    directory = ROOT / project["directory"]
     script = directory / "experiments" / f"{args.experiment}.py"
     if not script.is_file():
         parser.error(f"实验文件不存在：{script}")

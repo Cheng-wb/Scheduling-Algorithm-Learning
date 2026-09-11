@@ -18,13 +18,13 @@ Solution 与 Schedule；Swap/Insert；Best/First Improvement；局部最优；Mu
 | Day 6 | 搜索方法比较 | 同实例比较起点、邻域及 LS/Multi-start/SA，报告实际预算 | 对照表注明预算差异与种子 |
 | Day 7 | 搜索模块整合 | 检查计数、历史、输入保护和排程合法性，整理已有主题笔记 | 已有算法可独立调用且实验跑通 |
 
-按上述顺序推进；已有实现用于复核和补缺，不重复编写。每日交付记录在相应实验或主题笔记中，本计划不预建每日笔记文件。
+按上述顺序推进；已有实现用于复核和补缺，不重复编写。每日交付记录在相应实验或主题笔记中，笔记已按每日主题整理到 `note/`。
 
 ## 项目任务
 
-复用 search_lab，整理初始化、目标、邻域和停止接口；保留随机种子、搜索历史及实际评价计数。
+复用本周搜索模块，整理初始化、目标、邻域和停止接口；保留随机种子、搜索历史及实际评价计数。
 
-代码归属：scheduling_basics、search_lab。项目目录见 [projects](../../projects/README.md)。
+代码位于本周目录，模型和算法按功能命名；实验按 Day 编号组织。
 
 ## 实验任务
 
@@ -38,11 +38,32 @@ Solution 与 Schedule；Swap/Insert；Best/First Improvement；局部最优；Mu
 
 ## 材料衔接
 
-已有邻域、LS、Multi-start、SA 与实验；按四个主题复盘，完成验收后直接进入下一周。
+已有初始化、邻域、LS、Multi-start、SA、比较与整合实验已分别对应 Day 1～7。比较仍保留实际计数，不代表第四周的硬等预算实验已完成。
 
-## 主题笔记
 
-- [局部搜索 Local Search](notes/local_search.md)
-- [局部最优、随机初始解与 Multi-start](notes/multi_start.md)
-- [邻域、Move 与邻域生成](notes/neighborhoods.md)
-- [Simulated Annealing（模拟退火）](notes/simulated_annealing.md)
+## 本周目录与运行
+
+```text
+Week_3/
+├── README.md
+├── note/          # Day1.md～Day7.md
+├── experiments/   # 每日实验和公共输出工具
+├── models/
+├── scheduling/
+├── evaluation/
+├── search/
+├── data/
+└── results/       # 需要保存的运行产物
+```
+
+| 日期 | 笔记 | 实验 |
+| --- | --- | --- |
+| Day 1 | [Day1.md](note/Day1.md) | [day1_initial_solutions.py](experiments/day1_initial_solutions.py) |
+| Day 2 | [Day2.md](note/Day2.md) | [day2_neighborhood.py](experiments/day2_neighborhood.py) |
+| Day 3 | [Day3.md](note/Day3.md) | [day3_local_search.py](experiments/day3_local_search.py) |
+| Day 4 | [Day4.md](note/Day4.md) | [day4_random_restart.py](experiments/day4_random_restart.py) |
+| Day 5 | [Day5.md](note/Day5.md) | [day5_simulated_annealing.py](experiments/day5_simulated_annealing.py) |
+| Day 6 | [Day6.md](note/Day6.md) | [day6_algorithm_comparison.py](experiments/day6_algorithm_comparison.py) |
+| Day 7 | [Day7.md](note/Day7.md) | [day7_integration.py](experiments/day7_integration.py) |
+
+在本周目录运行 `python -m experiments.day1_initial_solutions`，或在仓库根目录运行 `python run.py week3 day1_initial_solutions`。支持 IDE 直接运行实验文件。

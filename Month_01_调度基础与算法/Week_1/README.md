@@ -18,13 +18,13 @@
 | Day 6 | 下界与规则比较 | 计算最大任务时长、平均负载下界；比较 Greedy/LPT 并分析非最优反例 | 同实例目标值、下界与差距表 |
 | Day 7 | 规则基线整合 | 复用已有模型、校验、指标和实验，归纳单机与并行机结论 | 可运行基线及适用范围总结 |
 
-按上述顺序推进；已有实现用于复核和补缺，不重复编写。每日交付记录在相应实验或主题笔记中，本计划不预建每日笔记文件。
+按上述顺序推进；已有实现用于复核和补缺，不重复编写。每日交付记录在相应实验或主题笔记中，笔记已按每日主题整理到 `note/`。
 
 ## 项目任务
 
 复用任务模型、解码器、指标、规则与并行机列表调度；整理一页“问题假设—目标—规则适用性”对照。
 
-代码归属：scheduling_basics、search_lab。项目目录见 [projects](../../projects/README.md)。
+代码位于本周目录，模型和算法按功能命名；实验按 Day 编号组织。
 
 ## 实验任务
 
@@ -38,11 +38,28 @@
 
 ## 材料衔接
 
-已有主体材料：原第二周的概念、规则、并行机实验，以及原第三周的规则初始解。按主题复核，不重新按七天学习。
+原有概念、规则与并行机材料已按本周七天重新整理，笔记与实验逐日对应。已有内容以复核为主。
 
-## 主题笔记
 
-- [调度规则与启发式算法](notes/dispatching_rules.md)
-- [调度规则与初始解](notes/initial_solutions.md)
-- [并行机调度——Greedy、LPT 与 MILP](notes/parallel_machines.md)
-- [调度问题的数学描述与核心概念](notes/scheduling_concepts.md)
+## 本周目录与运行
+
+```text
+Week_1/
+├── README.md
+├── note/          # Day1.md～Day7.md
+├── experiments/   # 每日实验和公共输出工具
+├── scheduling/    # 模型、指标、规则
+└── results/       # 需要保存的运行产物
+```
+
+| 日期 | 笔记 | 实验 |
+| --- | --- | --- |
+| Day 1 | [Day1.md](note/Day1.md) | [day1_models.py](experiments/day1_models.py) |
+| Day 2 | [Day2.md](note/Day2.md) | [day2_metrics.py](experiments/day2_metrics.py) |
+| Day 3 | [Day3.md](note/Day3.md) | [day3_dispatching.py](experiments/day3_dispatching.py) |
+| Day 4 | [Day4.md](note/Day4.md) | [day4_release_times.py](experiments/day4_release_times.py) |
+| Day 5 | [Day5.md](note/Day5.md) | [day5_parallel_rules.py](experiments/day5_parallel_rules.py) |
+| Day 6 | [Day6.md](note/Day6.md) | [day6_bounds.py](experiments/day6_bounds.py) |
+| Day 7 | [Day7.md](note/Day7.md) | [day7_baselines.py](experiments/day7_baselines.py) |
+
+在本周目录运行 `python -m experiments.day1_models`，或在仓库根目录运行 `python run.py week1 day1_models`。支持 IDE 直接运行实验文件。

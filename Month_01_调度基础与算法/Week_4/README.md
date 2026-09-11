@@ -42,6 +42,6 @@ Objective/Metric；参考最优值与 best-known；Runtime/Evaluations；实例�
 
 ## 主题笔记
 
-- [算法评测与统一实验](notes/algorithm_comparison.md)
-- [项目整合与端到端调度实验](notes/project_integration.md)
+- [算法评测与统一实验](../Week_3/note/Day6.md)
+- [项目整合与端到端调度实验](../Week_3/note/Day7.md)
 - [调度实验框架与周总结](notes/scheduling_benchmark.md)

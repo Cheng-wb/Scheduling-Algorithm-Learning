@@ -35,20 +35,20 @@ Month_06_动态调度与工程化/
     Week_2/README.md
     Week_3/README.md
     Week_4/README.md
-projects/      # 可运行实验与持续扩展的领域项目
+projects/      # 后续领域项目的任务框架及实验注册表
 run.py         # 按项目隔离运行已有实验
 LEARNING_PLAN.md # 六个月总计划
 MIGRATION.md   # 旧位置与新位置映射
 ```
 
-六个月都使用相同的 `Week_1`～`Week_4` 层级。月度 README 展开每周的学习、实践、实验与验收要求；每周 README 列出 Day 1～Day 7 的具体任务和交付标准。只保留已学内容的主题笔记，不预建每日笔记。命名参考 [AI_Infra_Learning](https://github.com/Cheng-wb/AI_Infra_Learning)。
+六个月都使用相同的 `Week_1`～`Week_4` 层级。月度 README 展开每周的学习、实践、实验与验收要求；每周 README 列出 Day 1～Day 7 的具体任务和交付标准。前三周的已学笔记按天放在各周 `note/`，代码与每日实验也在相应周目录；其余周仅保留计划，不预写每日笔记。命名参考 [AI_Infra_Learning](https://github.com/Cheng-wb/AI_Infra_Learning)。
 
 ## 运行已有项目
 
 ```powershell
 python run.py --list
-python run.py basics parallel_comparison
-python run.py search integrated_demo
+python run.py week1 day6_bounds
+python run.py week3 day7_integration
 ```
 
-使用现有虚拟环境时将 `python` 换为 `.\.venv\Scripts\python.exe`。MILP/绘图依赖按 [基础项目说明](projects/scheduling_basics/README.md) 安装；搜索项目仅依赖标准库。未来月份先提供明确任务与项目说明，未实现的算法不放空壳，也不出现在可运行列表。
+使用现有虚拟环境时将 `python` 换为 `.\.venv\Scripts\python.exe`。MILP/绘图依赖按 [基础项目说明](Month_01_调度基础与算法/Week_2/README.md) 安装；搜索项目仅依赖标准库。未来月份先提供明确任务与项目说明，未实现的算法不放空壳，也不出现在可运行列表。
