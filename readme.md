@@ -41,7 +41,7 @@ LEARNING_PLAN.md # 六个月总计划
 MIGRATION.md   # 旧位置与新位置映射
 ```
 
-六个月都使用相同的 `Week_1`～`Week_4` 层级。每周 README 写学习内容、代码任务、实验与完成标准；只保留已学内容的主题笔记，不预建每日笔记。命名参考 [AI_Infra_Learning](https://github.com/Cheng-wb/AI_Infra_Learning)。
+六个月都使用相同的 `Week_1`～`Week_4` 层级。月度 README 展开每周的学习、实践、实验与验收要求；每周 README 列出 Day 1～Day 7 的具体任务和交付标准。只保留已学内容的主题笔记，不预建每日笔记。命名参考 [AI_Infra_Learning](https://github.com/Cheng-wb/AI_Infra_Learning)。
 
 ## 运行已有项目
 
