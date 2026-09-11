@@ -1,15 +1,17 @@
 # 第 9 月：RL for Scheduling
 
+对齐依据：[全年计划](../LEARNING_PLAN.md)「M9」月度周次。周主题与顺序以全年计划为准，下面的任务与验收是执行细化；周号仅使用本月 Week 1–4。
+
 本月目标：不是「让 PPO 跑起来」，而是回答 RL 在什么时候比规则或 OR 更有价值。
 
 ## 周计划
 
-| 周次 | 学习内容 | 编码与实验任务 | 验收 |
-|---|---|---|---|
-| Week 1 | Dynamic JSP/FJSP 的 dispatching；基线 FIFO/SPT/EDD/ATC/critical ratio | 实现 DQN 或 PPO dispatcher | 比较训练稳定性与 KPI |
-| Week 2 | invalid action mask、变长动作空间、reward/observation 归一化、entropy 控制 | 做 reward ablation；研究 reward hacking、退化策略、policy collapse | 写出 reward ablation 报告 |
-| Week 3 | JSP Graph → GNN Encoder → Operation Embedding → Policy Head | 比较 MLP-PPO 与 GNN-PPO | 报告训练效率、泛化、决策延迟 |
-| Week 4 | 泛化与鲁棒性 | 训练 20×5，测试 30×5 / 50×8 / 不同工时分布 / 不同故障率 / 不同交期紧张度 | 必须做 OOD evaluation |
+| 周次 | 全年周主题 | 学习内容 | 编码与实验任务 | 验收 |
+|---|---|---|---|---|
+| Week 1 | Dispatching RL（vs FIFO/SPT/EDD/ATC） | Dynamic JSP/FJSP 的 dispatching；基线 FIFO/SPT/EDD/ATC/critical ratio | 实现 DQN 或 PPO dispatcher | 比较训练稳定性与 KPI |
+| Week 2 | PPO + Action Masking + reward ablation | invalid action mask、变长动作空间、reward/observation 归一化、entropy 控制 | 训练 PPO + Action Masking，做 reward ablation；研究 reward hacking、退化策略、policy collapse | 写出 reward ablation 报告 |
+| Week 3 | GNN Policy | JSP Graph → GNN Encoder → Operation Embedding → Policy Head | 比较 MLP-PPO 与 GNN-PPO | 报告训练效率、泛化、决策延迟 |
+| Week 4 | 泛化与鲁棒性（OOD） | 泛化与鲁棒性 | 训练 20×5，测试 30×5 / 50×8 / 不同工时分布 / 不同故障率 / 不同交期紧张度 | 必须做 OOD evaluation |
 
 ## 每周 7 天执行清单
 

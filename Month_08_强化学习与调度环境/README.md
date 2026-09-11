@@ -1,15 +1,17 @@
 # 第 8 月：强化学习基础与 Scheduling Environment
 
+对齐依据：[全年计划](../LEARNING_PLAN.md)「M8」月度周次。周主题与顺序以全年计划为准，下面的任务与验收是执行细化；周号仅使用本月 Week 1–4。
+
 本月目标：完整建立 RL 理论和工程基础，并把 Month 6 的仿真器封装成可训练的调度环境。
 
 ## 周计划
 
-| 周次 | 学习内容 | 编码与实验任务 | 验收 |
-|---|---|---|---|
-| Week 1 | MDP、Bellman 方程、policy/value/Q-value、DP、Monte Carlo、TD、Q-learning | 实现 GridWorld 与 tabular Q-learning | 禁止直接调用 RL library 完成全部逻辑 |
-| Week 2 | replay buffer、target network、epsilon greedy、bootstrapping、不稳定性 | 实现 DQN（Double DQN 选做） | 解决一个简单 resource-allocation environment |
-| Week 3 | REINFORCE、advantage、baseline、actor-critic、entropy、GAE、PPO | 实现 REINFORCE 与 PPO | 真正理解 PPO clip objective |
-| Week 4 | 基于 Month 6 Simulator 封装 reset/step/observation/action/reward/done/info/action_mask | state=机器可用/队列/工时/剩余工序/交期/优先级/WIP；action=选工序/选机器/dispatch | 可复现、可 vectorize、带 action masking、随机实例生成器 |
+| 周次 | 全年周主题 | 学习内容 | 编码与实验任务 | 验收 |
+|---|---|---|---|---|
+| Week 1 | MDP 与 Value-based RL（Q-learning） | MDP、Bellman 方程、policy/value/Q-value、DP、Monte Carlo、TD、Q-learning | 实现 GridWorld 与 tabular Q-learning | 禁止直接调用 RL library 完成全部逻辑 |
+| Week 2 | DQN | replay buffer、target network、epsilon greedy、bootstrapping、不稳定性 | 实现 DQN（Double DQN 选做） | 解决一个简单 resource-allocation environment |
+| Week 3 | Policy Gradient / Actor-Critic / PPO | REINFORCE、advantage、baseline、actor-critic、entropy、GAE、PPO | 实现 REINFORCE 与 PPO | 真正理解 PPO clip objective |
+| Week 4 | Scheduling Gym Environment | 基于 Month 6 Simulator 封装 reset/step/observation/action/reward/done/info/action_mask | state=机器可用/队列/工时/剩余工序/交期/优先级/WIP；action=选工序/选机器/dispatch | 可复现、可 vectorize、带 action masking、随机实例生成器 |
 
 ## 每周 7 天执行清单
 

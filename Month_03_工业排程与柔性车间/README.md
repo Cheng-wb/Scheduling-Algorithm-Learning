@@ -1,15 +1,17 @@
 # 第 3 月：JSP / FJSP 与工业级排程
 
+对齐依据：[全年计划](../LEARNING_PLAN.md)「M3」月度周次。周主题与顺序以全年计划为准，下面的任务与验收是执行细化；周号仅使用本月 Week 1–4。
+
 本月目标：从「算法题」转向「真实生产调度」，把 Flow Shop / Job Shop 推进到 Flexible Job Shop，并叠加真实业务约束。
 
 ## 周计划
 
-| 周次 | 学习内容 | 编码与实验任务 | 验收 |
-|---|---|---|---|
-| Week 1 | Flow Shop、Johnson 规则、NEH；JSP 析取图、关键路径、关键块 | 读 FT/LA/ABZ 标准实例；实现 Flow Shop baseline 与 CP-SAT JSP；输出甘特图 | 独立验证器通过；提交关键路径与瓶颈分析 |
-| Week 2 | FJSP 的机器选择、按机器变化的工时、机器指派 | 实现 FJSP Decoder / Validator / CP-SAT / 启发式 | 比较随机指派、最短工时机器、负载均衡、CP-SAT |
-| Week 3 | 释放时间、交期、加权迟交、sequence-dependent setup、机器日历、计划维护 | 目标从 min Cmax 扩展为 α·Cmax + β·总迟交 + γ·setup 成本 | 给出多目标归一化与权重敏感性分析 |
-| Week 4 | 机器资质、次生资源、工人、工装、批处理、WIP、锁定工序、紧急订单 | 建立 Order/ProcessRoute/Operation/Machine/Calendar/Qualification/Resource 数据模型 | 至少 5 种真实约束、JSON 输入输出、多目标 KPI |
+| 周次 | 全年周主题 | 学习内容 | 编码与实验任务 | 验收 |
+|---|---|---|---|---|
+| Week 1 | Flow Shop 与 JSP | Flow Shop、Johnson 规则、NEH；JSP 析取图、关键路径、关键块 | 读 FT/LA/ABZ 标准实例；实现 Flow Shop baseline 与 CP-SAT JSP；输出甘特图 | 独立验证器通过；提交关键路径与瓶颈分析 |
+| Week 2 | FJSP | FJSP 的机器选择、按机器变化的工时、机器指派 | 实现 FJSP Decoder / Validator / CP-SAT / 启发式 | 比较随机指派、最短工时机器、负载均衡、CP-SAT |
+| Week 3 | 工业约束 I（release/due/setup/calendar/maintenance） | 释放时间、交期、加权迟交、sequence-dependent setup、机器日历、计划维护 | 目标从 min Cmax 扩展为 α·Cmax + β·总迟交 + γ·setup 成本 | 给出多目标归一化与权重敏感性分析 |
+| Week 4 | 工业约束 II（qualification/worker/batching/WIP/urgent order） | 机器资质、次生资源、工人、工装、批处理、WIP、锁定工序、紧急订单 | 建立 Order/ProcessRoute/Operation/Machine/Calendar/Qualification/Resource 数据模型 | 至少 5 种真实约束、JSON 输入输出、多目标 KPI |
 
 ## 每周 7 天执行清单
 
