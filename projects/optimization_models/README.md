@@ -1,8 +1,8 @@
 # LP / MILP / CP 模型实验
 
-[项目总览](../README.md) · [学习路线](../../LEARNING_PLAN.md)
+[学习路线](../../LEARNING_PLAN.md)
 
-对应第 05～08 周。本目录是项目任务框架，尚无求解代码，不能作为已实现成果运行。
+对应第 2 月（M2，Week 1–4）。本目录是项目任务框架，尚无求解代码，不能作为已实现成果运行。
 
 ## 任务主线
 
@@ -14,7 +14,7 @@
 
 ## 首个实现任务
 
-从第 05 周的生产计划 LP 开始，建立 models、solvers、experiments 与 results；在第一份实现时再确定模块细分。
+从第 2 月 Week 1 的生产计划 LP 开始，建立 models、solvers、experiments 与 results；在第一份实现时再确定模块细分。
 
 ## 交付
 

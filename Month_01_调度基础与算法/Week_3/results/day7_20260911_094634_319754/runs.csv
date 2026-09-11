@@ -1,7 +1,0 @@
-﻿algorithm,instance,instance_seed,algorithm_seed,n_jobs,objective_name,status,error,objective,improvement,improvement_rate,iterations,restarts,stop_reason,solution,runtime,evaluations,makespan,average_completion_time,max_lateness
-FCFS,n6_seed100,100,,6,total_tardiness,OK,,0,0,,0,0,rule,"[""J1"", ""J2"", ""J3"", ""J4"", ""J5"", ""J6""]",0.00024040008429437876,1,54,35.0,0
-SPT,n6_seed100,100,,6,total_tardiness,OK,,0,0,,0,0,rule,"[""J6"", ""J5"", ""J1"", ""J3"", ""J4"", ""J2""]",0.00010609999299049377,1,54,23.333333333333332,-10
-EDD,n6_seed100,100,,6,total_tardiness,OK,,0,0,,0,0,rule,"[""J5"", ""J2"", ""J3"", ""J6"", ""J1"", ""J4""]",0.0001004999503493309,1,54,30.666666666666668,-45
-SPT+LS,n6_seed100,100,,6,total_tardiness,OK,,0,0,,0,0,no_improvement,"[""J6"", ""J5"", ""J1"", ""J3"", ""J4"", ""J2""]",0.0015348000451922417,16,54,23.333333333333332,-10
-Multi-start,n6_seed100,100,0,6,total_tardiness,OK,,0,0,,0,1,completed; capped=0,"[""J5"", ""J3"", ""J2"", ""J1"", ""J6"", ""J4""]",0.0016095999162644148,16,54,30.666666666666668,-32
-SPT+SA,n6_seed100,100,0,6,total_tardiness,OK,,0,0,,360,0,min_temperature,"[""J6"", ""J5"", ""J1"", ""J3"", ""J4"", ""J2""]",0.059664900065399706,361,54,23.333333333333332,-10

@@ -1,3 +1,0 @@
-﻿algorithm,instance,samples,success,failed,best,mean,worst,std,mean_runtime,mean_evaluations
-Multi-start,n20_seed42,1,1,0,521,521,521,0.0,0.08472689997870475,381
-SPT+SA,n20_seed42,1,1,0,375,375,375,0.0,0.002584500005468726,11

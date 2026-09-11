@@ -1,7 +1,0 @@
-﻿algorithm,instance,instance_seed,algorithm_seed,n_jobs,objective_name,status,error,objective,improvement,improvement_rate,iterations,restarts,stop_reason,solution,runtime,evaluations,makespan,average_completion_time,max_lateness
-FCFS,n3_seed100,100,,3,total_tardiness,OK,,0,0,,0,0,rule,"[""J1"", ""J2"", ""J3""]",0.0004822999471798539,1,33,19.333333333333332,-44
-SPT,n3_seed100,100,,3,total_tardiness,OK,,0,0,,0,0,rule,"[""J1"", ""J3"", ""J2""]",6.360001862049103e-05,1,33,18.666666666666668,-31
-EDD,n3_seed100,100,,3,total_tardiness,OK,,0,0,,0,0,rule,"[""J2"", ""J3"", ""J1""]",6.440002471208572e-05,1,33,25.333333333333332,-49
-SPT+LS,n3_seed100,100,,3,total_tardiness,OK,,0,0,,0,0,no_improvement,"[""J1"", ""J3"", ""J2""]",0.00024419999681413174,4,33,18.666666666666668,-31
-Multi-start,n3_seed100,100,0,3,total_tardiness,OK,,0,0,,0,1,completed; capped=0,"[""J1"", ""J3"", ""J2""]",0.00027950003277510405,4,33,18.666666666666668,-31
-SPT+SA,n3_seed100,100,0,3,total_tardiness,OK,,0,0,,360,0,min_temperature,"[""J1"", ""J3"", ""J2""]",0.022575800074264407,361,33,18.666666666666668,-31

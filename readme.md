@@ -1,48 +1,24 @@
-# 通用调度算法与运筹优化 · 六个月学习框架
+# Scheduling Algorithm Learning
 
-默认掌握 Python、数据结构与基本开发工具。以“问题定义 → 数学建模 → 求解算法 → 合法性校验 → 实验评测 → 项目交付”为主线，按 6 个月、24 个主题周组织。
+十二个月的运筹优化调度学习仓库，目标岗位是「调度 / 运筹优化 / AI4OR 工程师」。默认已掌握 Python，重点是建模、求解、数据驱动、AI4OR 增强和工程交付。
 
-## 学习入口
+入口：[十二个月学习计划](LEARNING_PLAN.md)
 
-- [六个月总计划](LEARNING_PLAN.md)：学习目标、知识主线、工具与任务安排。
-- [代码项目](projects/README.md)：长期项目边界、运行方式与后续扩展。
+| 阶段 | 月份 | 主题 | 目录 |
+|---|---|---|---|
+| Phase I | 1 | 建模、基线与实验框架 | [Month 01](Month_01_基础系统与框架设计/README.md) |
+| Phase I | 2 | MILP / CP-SAT 精确求解 | [Month 02](Month_02_精确算法与参数学习/README.md) |
+| Phase II | 3 | JSP / FJSP 与工业排程 | [Month 03](Month_03_工业排程与柔性车间/README.md) |
+| Phase II | 4 | 高级运筹与分解方法 | [Month 04](Month_04_高级运筹与分解方法/README.md) |
+| Phase III | 5 | 元启发式与混合求解 | [Month 05](Month_05_元启发式与混合优化/README.md) |
+| Phase III | 6 | 动态调度与仿真交付 | [Month 06](Month_06_动态系统与工业交付/README.md) |
+| Phase IV | 7 | 机器学习与运筹 | [Month 07](Month_07_机器学习与运筹/README.md) |
+| Phase IV | 8 | 强化学习与调度环境 | [Month 08](Month_08_强化学习与调度环境/README.md) |
+| Phase V | 9 | 调度强化学习 | [Month 09](Month_09_调度强化学习/README.md) |
+| Phase V | 10 | 神经组合优化 | [Month 10](Month_10_神经组合优化/README.md) |
+| Phase VI | 11 | 混合运筹与 AI | [Month 11](Month_11_混合运筹与AI/README.md) |
+| Phase VI | 12 | 智能 APS 综合项目 | [Month 12](Month_12_智能APS综合项目/README.md) |
 
-| 月份 | 任务大纲 |
-| --- | --- |
-| 第 1 月 · 第 01～04 周 | [调度基础、建模与搜索闭环](Month_01_调度基础与算法/README.md) |
-| 第 2 月 · 第 05～08 周 | [运筹优化与精确求解](Month_02_运筹优化与数学建模/README.md) |
-| 第 3 月 · 第 09～12 周 | [JSP / FJSP 生产调度](Month_03_JSP与FJSP生产调度/README.md) |
-| 第 4 月 · 第 13～16 周 | [网络优化与车辆路径](Month_04_图优化与车辆调度/README.md) |
-| 第 5 月 · 第 17～20 周 | [邻域设计与混合优化](Month_05_启发式与大规模优化/README.md) |
-| 第 6 月 · 第 21～24 周 | [动态优化与综合交付](Month_06_动态调度与工程化/README.md) |
+每月只用本地 Week 1–4，不使用跨月全局周号。每个实验记录输入版本、随机种子、参数、状态、目标值、gap、运行时间和结论。
 
-## 目录
-
-```text
-Month_01_调度基础与算法/
-Month_02_运筹优化与数学建模/
-Month_03_JSP与FJSP生产调度/
-Month_04_图优化与车辆调度/
-Month_05_启发式与大规模优化/
-Month_06_动态调度与工程化/
-    README.md  # 每个月的主题、目标与里程碑
-    Week_1/README.md
-    Week_2/README.md
-    Week_3/README.md
-    Week_4/README.md
-projects/      # 后续领域项目的任务框架及实验注册表
-run.py         # 按周隔离运行实验
-LEARNING_PLAN.md # 六个月总计划
-```
-
-六个月都使用相同的 `Week_1`～`Week_4` 层级。月度 README 展开每周的学习、实践、实验与验收要求；每周 README 列出 Day 1～Day 7 的具体任务和交付标准。笔记按天放在各周 `note/`，代码与每日实验也在相应周目录。
-
-## 运行实验
-
-```powershell
-python run.py --list
-python run.py week1 day6_bounds
-python run.py week3 day7_integration
-```
-
-使用仓库虚拟环境时将 `python` 换为 `.\.venv\Scripts\python.exe`。MILP/绘图依赖按 [基础项目说明](Month_01_调度基础与算法/Week_2/README.md) 安装；搜索项目仅依赖标准库。未来月份先提供明确任务与项目说明，未实现的算法不放空壳，也不出现在可运行列表。
+代码与实验按月份组织在 [projects/](projects/) 下（各月任务的实现框架）。
