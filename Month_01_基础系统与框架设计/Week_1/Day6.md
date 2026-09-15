@@ -35,7 +35,7 @@
 python -m pytest tests/test_month1.py -k hand -v
 ```
 
-数据与断言见 [test_month1.py](../../../projects/01_scheduling_core/tests/test_month1.py) 的 `HAND_CASES`。预期 10 个参数化案例通过。
+数据与断言见 [test_month1.py](../../projects/01_scheduling_core/tests/test_month1.py) 的 `HAND_CASES`。预期 10 个参数化案例通过。
 
 案例 6 展示 non-delay 的局限：先等到 t=1，加工短任务到 2，再加工长任务到 12，ΣC=14，比规则的 21 小。规则输出可行，不代表最优。
 

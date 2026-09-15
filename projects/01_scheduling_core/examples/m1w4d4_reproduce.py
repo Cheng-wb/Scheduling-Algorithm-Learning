@@ -11,9 +11,9 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scheduling_core.benchmark import ROOT, source_hash
-from scheduling_core.parser import load_json_instance
-from scheduling_core.search import SearchConfig, solve
+from scheduling_experiments.benchmark import ROOT, source_hash
+from scheduling_io.parser import load_json_instance
+from scheduling_algorithms.search import SearchConfig, solve
 
 
 def reproduce(directory: Path) -> int:
@@ -74,6 +74,9 @@ def reproduce(directory: Path) -> int:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "directory", type=Path, nargs="?", default=ROOT / "artifacts" / "month1"
+        "directory",
+        type=Path,
+        nargs="?",
+        default=ROOT / "artifacts" / "month1_refactored",
     )
     reproduce(parser.parse_args().directory)

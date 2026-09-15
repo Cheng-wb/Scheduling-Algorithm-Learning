@@ -4,27 +4,6 @@
 
 本月目标：建立统一输入模型、经典规则、解码器、独立验证器和目标评估器，实现局部搜索与模拟退火，并完成可复现的 Benchmark。MILP / CP-SAT 在 M2 学习，本月不涉及。月末作品为 **Scheduling Core & Search Lab**。
 
-## 已完成材料与学习入口
-
-已保留 Week 1 Day 1–4，并补齐余下 24 天：共 28 篇每日笔记、4 篇周报、1 篇月度报告。材料和代码已完成；个人练习掌握情况请按每日自测自行确认。
-
-| 周次 | 每日笔记 | 周报 |
-|---|---|---|
-| Week 1 | [D1](Week_1/Day1.md) · [D2](Week_1/Day2.md) · [D3](Week_1/Day3.md) · [D4](Week_1/Day4.md) · [D5](Week_1/Day5.md) · [D6](Week_1/Day6.md) · [D7](Week_1/Day7.md) | [week1.md](week1.md) |
-| Week 2 | [D1](Week_2/Day1.md) · [D2](Week_2/Day2.md) · [D3](Week_2/Day3.md) · [D4](Week_2/Day4.md) · [D5](Week_2/Day5.md) · [D6](Week_2/Day6.md) · [D7](Week_2/Day7.md) | [week2.md](week2.md) |
-| Week 3 | [D1](Week_3/Day1.md) · [D2](Week_3/Day2.md) · [D3](Week_3/Day3.md) · [D4](Week_3/Day4.md) · [D5](Week_3/Day5.md) · [D6](Week_3/Day6.md) · [D7](Week_3/Day7.md) | [week3.md](week3.md) |
-| Week 4 | [D1](Week_4/Day1.md) · [D2](Week_4/Day2.md) · [D3](Week_4/Day3.md) · [D4](Week_4/Day4.md) · [D5](Week_4/Day5.md) · [D6](Week_4/Day6.md) · [D7](Week_4/Day7.md) | [week4.md](week4.md) |
-
-- [项目代码与运行命令](../projects/01_scheduling_core/README.md)
-- [月度报告：模型、结果与局限](MONTH1_REPORT.md)
-- [实际实验汇总](../projects/01_scheduling_core/artifacts/month1/report.md)
-
-从仓库根目录重跑（使用新的输出目录）：
-
-```powershell
-python projects/01_scheduling_core/examples/m1w4d1_benchmark.py --output projects/01_scheduling_core/artifacts/my_run
-```
-
 ## Week 1：调度问题语言与经典规则
 
 全年主题：Week 1 调度问题语言与经典规则（`1||Cmax`、`1||ΣCj`、SPT/EDD/WSPT/LPT）。

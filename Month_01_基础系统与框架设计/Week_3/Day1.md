@@ -4,7 +4,7 @@
 
 ## 1. 搜索契约
 
-[search.py](../../../projects/01_scheduling_core/scheduling_core/search.py) 定义 `solve(instance, config, initial=None) -> SearchResult`。所有目标都最小化，支持 makespan、total_tardiness、weighted_completion_time。
+[search.py](../../projects/01_scheduling_core/scheduling_algorithms/search.py) 定义 `solve(instance, config, initial=None) -> SearchResult`。所有目标都最小化，支持 makespan、total_tardiness、weighted_completion_time。
 
 SearchConfig 保存 algorithm、objective、budget、seed、temperature、cooling、restart_interval。SearchResult 返回历史最好 Candidate、Schedule、objective、evaluations、status、elapsed_seconds、trace。返回的是历史最好解，不一定是最后走到的解。
 

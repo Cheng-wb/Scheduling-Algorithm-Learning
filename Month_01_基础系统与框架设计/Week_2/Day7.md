@@ -18,7 +18,7 @@
 | 可复现输入、CSV/JSON | test_roundtrip_and_csv |
 | 至少五个小例枚举 | test_five_independent_enumerations，五个种子 |
 
-周报：[week2.md](../week2.md)。测试代码位于 [test_month1.py](../../../projects/01_scheduling_core/tests/test_month1.py)。
+周报：[week2.md](../week2.md)。测试代码位于 [test_month1.py](../../projects/01_scheduling_core/tests/test_month1.py)。
 
 ## 3. 已知局限
 

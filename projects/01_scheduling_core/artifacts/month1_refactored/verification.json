@@ -1,0 +1,12 @@
+{
+  "tests_passed": 107,
+  "ruff": "passed",
+  "black": "passed",
+  "mypy_source_files": 18,
+  "reproduced_runs": 162,
+  "pre_refactor_rows_equal_excluding_timing": 162,
+  "identical_candidates_schedules_and_traces": 162,
+  "documentation_links": "passed",
+  "package_dependency_boundaries": "passed",
+  "daily_examples": "passed"
+}

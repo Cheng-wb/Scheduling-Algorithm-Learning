@@ -1,6 +1,6 @@
 # Week 3 周报：局部搜索与模拟退火
 
-## 已交付
+## 本周内容
 
 统一 SearchConfig/SearchResult，Random、First、Best、Multi-start、SA，以及逐评价轨迹。LPT 初始基线作为额外方法保留。
 

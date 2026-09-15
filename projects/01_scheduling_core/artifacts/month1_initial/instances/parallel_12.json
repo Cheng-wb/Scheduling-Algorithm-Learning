@@ -1,0 +1,248 @@
+{
+  "jobs": [
+    {
+      "id": "J000",
+      "operation_ids": [
+        "J000_O0"
+      ],
+      "release_time": 6,
+      "due_date": 15,
+      "weight": 4.0
+    },
+    {
+      "id": "J001",
+      "operation_ids": [
+        "J001_O0"
+      ],
+      "release_time": 7,
+      "due_date": 22,
+      "weight": 2.0
+    },
+    {
+      "id": "J002",
+      "operation_ids": [
+        "J002_O0"
+      ],
+      "release_time": 8,
+      "due_date": 32,
+      "weight": 2.0
+    },
+    {
+      "id": "J003",
+      "operation_ids": [
+        "J003_O0"
+      ],
+      "release_time": 8,
+      "due_date": 33,
+      "weight": 2.0
+    },
+    {
+      "id": "J004",
+      "operation_ids": [
+        "J004_O0"
+      ],
+      "release_time": 0,
+      "due_date": 1,
+      "weight": 3.0
+    },
+    {
+      "id": "J005",
+      "operation_ids": [
+        "J005_O0"
+      ],
+      "release_time": 6,
+      "due_date": 34,
+      "weight": 1.0
+    },
+    {
+      "id": "J006",
+      "operation_ids": [
+        "J006_O0"
+      ],
+      "release_time": 3,
+      "due_date": 10,
+      "weight": 2.0
+    },
+    {
+      "id": "J007",
+      "operation_ids": [
+        "J007_O0"
+      ],
+      "release_time": 6,
+      "due_date": 9,
+      "weight": 4.0
+    },
+    {
+      "id": "J008",
+      "operation_ids": [
+        "J008_O0"
+      ],
+      "release_time": 7,
+      "due_date": 37,
+      "weight": 1.0
+    },
+    {
+      "id": "J009",
+      "operation_ids": [
+        "J009_O0"
+      ],
+      "release_time": 8,
+      "due_date": 24,
+      "weight": 4.0
+    },
+    {
+      "id": "J010",
+      "operation_ids": [
+        "J010_O0"
+      ],
+      "release_time": 10,
+      "due_date": 16,
+      "weight": 3.0
+    },
+    {
+      "id": "J011",
+      "operation_ids": [
+        "J011_O0"
+      ],
+      "release_time": 2,
+      "due_date": 3,
+      "weight": 1.0
+    }
+  ],
+  "operations": [
+    {
+      "id": "J000_O0",
+      "job_id": "J000",
+      "processing_time": 6,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J001_O0",
+      "job_id": "J001",
+      "processing_time": 10,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J002_O0",
+      "job_id": "J002",
+      "processing_time": 16,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J003_O0",
+      "job_id": "J003",
+      "processing_time": 17,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J004_O0",
+      "job_id": "J004",
+      "processing_time": 1,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J005_O0",
+      "job_id": "J005",
+      "processing_time": 19,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J006_O0",
+      "job_id": "J006",
+      "processing_time": 5,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J007_O0",
+      "job_id": "J007",
+      "processing_time": 2,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J008_O0",
+      "job_id": "J008",
+      "processing_time": 20,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J009_O0",
+      "job_id": "J009",
+      "processing_time": 11,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J010_O0",
+      "job_id": "J010",
+      "processing_time": 4,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J011_O0",
+      "job_id": "J011",
+      "processing_time": 1,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    }
+  ],
+  "machines": [
+    {
+      "id": "M0",
+      "name": "Machine 0"
+    },
+    {
+      "id": "M1",
+      "name": "Machine 1"
+    },
+    {
+      "id": "M2",
+      "name": "Machine 2"
+    }
+  ]
+}

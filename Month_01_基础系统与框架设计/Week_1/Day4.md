@@ -135,7 +135,7 @@ Job B：p = 1,   r = 1
 
 ## 7. 实现：`rules.py` 的设计
 
-对应文件 [rules.py](../../projects/01_scheduling_core/scheduling_core/rules.py)。
+对应文件 [rules.py](../../projects/01_scheduling_core/scheduling_algorithms/rules.py)。
 
 ### 7.1 核心是「一个通用函数 + 四个薄包装」
 

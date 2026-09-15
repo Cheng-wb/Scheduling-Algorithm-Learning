@@ -16,7 +16,7 @@
 
 ## 2. 本月默认配置
 
-预算 150、种子 0/1/2、SA T0=10、cooling=0.98、Multi-start interval=40。来源是可快速重跑的教学设置；不是经过独立验证集选择的生产参数。完整设置在 [month1.json](../../../projects/01_scheduling_core/configs/month1.json)。
+预算 150、种子 0/1/2、SA T0=10、cooling=0.98、Multi-start interval=40。来源是可快速重跑的教学设置；不是经过独立验证集选择的生产参数。完整设置在 [month1.json](../../projects/01_scheduling_core/configs/month1.json)。
 
 ## 3. 概率补充
 

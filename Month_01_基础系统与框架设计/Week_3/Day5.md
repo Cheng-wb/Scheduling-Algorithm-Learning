@@ -16,7 +16,7 @@ proposed 是候选目标；current 是接受/拒绝后的当前值；best 是历
 
 ## 3. 实现选择
 
-[search.py](../../../projects/01_scheduling_core/scheduling_core/search.py) 随机选 swap、insert、reassign 三种移动。允许 i=j 或原机器被再次抽到，此时 no-op 仍计预算；这避免单元素实例陷入“必须抽到不同解”的死循环。
+[search.py](../../projects/01_scheduling_core/scheduling_algorithms/search.py) 随机选 swap、insert、reassign 三种移动。允许 i=j 或原机器被再次抽到，此时 no-op 仍计预算；这避免单元素实例陷入“必须抽到不同解”的死循环。
 
 温度必须有限且正，cooling 在 (0,1]。计算时用很小正数保护除零。这里只实现有限预算的几何降温启发式，不声称具有渐近全局最优保证。
 

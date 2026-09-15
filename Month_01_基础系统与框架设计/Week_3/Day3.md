@@ -16,7 +16,7 @@ trace 的 proposed 表示这一次评估的候选值；current 在扫描期间�
 
 ## 3. 实验
 
-代码：[search.py](../../../projects/01_scheduling_core/scheduling_core/search.py) 中的局部搜索分支。运行 `python -m examples.m1w3d6_search`，对比 first、best 的目标和实际 evaluations。
+代码：[search.py](../../projects/01_scheduling_core/scheduling_algorithms/search.py) 中的局部搜索分支。运行 `python -m examples.m1w3d6_search`，对比 first、best 的目标和实际 evaluations。
 
 记录三列：相同预算上限、实际评价数、返回值。墙钟时间另列，因为邻居生成和去重也消耗时间，而完整评价预算不计这些操作。
 

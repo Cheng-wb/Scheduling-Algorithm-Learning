@@ -4,7 +4,7 @@
 
 ## 1. 配置驱动
 
-[benchmark.py](../../../projects/01_scheduling_core/scheduling_core/benchmark.py) 读取 JSON 配置；数据规模、目标、种子、预算和敏感性参数都不写死在算法中。默认配置：[month1.json](../../../projects/01_scheduling_core/configs/month1.json)。
+[benchmark.py](../../projects/01_scheduling_core/scheduling_experiments/benchmark.py) 读取 JSON 配置；数据规模、目标、种子、预算和敏感性参数都不写死在算法中。默认配置：[month1.json](../../projects/01_scheduling_core/configs/month1.json)。
 
 仓库根目录复跑：
 
@@ -12,7 +12,7 @@
 python projects/01_scheduling_core/examples/m1w4d1_benchmark.py --output projects/01_scheduling_core/artifacts/my_run
 ```
 
-输出目录须为空或不存在，避免覆盖已有证据。已交付记录放在 artifacts/month1；再次运行换新目录名即可。项目目录也支持 `python -m scheduling_core.benchmark --output artifacts/my_run`。
+输出目录须为空或不存在，避免覆盖已有证据。实验记录放在 artifacts/month1_refactored；再次运行换新目录名即可。项目目录也支持 `python -m scheduling_experiments.benchmark --output artifacts/my_run`。
 
 ## 2. 运行顺序
 

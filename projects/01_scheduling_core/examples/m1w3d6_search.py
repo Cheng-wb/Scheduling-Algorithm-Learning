@@ -6,8 +6,8 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scheduling_core.generator import generate_instance
-from scheduling_core.search import ALGORITHMS, SearchConfig, solve
+from scheduling_io.generator import generate_instance
+from scheduling_algorithms.search import ALGORITHMS, SearchConfig, solve
 
 
 def main() -> None:

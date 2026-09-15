@@ -10,7 +10,14 @@ from scheduling_core.objective import (
     total_tardiness,
     weighted_completion_time,
 )
-from scheduling_core.rules import edd, lpt, spt, wspt
+from scheduling_algorithms.rules import (
+    edd,
+    lpt,
+    parallel_lpt,
+    parallel_makespan_lower_bound,
+    spt,
+    wspt,
+)
 
 
 def _single_machine_instance(jobs_spec):
@@ -230,3 +237,118 @@ def test_rejects_multiple_machines_without_machine_id():
 
     with pytest.raises(ValueError):
         spt(inst)
+
+
+def _parallel_instance(processing_times, machine_count=2):
+    """构造 r=0、全资格的并行机实例：每个 job 一道工序，p 由列表给出。"""
+    machine_ids = tuple(f"M{i}" for i in range(machine_count))
+    machines = tuple(Machine(id=mid, name=mid) for mid in machine_ids)
+
+    jobs = []
+    operations = []
+
+    for i, p in enumerate(processing_times):
+        jid = f"J{i}"
+        oid = f"O{i}"
+        jobs.append(Job(id=jid, operation_ids=(oid,)))
+        operations.append(
+            Operation(
+                id=oid, job_id=jid, processing_time=p, eligible_machine_ids=machine_ids
+            )
+        )
+
+    return Instance(jobs=tuple(jobs), operations=tuple(operations), machines=machines)
+
+
+def test_parallel_lpt_orders_by_longest_first():
+    inst = _parallel_instance([3, 8, 5], machine_count=2)
+    schedule = parallel_lpt(inst)
+    # 加工时间降序：J1(8), J2(5), J0(3)
+    assert [s.operation_id for s in schedule.operations] == ["O1", "O2", "O0"]
+
+
+def test_parallel_lpt_assigns_to_least_loaded_machine():
+    inst = _parallel_instance([8, 7, 6, 5], machine_count=2)
+    schedule = parallel_lpt(inst)
+    # O0(8)->M0, O1(7)->M1, O2(6)->M1(7<8), O3(5)->M0(8<13)
+    assert [
+        (s.operation_id, s.machine_id, s.start_time, s.end_time)
+        for s in schedule.operations
+    ] == [
+        ("O0", "M0", 0, 8),
+        ("O1", "M1", 0, 7),
+        ("O2", "M1", 7, 13),
+        ("O3", "M0", 8, 13),
+    ]
+
+
+def test_parallel_lpt_machine_tie_breaks_by_machine_id():
+    inst = _parallel_instance([5], machine_count=3)
+    schedule = parallel_lpt(inst)
+    # 所有机器 ready=0，选 id 最小的 M0
+    assert schedule.operations[0].machine_id == "M0"
+
+
+def test_parallel_lpt_job_tie_breaks_by_job_id():
+    inst = _parallel_instance([5, 5], machine_count=2)
+    schedule = parallel_lpt(inst)
+    assert [s.operation_id for s in schedule.operations] == ["O0", "O1"]
+    assert makespan(inst, schedule) == 5
+
+
+def test_parallel_lpt_makespan_balanced():
+    inst = _parallel_instance([8, 7, 6, 5], machine_count=2)
+    assert makespan(inst, parallel_lpt(inst)) == 13
+
+
+def test_parallel_lpt_makespan_matches_hand_computed():
+    inst = _parallel_instance([4, 3, 2], machine_count=2)
+    assert makespan(inst, parallel_lpt(inst)) == 5
+
+
+def test_parallel_lpt_schedules_every_operation_once():
+    inst = _parallel_instance([8, 7, 6, 5], machine_count=2)
+    schedule = parallel_lpt(inst)
+    scheduled_ids = [s.operation_id for s in schedule.operations]
+    assert sorted(scheduled_ids) == ["O0", "O1", "O2", "O3"]
+    assert len(scheduled_ids) == len(set(scheduled_ids)) == 4
+
+
+def test_parallel_lpt_rejects_multi_operation_job():
+    m0 = Machine(id="M0", name="M0")
+    m1 = Machine(id="M1", name="M1")
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=2, eligible_machine_ids=("M0", "M1")
+    )
+    o2 = Operation(
+        id="O2", job_id="J1", processing_time=3, eligible_machine_ids=("M0", "M1")
+    )
+    j1 = Job(id="J1", operation_ids=("O1", "O2"))
+
+    inst = Instance(jobs=(j1,), operations=(o1, o2), machines=(m0, m1))
+
+    with pytest.raises(ValueError):
+        parallel_lpt(inst)
+
+
+def test_parallel_makespan_lower_bound_average_dominates():
+    inst = _parallel_instance([9, 8, 7, 6, 5, 4], machine_count=3)
+    # total=39, ceil(39/3)=13, longest=9 → 13
+    assert parallel_makespan_lower_bound(inst) == 13
+
+
+def test_parallel_makespan_lower_bound_balanced():
+    inst = _parallel_instance([8, 7, 6, 5], machine_count=2)
+    # total=26, ceil(26/2)=13, longest=8 → 13
+    assert parallel_makespan_lower_bound(inst) == 13
+
+
+def test_parallel_makespan_lower_bound_longest_dominates():
+    inst = _parallel_instance([10, 1, 1, 1], machine_count=3)
+    # total=13, ceil(13/3)=5, 但最长加工 10 → 10
+    assert parallel_makespan_lower_bound(inst) == 10
+
+
+def test_parallel_makespan_lower_bound_empty():
+    inst = _parallel_instance([], machine_count=2)
+    assert parallel_makespan_lower_bound(inst) == 0

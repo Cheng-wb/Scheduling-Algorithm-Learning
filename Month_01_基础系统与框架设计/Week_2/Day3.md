@@ -16,7 +16,7 @@ insert 的 j 指移除后插入的最终索引，不是“原索引 j 前面”�
 
 ## 2. 边界与可行性
 
-实现位于 [solution.py](../../../projects/01_scheduling_core/scheduling_core/solution.py)。swap/insert 拒绝负数和越界；i=j 返回等值候选解。reassign 只允许 eligible 集合中的机器。交换优先级可能把后继放在前面，但 decoder 会等待前驱，不等于 precedence 违规。
+实现位于 [neighborhoods.py](../../projects/01_scheduling_core/scheduling_algorithms/neighborhoods.py)。swap/insert 拒绝负数和越界；i=j 返回等值候选解。reassign 只允许 eligible 集合中的机器。交换优先级可能把后继放在前面，但 decoder 会等待前驱，不等于 precedence 违规。
 
 完整邻域按固定顺序扫描 swap、insert、机器替换，用集合去重并排除自身。swap 有 n(n−1)/2 个位置对，insert 原始有 n(n−1) 个有向移动；相邻交换会与 insert 重合，不能把两者简单相加当作去重后大小。
 

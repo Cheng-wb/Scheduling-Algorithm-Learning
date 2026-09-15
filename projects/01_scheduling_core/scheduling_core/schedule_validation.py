@@ -2,9 +2,9 @@
 
 from collections import Counter
 
-from .models import Instance
-from .schedule import Schedule
-from .validation import validate_instance
+from scheduling_core.models import Instance
+from scheduling_core.schedule import Schedule
+from scheduling_core.validation import validate_instance
 
 
 def schedule_errors(instance: Instance, schedule: Schedule) -> list[str]:

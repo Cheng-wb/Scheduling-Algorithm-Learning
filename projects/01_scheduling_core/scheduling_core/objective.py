@@ -6,8 +6,8 @@
 
 from __future__ import annotations
 
-from .models import Instance
-from .schedule import Schedule
+from scheduling_core.models import Instance
+from scheduling_core.schedule import Schedule
 
 
 def job_completion_times(instance: Instance, schedule: Schedule) -> dict[str, int]:

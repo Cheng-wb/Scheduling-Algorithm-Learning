@@ -4,7 +4,7 @@
 
 ## 1. 穷举范围
 
-[oracle.py](../../../projects/01_scheduling_core/scheduling_core/oracle.py) 只支持每作业一道工序。对 n 个任务、每个有 m 台资格，遍历 n! 个排列与全部指派。n=4、m=2 时为 `24×16=384` 个组合。
+[oracle.py](../../projects/01_scheduling_core/scheduling_algorithms/oracle.py) 只支持每作业一道工序。对 n 个任务、每个有 m 台资格，遍历 n! 个排列与全部指派。n=4、m=2 时为 `24×16=384` 个组合。
 
 Oracle 自己维护机器可用时刻，不调用 decoder。测试另用 Candidate+decode 遍历同样的决策空间，比较最小目标。共享领域模型与目标公式，因此目标公式还需要 Week 1 手算提供另一层证据。
 

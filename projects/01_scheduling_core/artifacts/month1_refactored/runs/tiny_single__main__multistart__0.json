@@ -1,0 +1,53 @@
+{
+  "config": {
+    "algorithm": "multistart",
+    "objective": "total_tardiness",
+    "budget": 150,
+    "seed": 0,
+    "temperature": 10.0,
+    "cooling": 0.98,
+    "restart_interval": 40
+  },
+  "candidate": {
+    "order": [
+      "J002_O0",
+      "J003_O0",
+      "J001_O0",
+      "J000_O0"
+    ],
+    "assignments": [
+      "M0",
+      "M0",
+      "M0",
+      "M0"
+    ]
+  },
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 14
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 14,
+        "end_time": 23
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 23,
+        "end_time": 39
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 39,
+        "end_time": 58
+      }
+    ]
+  }
+}

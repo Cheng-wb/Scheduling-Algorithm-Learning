@@ -6,7 +6,7 @@
 
 Instance 是不随搜索改变的业务输入。Schedule 是已经落到时间轴的输出。直接移动 Schedule 中的时间戳很容易破坏释放时间和机器容量，因此引入 Candidate：它描述决策，由解码器重新计算时间。
 
-定义见 [solution.py](../../../projects/01_scheduling_core/scheduling_core/solution.py)：
+定义见 [solution.py](../../projects/01_scheduling_core/scheduling_core/solution.py)：
 
 ```python
 Candidate(order=("A", "B", "C"), assignments=("M0", "M1", "M0"))

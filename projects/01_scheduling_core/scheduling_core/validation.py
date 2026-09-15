@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import math
 
-from .models import Instance, Job, Machine, Operation
+from scheduling_core.models import Instance, Job, Machine, Operation
 
 
 class InstanceValidationError(ValueError):

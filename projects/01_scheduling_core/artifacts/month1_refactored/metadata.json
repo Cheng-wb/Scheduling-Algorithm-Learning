@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-15T08:50:38.290916+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "git_commit": "538886b3ded5c11afcfd137fa1aebc14fe59020c",
+  "working_tree_dirty": true,
+  "source_sha256": "025ed469c2621c036403f7876a865ac858c1951563f7dc7058113c305e142477",
+  "config_sha256": "8b126be787355ee715d0113338609863e130b7f047f6c25da8fb255a4742eeaa",
+  "budget_unit": "full decode + validate + objective, including initialization and rejection"
+}

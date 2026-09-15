@@ -1,8 +1,8 @@
 # Month 1 报告：Scheduling Core & Search Lab
 
-## 1. 结论与交付范围
+## 1. 研究范围
 
-按全年 M1 四周主题完成调度核心、规则、邻域、独立验证、五种搜索和实验框架。保留已有 Week 1 Day 1–4，补齐后续 24 篇笔记、四篇周报与本报告。笔记包含原理、手算、代码定位、实验命令与自测，不将材料生成等同于个人学习完成。
+本月研究调度核心、规则、邻域、独立验证、五种搜索方法及实验框架。
 
 验证包含 107 项测试、十个不同手算案例、三条精确解码轨迹、五个小实例枚举对拍和九类损坏排程。正式实验共 162 次，全部成功；另有故障注入验证失败留痕。复现脚本逐次重算并核对目标、状态、评价数、候选、排程和完整轨迹。
 
@@ -19,6 +19,8 @@
 支持同质加工时长与不可抢占；没有换型、维护日历、工人、动态订单和机器相关工时，这些留给后续月份。
 
 ## 3. 实现与算法
+
+项目按职责拆为 scheduling_core（模型、候选解、指标、验证）、scheduling_algorithms（解码、邻域、规则、搜索、枚举）、scheduling_io（解析、生成）和 scheduling_experiments（运行、统计、绘图）。重构只调整代码归属与导入，不改变调度算法；旧运行保留，新结构的记录位于 month1_refactored。
 
 Candidate.order 包含每道工序一次；assignments 对齐 instance.operations。decoder 每步扫描最高优先级的就绪工序，将其追加到指定机器，start=max(机器末尾、前驱结束、释放时间)。不会向已有空隙插入。
 
@@ -53,11 +55,11 @@ Candidate.order 包含每道工序一次；assignments 对齐 instance.operation
 
 ## 5. 实验设置与原始记录
 
-实例参数详见 [Week 4 Day 2](Week_4/Day2.md)，实际输入见 [instances](../projects/01_scheduling_core/artifacts/month1/instances)。算法 seed=0/1/2；预算 150；SA T0=10、cooling=0.98；Multi-start interval=40。
+实例参数详见 [Week 4 Day 2](Week_4/Day2.md)，实际输入见 [instances](../projects/01_scheduling_core/artifacts/month1_refactored/instances)。算法 seed=0/1/2；预算 150；SA T0=10、cooling=0.98；Multi-start interval=40。
 
 六实例×六方法×三 seed=108 主实验；三个 SA 变体×六实例×三 seed=54 敏感性实验，总计 162。源码 SHA-256、输入 SHA-256、Git commit/dirty、平台和 Python 版本已记录。源码未提交时通过 dirty 标记及源码 hash 明确版本状态。
 
-原始文件：[results.csv](../projects/01_scheduling_core/artifacts/month1/results.csv) · [summary.csv](../projects/01_scheduling_core/artifacts/month1/summary.csv) · [metadata.json](../projects/01_scheduling_core/artifacts/month1/metadata.json) · [失败记录](../projects/01_scheduling_core/artifacts/month1/failures.json)。
+原始文件：[results.csv](../projects/01_scheduling_core/artifacts/month1_refactored/results.csv) · [summary.csv](../projects/01_scheduling_core/artifacts/month1_refactored/summary.csv) · [metadata.json](../projects/01_scheduling_core/artifacts/month1_refactored/metadata.json) · [失败记录](../projects/01_scheduling_core/artifacts/month1_refactored/failures.json)。
 
 ## 6. 主实验结果
 
@@ -93,21 +95,21 @@ First/Best 在 tiny_single 分别使用 23/37 次评价就停止；tiny_parallel
 
 ## 8. 图与案例
 
-![参考 gap 分布](../projects/01_scheduling_core/artifacts/month1/quality.png)
+![参考 gap 分布](../projects/01_scheduling_core/artifacts/month1_refactored/quality.png)
 
 合并 gap 的箱线图仅作描述；不同目标的原始值不混合平均。
 
-![routes_12 收敛](../projects/01_scheduling_core/artifacts/month1/convergence.png)
+![routes_12 收敛](../projects/01_scheduling_core/artifacts/month1_refactored/convergence.png)
 
 固定 routes_12、seed=0，显示历史最好值随评价预算的变化。它不是三 seed 平均曲线。LPT 只有一个初始点。
 
-![routes_12 甘特图](../projects/01_scheduling_core/artifacts/month1/gantt.png)
+![routes_12 甘特图](../projects/01_scheduling_core/artifacts/month1_refactored/gantt.png)
 
 图展示主实验中该实例的一个最好排程，Cmax=41；敏感性实验另有 40，因此这张图不声称展示全批最优。同一作业颜色一致，工序标签包括序号。
 
 ## 9. 修复与局限
 
-修复原有 Day 4 的 WSPT 手算答案 28→43、错误相对链接和带释放时间时 Cmax 的过强描述。代码补充单机规则资格检查、JSON 工时不静默截断、非有限权重/非整数时刻拒绝。原示例行为通过回归检查。
+修复原有 Day 4 的 WSPT 手算答案 28→43，以及带释放时间时 Cmax 的过强描述，并核对全月文档链接。代码补充单机规则资格检查、JSON 工时不静默截断、非有限权重/非整数时刻拒绝。原示例行为通过回归检查。
 
 当前限制：小规模、仅六个合成实例、三 seed；所有生成实例全机器资格；无独立调参测试集；追加 decoder 有表示与构造偏置；First/Best 先扫描排列再扫描机器指派，小预算可能根本到不了指派邻域；SA 允许 no-op，接受率不能直接当作有效探索率。报告不做统计显著性声明。
 
@@ -117,10 +119,10 @@ First/Best 在 tiny_single 分别使用 23/37 次评价就停止；tiny_parallel
 
 ```powershell
 python projects/01_scheduling_core/examples/m1w4d1_benchmark.py --output projects/01_scheduling_core/artifacts/my_run
-python projects/01_scheduling_core/examples/m1w4d4_reproduce.py projects/01_scheduling_core/artifacts/month1
+python projects/01_scheduling_core/examples/m1w4d4_reproduce.py projects/01_scheduling_core/artifacts/month1_refactored
 python -m pytest projects/01_scheduling_core -q
 ```
 
-新输出目录需不存在或为空。安装与静态检查见 [项目 README](../projects/01_scheduling_core/README.md)。复现忽略时间差异，严格比较算法结果与轨迹。
+新输出目录需不存在或为空。安装与静态检查见 [项目 README](../projects/01_scheduling_core/PROJECT_GUIDE.md)。复现忽略时间差异，严格比较算法结果与轨迹。
 
 进入 M2 后复用同一模型、Objective 和独立验证器，用 MILP/CP-SAT 提供更大实例的 bound 与最优性证明；再扩展机器资格分布、更多规模和独立测试集。个人学习从 [月度索引](README.md) 按日继续即可。

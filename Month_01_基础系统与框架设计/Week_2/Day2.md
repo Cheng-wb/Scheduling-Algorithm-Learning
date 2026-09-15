@@ -26,7 +26,7 @@
 
 ## 3. 代码与复杂度
 
-读 [solution.py](../../../projects/01_scheduling_core/scheduling_core/solution.py) 的 `decode`。每步线性扫描候选列表并移除元素，总体约 O(n²)，另外有输入与候选检查开销。M1 优先保持可验证的实现，M5 再研究增量评估。
+读 [decoder.py](../../projects/01_scheduling_core/scheduling_algorithms/decoder.py) 的 `decode`。每步线性扫描候选列表并移除元素，总体约 O(n²)，另外有输入与候选检查开销。M1 优先保持可验证的实现，M5 再研究增量评估。
 
 项目目录运行 `python -m pytest tests/test_month1.py -k three_decoder -v`，应通过三个精确时间轨迹测试。
 

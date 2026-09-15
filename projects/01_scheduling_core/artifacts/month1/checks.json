@@ -1,0 +1,22 @@
+[
+  {
+    "command": "-m pytest -q",
+    "exit_code": 0,
+    "output": "........................................................................ [ 67%]\n...................................                                      [100%]\n107 passed in 0.67s\n"
+  },
+  {
+    "command": "-m ruff check scheduling_core tests examples",
+    "exit_code": 0,
+    "output": "All checks passed!\n"
+  },
+  {
+    "command": "-m black --check scheduling_core tests examples",
+    "exit_code": 0,
+    "output": "All done! \\u2728 \\U0001f370 \\u2728\n28 files would be left unchanged.\n"
+  },
+  {
+    "command": "-m mypy scheduling_core --ignore-missing-imports",
+    "exit_code": 0,
+    "output": "Success: no issues found in 13 source files\n"
+  }
+]

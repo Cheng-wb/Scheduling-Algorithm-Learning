@@ -27,7 +27,7 @@ from scheduling_core.objective import (
     total_tardiness,
     weighted_completion_time,
 )
-from scheduling_core.rules import edd, lpt, spt, wspt
+from scheduling_algorithms.rules import edd, lpt, spt, wspt
 
 
 def single_machine_instance(jobs_spec) -> Instance:

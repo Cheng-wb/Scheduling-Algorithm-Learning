@@ -1,0 +1,117 @@
+{
+  "config": {
+    "algorithm": "sa",
+    "objective": "makespan",
+    "budget": 150,
+    "seed": 2,
+    "temperature": 0.1,
+    "cooling": 0.98,
+    "restart_interval": 40
+  },
+  "candidate": {
+    "order": [
+      "J001_O1",
+      "J003_O0",
+      "J005_O0",
+      "J002_O0",
+      "J004_O0",
+      "J001_O0",
+      "J004_O1",
+      "J000_O1",
+      "J005_O1",
+      "J003_O1",
+      "J002_O1",
+      "J000_O0"
+    ],
+    "assignments": [
+      "M0",
+      "M2",
+      "M0",
+      "M1",
+      "M1",
+      "M2",
+      "M1",
+      "M2",
+      "M2",
+      "M2",
+      "M0",
+      "M2"
+    ]
+  },
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M1",
+        "start_time": 3,
+        "end_time": 18
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 16
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 18,
+        "end_time": 30
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M2",
+        "start_time": 1,
+        "end_time": 16
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 16,
+        "end_time": 26
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M1",
+        "start_time": 30,
+        "end_time": 44
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M2",
+        "start_time": 16,
+        "end_time": 17
+      },
+      {
+        "operation_id": "J005_O1",
+        "machine_id": "M2",
+        "start_time": 17,
+        "end_time": 31
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M2",
+        "start_time": 31,
+        "end_time": 32
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M2",
+        "start_time": 32,
+        "end_time": 37
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 26,
+        "end_time": 36
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M2",
+        "start_time": 37,
+        "end_time": 40
+      }
+    ]
+  }
+}

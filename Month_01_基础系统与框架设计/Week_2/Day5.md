@@ -4,7 +4,7 @@
 
 ## 1. 生成器参数
 
-[generator.py](../../../projects/01_scheduling_core/scheduling_core/generator.py) 使用局部 `Random(seed)`，不修改 Python 全局 RNG。
+[generator.py](../../projects/01_scheduling_core/scheduling_io/generator.py) 使用局部 `Random(seed)`，不修改 Python 全局 RNG。
 
 | 参数 | 含义 | 默认值 |
 |---|---|---:|

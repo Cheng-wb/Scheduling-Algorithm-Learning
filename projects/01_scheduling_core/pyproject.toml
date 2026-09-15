@@ -1,3 +1,7 @@
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+
+[tool.mypy]
+files = ["scheduling_core", "scheduling_algorithms", "scheduling_io", "scheduling_experiments"]
+ignore_missing_imports = true

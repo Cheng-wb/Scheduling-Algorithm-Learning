@@ -12,7 +12,7 @@
 
 第一层：同输入/配置/种子重新运行，目标与评价数一致。第二层：最好 Candidate、Schedule 和逐评价 trace 完全一致。第三层：环境、源码和输入有记录，能够解释版本差异。
 
-时间戳、elapsed_seconds 通常不同，不要求逐字节一致；忽略这些字段不等于忽略算法结果。项目提供 [reproduce.py](../../../projects/01_scheduling_core/examples/m1w4d4_reproduce.py)，对已保存的每次成功运行重新求解并核对结果、排程与轨迹。
+时间戳、elapsed_seconds 通常不同，不要求逐字节一致；忽略这些字段不等于忽略算法结果。项目提供 [reproduce.py](../../projects/01_scheduling_core/examples/m1w4d4_reproduce.py)，对已保存的每次成功运行重新求解并核对结果、排程与轨迹。
 
 ## 3. 失败注入
 

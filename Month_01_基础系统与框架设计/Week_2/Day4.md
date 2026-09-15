@@ -6,7 +6,7 @@
 
 输入先由 validate_instance 校验；排程来自任何算法，可能损坏。验证器不调用 decoder、不假设工序列表按时间排序、不根据某个算法的内部状态判断可行性。
 
-代码：[schedule_validation.py](../../../projects/01_scheduling_core/scheduling_core/schedule_validation.py)。`schedule_errors` 返回诊断列表；`validate_schedule` 在存在错误时抛异常。Objective 只计算指标，调用者应先验证完整可行性。
+代码：[schedule_validation.py](../../projects/01_scheduling_core/scheduling_core/schedule_validation.py)。`schedule_errors` 返回诊断列表；`validate_schedule` 在存在错误时抛异常。Objective 只计算指标，调用者应先验证完整可行性。
 
 ## 2. 独立检查清单
 

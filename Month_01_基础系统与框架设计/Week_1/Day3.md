@@ -98,7 +98,7 @@ Parser 的产物可以「先不合法」，交给 Validator 统一把关。这�
 
 ## 5. Parser 第一版
 
-对应文件 `scheduling_core/parser.py`：
+对应文件 `scheduling_io/parser.py`：
 
 ```python
 def load_json_instance(path: str | Path) -> Instance:

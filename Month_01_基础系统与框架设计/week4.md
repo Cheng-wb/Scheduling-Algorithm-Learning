@@ -1,6 +1,6 @@
 # Week 4 周报：Benchmark 与科研式实验
 
-## 已交付
+## 本周内容
 
 JSON 配置、六个保存输入、162 次运行记录、结构化结果/排程/轨迹、均值/中位数/标准差汇总、质量/收敛/甘特图、SA 敏感性分析和逐运行复现脚本。
 
@@ -14,7 +14,7 @@ JSON 配置、六个保存输入、162 次运行记录、结构化结果/排程/
 
 ## 复现入口
 
-[项目 README](../projects/01_scheduling_core/README.md) 提供安装、测试、基准、逐次复现命令；[MONTH1_REPORT.md](MONTH1_REPORT.md) 提供最终模型、数据、结果与局限。
+[项目 README](../projects/01_scheduling_core/PROJECT_GUIDE.md) 提供安装、测试、基准、逐次复现命令；[MONTH1_REPORT.md](MONTH1_REPORT.md) 提供最终模型、数据、结果与局限。
 
 ## 后续学习
 

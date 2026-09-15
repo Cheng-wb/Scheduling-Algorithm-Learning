@@ -21,7 +21,7 @@ from scheduling_core.objective import (
     total_tardiness,
     weighted_completion_time,
 )
-from scheduling_core.parser import load_json_instance
+from scheduling_io.parser import load_json_instance
 from scheduling_core.schedule import Schedule, ScheduledOperation
 from scheduling_core.validation import validate_instance
 

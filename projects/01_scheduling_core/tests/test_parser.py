@@ -2,7 +2,7 @@
 
 import json
 
-from scheduling_core.parser import load_json_instance
+from scheduling_io.parser import load_json_instance
 
 
 def _write_json(tmp_path, data):

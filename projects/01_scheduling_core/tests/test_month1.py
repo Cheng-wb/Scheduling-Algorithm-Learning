@@ -7,7 +7,7 @@ from itertools import permutations, product
 
 import pytest
 
-from scheduling_core.generator import generate_instance
+from scheduling_io.generator import generate_instance
 from scheduling_core.models import Instance, Job, Machine, Operation
 from scheduling_core.objective import (
     makespan,
@@ -15,24 +15,19 @@ from scheduling_core.objective import (
     total_tardiness,
     weighted_completion_time,
 )
-from scheduling_core.oracle import exhaustive_optimum
-from scheduling_core.parser import (
+from scheduling_algorithms.oracle import exhaustive_optimum
+from scheduling_io.parser import (
     load_csv_instance,
     load_json_instance,
     save_json_instance,
 )
-from scheduling_core.rules import edd, lpt, parallel_lpt, spt, wspt
+from scheduling_algorithms.rules import edd, lpt, parallel_lpt, spt, wspt
 from scheduling_core.schedule import Schedule, ScheduledOperation
 from scheduling_core.schedule_validation import schedule_errors, validate_schedule
-from scheduling_core.search import ALGORITHMS, SearchConfig, solve
-from scheduling_core.solution import (
-    Candidate,
-    decode,
-    insert,
-    neighbors,
-    reassign,
-    swap,
-)
+from scheduling_algorithms.search import ALGORITHMS, SearchConfig, solve
+from scheduling_core.solution import Candidate
+from scheduling_algorithms.decoder import decode
+from scheduling_algorithms.neighborhoods import insert, neighbors, reassign, swap
 from scheduling_core.validation import validate_instance
 
 
@@ -333,7 +328,7 @@ def test_invalid_inputs_and_rule_eligibility():
 
 
 def test_benchmark_failure_is_recorded(tmp_path, monkeypatch):
-    from scheduling_core import benchmark
+    from scheduling_experiments import benchmark
 
     config = {
         "instances": [

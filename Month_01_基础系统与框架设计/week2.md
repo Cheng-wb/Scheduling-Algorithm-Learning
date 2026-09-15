@@ -1,6 +1,6 @@
 # Week 2 周报：解表示、邻域与独立验证
 
-## 已交付
+## 本周内容
 
 Candidate、追加式 decoder、swap/insert/reassign、独立 schedule validator、随机实例生成器和单工序极小枚举 oracle。
 
