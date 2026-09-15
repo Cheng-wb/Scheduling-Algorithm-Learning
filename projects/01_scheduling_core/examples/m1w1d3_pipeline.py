@@ -38,9 +38,15 @@ def build_hand_schedule() -> Schedule:
     """
     return Schedule(
         operations=(
-            ScheduledOperation(operation_id="O1", machine_id="M1", start_time=0, end_time=3),
-            ScheduledOperation(operation_id="O2", machine_id="M2", start_time=3, end_time=5),
-            ScheduledOperation(operation_id="O3", machine_id="M1", start_time=3, end_time=7),
+            ScheduledOperation(
+                operation_id="O1", machine_id="M1", start_time=0, end_time=3
+            ),
+            ScheduledOperation(
+                operation_id="O2", machine_id="M2", start_time=3, end_time=5
+            ),
+            ScheduledOperation(
+                operation_id="O3", machine_id="M1", start_time=3, end_time=7
+            ),
         )
     )
 

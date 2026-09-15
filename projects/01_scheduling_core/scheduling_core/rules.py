@@ -19,6 +19,7 @@ from typing import Any
 
 from .models import Instance, Job, Machine, Operation
 from .schedule import Schedule, ScheduledOperation
+from .validation import validate_instance
 
 # 优先级函数：给定 (job, operation) 返回一个可比较的排序键。
 # list_schedule 按「键值升序 = 优先级从高到低」挑选。
@@ -75,13 +76,14 @@ def list_schedule(
     3. 若无 job 已释放，则把 t 推进到剩余 job 的最小 rj（空转等待）；
     4. 该 job 的开始时间 = max(t, rj)，加工后 t 推进到其完工时间。
     """
+    validate_instance(instance)
     machine = _resolve_machine(instance, machine_id)
 
     operations_by_id = {op.id: op for op in instance.operations}
-    tasks = [
-        (job, _single_operation(job, operations_by_id))
-        for job in instance.jobs
-    ]
+    tasks = [(job, _single_operation(job, operations_by_id)) for job in instance.jobs]
+    for _, operation in tasks:
+        if machine.id not in operation.eligible_machine_ids:
+            raise ValueError(f"illegal assignment: {operation.id} -> {machine.id}")
 
     # 稳定排序：优先级升序，平局按 job.id 升序
     ordered = sorted(tasks, key=lambda t: (priority(t[0], t[1]), t[0].id))
@@ -159,3 +161,13 @@ def wspt(instance: Instance, *, machine_id: str | None = None) -> Schedule:
         return Fraction(op.processing_time) / Fraction(job.weight)
 
     return list_schedule(instance, key, machine_id=machine_id)
+
+
+def parallel_lpt(instance: Instance) -> Schedule:
+    """并行机 LPT 列表基线。r=0、同质且全资格时为经典 P||Cmax。"""
+    from .solution import decode, initial_candidate
+
+    validate_instance(instance)
+    if any(len(job.operation_ids) != 1 for job in instance.jobs):
+        raise ValueError("parallel LPT requires one operation per job")
+    return decode(instance, initial_candidate(instance))

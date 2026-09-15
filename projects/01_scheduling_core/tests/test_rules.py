@@ -23,7 +23,9 @@ def _single_machine_instance(jobs_spec):
     for jid, p, r, d, w in jobs_spec:
         oid = f"O_{jid}"
         operations.append(
-            Operation(id=oid, job_id=jid, processing_time=p, eligible_machine_ids=("M1",))
+            Operation(
+                id=oid, job_id=jid, processing_time=p, eligible_machine_ids=("M1",)
+            )
         )
         jobs.append(
             Job(id=jid, operation_ids=(oid,), release_time=r, due_date=d, weight=w)
@@ -202,8 +204,12 @@ def test_day1_instance_lpt_objectives():
 
 def test_rejects_multi_operation_job():
     m1 = Machine(id="M1", name="M1")
-    o1 = Operation(id="O1", job_id="J1", processing_time=2, eligible_machine_ids=("M1",))
-    o2 = Operation(id="O2", job_id="J1", processing_time=3, eligible_machine_ids=("M1",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=2, eligible_machine_ids=("M1",)
+    )
+    o2 = Operation(
+        id="O2", job_id="J1", processing_time=3, eligible_machine_ids=("M1",)
+    )
     j1 = Job(id="J1", operation_ids=("O1", "O2"))
 
     inst = Instance(jobs=(j1,), operations=(o1, o2), machines=(m1,))
@@ -215,7 +221,9 @@ def test_rejects_multi_operation_job():
 def test_rejects_multiple_machines_without_machine_id():
     m1 = Machine(id="M1", name="M1")
     m2 = Machine(id="M2", name="M2")
-    o1 = Operation(id="O1", job_id="J1", processing_time=2, eligible_machine_ids=("M1",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=2, eligible_machine_ids=("M1",)
+    )
     j1 = Job(id="J1", operation_ids=("O1",))
 
     inst = Instance(jobs=(j1,), operations=(o1,), machines=(m1, m2))

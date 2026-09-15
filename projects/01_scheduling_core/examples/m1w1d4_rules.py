@@ -40,7 +40,9 @@ def single_machine_instance(jobs_spec) -> Instance:
     for jid, p, r, d, w in jobs_spec:
         oid = f"O_{jid}"
         operations.append(
-            Operation(id=oid, job_id=jid, processing_time=p, eligible_machine_ids=("M1",))
+            Operation(
+                id=oid, job_id=jid, processing_time=p, eligible_machine_ids=("M1",)
+            )
         )
         jobs.append(
             Job(id=jid, operation_ids=(oid,), release_time=r, due_date=d, weight=w)
@@ -61,7 +63,7 @@ def report(instance: Instance, title: str) -> None:
     print(f"\n=== {title} ===")
     print(f"machines: {[m.id for m in instance.machines]}")
     print(
-        f"jobs: "
+        "jobs: "
         + ", ".join(
             f"{j.id}(p={op.processing_time}, r={j.release_time}, "
             f"d={j.due_date}, w={j.weight})"
@@ -69,7 +71,9 @@ def report(instance: Instance, title: str) -> None:
         )
     )
 
-    print(f"{'rule':6} {'order':22} {'Cmax':>5} {'ΣCj':>5} {'ΣTj':>5} {'ΣwjCj':>7} {'Lmax':>5}")
+    print(
+        f"{'rule':6} {'order':22} {'Cmax':>5} {'ΣCj':>5} {'ΣTj':>5} {'ΣwjCj':>7} {'Lmax':>5}"
+    )
     print("-" * 60)
 
     for name, rule in [("SPT", spt), ("EDD", edd), ("WSPT", wspt), ("LPT", lpt)]:

@@ -43,10 +43,7 @@ def total_completion_time(instance: Instance, schedule: Schedule) -> int:
 def total_flow_time(instance: Instance, schedule: Schedule) -> int:
     """总流动时间：Σ (Cj - rj)。"""
     completion_times = job_completion_times(instance, schedule)
-    return sum(
-        completion_times[job.id] - job.release_time
-        for job in instance.jobs
-    )
+    return sum(completion_times[job.id] - job.release_time for job in instance.jobs)
 
 
 def max_lateness(instance: Instance, schedule: Schedule) -> int:
@@ -85,7 +82,4 @@ def weighted_completion_time(instance: Instance, schedule: Schedule) -> float:
     """加权总完工时间：Σ wj·Cj。"""
     completion_times = job_completion_times(instance, schedule)
 
-    return sum(
-        job.weight * completion_times[job.id]
-        for job in instance.jobs
-    )
+    return sum(job.weight * completion_times[job.id] for job in instance.jobs)

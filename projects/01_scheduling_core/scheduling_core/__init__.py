@@ -10,12 +10,38 @@ from .objective import (
     total_tardiness,
     weighted_completion_time,
 )
-from .parser import load_json_instance
-from .rules import edd, list_schedule, lpt, spt, wspt
+from .parser import load_csv_instance, load_json_instance, save_json_instance
+from .rules import edd, list_schedule, lpt, parallel_lpt, spt, wspt
+from .schedule_validation import schedule_errors, validate_schedule
+from .solution import (
+    Candidate,
+    decode,
+    initial_candidate,
+    insert,
+    neighbors,
+    reassign,
+    swap,
+)
+from .search import SearchConfig, SearchResult, solve
 from .schedule import Schedule, ScheduledOperation
 from .validation import InstanceValidationError, validate_instance
 
 __all__ = [
+    "load_csv_instance",
+    "save_json_instance",
+    "parallel_lpt",
+    "schedule_errors",
+    "validate_schedule",
+    "Candidate",
+    "decode",
+    "initial_candidate",
+    "insert",
+    "neighbors",
+    "reassign",
+    "swap",
+    "SearchConfig",
+    "SearchResult",
+    "solve",
     "Instance",
     "Job",
     "Machine",

@@ -16,8 +16,12 @@ from scheduling_core.schedule import Schedule, ScheduledOperation
 def _two_job_instance():
     m1 = Machine(id="M1", name="M1")
 
-    o1 = Operation(id="O1", job_id="J1", processing_time=3, eligible_machine_ids=("M1",))
-    o2 = Operation(id="O2", job_id="J2", processing_time=2, eligible_machine_ids=("M1",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=3, eligible_machine_ids=("M1",)
+    )
+    o2 = Operation(
+        id="O2", job_id="J2", processing_time=2, eligible_machine_ids=("M1",)
+    )
 
     j1 = Job(id="J1", operation_ids=("O1",), release_time=0, due_date=4, weight=2.0)
     j2 = Job(id="J2", operation_ids=("O2",), release_time=0, due_date=10, weight=1.0)
@@ -62,9 +66,15 @@ def test_hand_computed_nonzero_tardiness():
     # 参考文档第 26 节练习 2：C1=5,d1=4,w1=2；C2=8,d2=10,w2=3；C3=6,d3=6,w3=1
     m1 = Machine(id="M1", name="M1")
 
-    o1 = Operation(id="O1", job_id="J1", processing_time=5, eligible_machine_ids=("M1",))
-    o2 = Operation(id="O2", job_id="J2", processing_time=3, eligible_machine_ids=("M1",))
-    o3 = Operation(id="O3", job_id="J3", processing_time=1, eligible_machine_ids=("M1",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=5, eligible_machine_ids=("M1",)
+    )
+    o2 = Operation(
+        id="O2", job_id="J2", processing_time=3, eligible_machine_ids=("M1",)
+    )
+    o3 = Operation(
+        id="O3", job_id="J3", processing_time=1, eligible_machine_ids=("M1",)
+    )
 
     j1 = Job(id="J1", operation_ids=("O1",), release_time=0, due_date=4, weight=2.0)
     j2 = Job(id="J2", operation_ids=("O2",), release_time=0, due_date=10, weight=3.0)
@@ -91,9 +101,15 @@ def test_total_flow_time_with_release():
     # 参考文档第 26 节练习 3：F1=5, F2=5, F3=4
     m1 = Machine(id="M1", name="M1")
 
-    o1 = Operation(id="O1", job_id="J1", processing_time=5, eligible_machine_ids=("M1",))
-    o2 = Operation(id="O2", job_id="J2", processing_time=5, eligible_machine_ids=("M1",))
-    o3 = Operation(id="O3", job_id="J3", processing_time=4, eligible_machine_ids=("M1",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=5, eligible_machine_ids=("M1",)
+    )
+    o2 = Operation(
+        id="O2", job_id="J2", processing_time=5, eligible_machine_ids=("M1",)
+    )
+    o3 = Operation(
+        id="O3", job_id="J3", processing_time=4, eligible_machine_ids=("M1",)
+    )
 
     j1 = Job(id="J1", operation_ids=("O1",), release_time=0)
     j2 = Job(id="J2", operation_ids=("O2",), release_time=3)
@@ -117,8 +133,12 @@ def test_max_lateness():
     # C1=5,d1=4 → L1=1；C2=8,d2=10 → L2=-2 → Lmax = 1
     m1 = Machine(id="M1", name="M1")
 
-    o1 = Operation(id="O1", job_id="J1", processing_time=5, eligible_machine_ids=("M1",))
-    o2 = Operation(id="O2", job_id="J2", processing_time=3, eligible_machine_ids=("M1",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=5, eligible_machine_ids=("M1",)
+    )
+    o2 = Operation(
+        id="O2", job_id="J2", processing_time=3, eligible_machine_ids=("M1",)
+    )
 
     j1 = Job(id="J1", operation_ids=("O1",), release_time=0, due_date=4)
     j2 = Job(id="J2", operation_ids=("O2",), release_time=0, due_date=10)
@@ -139,7 +159,9 @@ def test_max_lateness_can_be_negative():
     # 所有 job 都提前完成时 Lmax < 0
     m1 = Machine(id="M1", name="M1")
 
-    o1 = Operation(id="O1", job_id="J1", processing_time=2, eligible_machine_ids=("M1",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=2, eligible_machine_ids=("M1",)
+    )
 
     j1 = Job(id="J1", operation_ids=("O1",), release_time=0, due_date=10)
 
@@ -153,8 +175,12 @@ def test_max_lateness_can_be_negative():
 def test_total_tardiness_ignores_missing_due_date():
     m1 = Machine(id="M1", name="M1")
 
-    o1 = Operation(id="O1", job_id="J1", processing_time=10, eligible_machine_ids=("M1",))
-    o2 = Operation(id="O2", job_id="J2", processing_time=1, eligible_machine_ids=("M1",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=10, eligible_machine_ids=("M1",)
+    )
+    o2 = Operation(
+        id="O2", job_id="J2", processing_time=1, eligible_machine_ids=("M1",)
+    )
 
     j1 = Job(id="J1", operation_ids=("O1",), release_time=0, due_date=2, weight=1.0)
     j2 = Job(id="J2", operation_ids=("O2",), release_time=0, due_date=None, weight=1.0)
@@ -176,8 +202,12 @@ def test_job_completion_times_takes_max_over_operations():
     m1 = Machine(id="M1", name="M1")
     m2 = Machine(id="M2", name="M2")
 
-    o1 = Operation(id="O1", job_id="J1", processing_time=3, eligible_machine_ids=("M1",))
-    o2 = Operation(id="O2", job_id="J1", processing_time=2, eligible_machine_ids=("M2",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=3, eligible_machine_ids=("M1",)
+    )
+    o2 = Operation(
+        id="O2", job_id="J1", processing_time=2, eligible_machine_ids=("M2",)
+    )
 
     j1 = Job(id="J1", operation_ids=("O1", "O2"), release_time=0)
 

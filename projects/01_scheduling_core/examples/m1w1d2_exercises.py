@@ -31,9 +31,15 @@ def exercise_1() -> Instance:
     m1 = Machine(id="M1", name="Machine 1")
 
     # 3 个 Operation，每个 Job 单工序
-    o1 = Operation(id="O1", job_id="J1", processing_time=3, eligible_machine_ids=("M1",))
-    o2 = Operation(id="O2", job_id="J2", processing_time=1, eligible_machine_ids=("M1",))
-    o3 = Operation(id="O3", job_id="J3", processing_time=5, eligible_machine_ids=("M1",))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=3, eligible_machine_ids=("M1",)
+    )
+    o2 = Operation(
+        id="O2", job_id="J2", processing_time=1, eligible_machine_ids=("M1",)
+    )
+    o3 = Operation(
+        id="O3", job_id="J3", processing_time=5, eligible_machine_ids=("M1",)
+    )
 
     # 3 个 Job
     j1 = Job(id="J1", operation_ids=("O1",), due_date=8)
@@ -62,9 +68,15 @@ def exercise_2() -> Instance:
 
     # 3 个 Operation（注意 eligible_machine_ids 的区别：
     # 单元素也要写成 (...,) 才是 tuple）
-    o1 = Operation(id="O1", job_id="J1", processing_time=3, eligible_machine_ids=("M1",))
-    o2 = Operation(id="O2", job_id="J1", processing_time=2, eligible_machine_ids=("M2",))
-    o3 = Operation(id="O3", job_id="J2", processing_time=4, eligible_machine_ids=("M1", "M2"))
+    o1 = Operation(
+        id="O1", job_id="J1", processing_time=3, eligible_machine_ids=("M1",)
+    )
+    o2 = Operation(
+        id="O2", job_id="J1", processing_time=2, eligible_machine_ids=("M2",)
+    )
+    o3 = Operation(
+        id="O3", job_id="J2", processing_time=4, eligible_machine_ids=("M1", "M2")
+    )
 
     # 2 个 Job
     j1 = Job(id="J1", operation_ids=("O1", "O2"))

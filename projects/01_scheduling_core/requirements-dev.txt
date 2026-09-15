@@ -1,0 +1,6 @@
+pytest>=8
+ruff>=0.9
+black>=25
+mypy>=1.14
+matplotlib>=3.9
+pre-commit>=4

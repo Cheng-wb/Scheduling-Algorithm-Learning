@@ -1,0 +1,94 @@
+{
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "algorithms": [
+    "lpt",
+    "random",
+    "first",
+    "best",
+    "multistart",
+    "sa"
+  ],
+  "search": {
+    "budget": 150,
+    "temperature": 10.0,
+    "cooling": 0.98,
+    "restart_interval": 40
+  },
+  "sensitivity": [
+    {
+      "temperature": 0.1,
+      "cooling": 0.98
+    },
+    {
+      "temperature": 100.0,
+      "cooling": 0.98
+    },
+    {
+      "temperature": 10.0,
+      "cooling": 0.9
+    }
+  ],
+  "instances": [
+    {
+      "name": "tiny_single",
+      "generator": {
+        "seed": 10,
+        "jobs": 4,
+        "machines": 1
+      },
+      "objective": "total_tardiness",
+      "exact": true
+    },
+    {
+      "name": "tiny_parallel",
+      "generator": {
+        "seed": 11,
+        "jobs": 4,
+        "machines": 2
+      },
+      "objective": "makespan",
+      "exact": true
+    },
+    {
+      "name": "single_12",
+      "generator": {
+        "seed": 20,
+        "jobs": 12,
+        "machines": 1
+      },
+      "objective": "total_tardiness"
+    },
+    {
+      "name": "parallel_12",
+      "generator": {
+        "seed": 21,
+        "jobs": 12,
+        "machines": 3
+      },
+      "objective": "makespan"
+    },
+    {
+      "name": "parallel_24",
+      "generator": {
+        "seed": 22,
+        "jobs": 24,
+        "machines": 3
+      },
+      "objective": "makespan"
+    },
+    {
+      "name": "routes_12",
+      "generator": {
+        "seed": 23,
+        "jobs": 6,
+        "machines": 3,
+        "operations_per_job": 2
+      },
+      "objective": "makespan"
+    }
+  ]
+}

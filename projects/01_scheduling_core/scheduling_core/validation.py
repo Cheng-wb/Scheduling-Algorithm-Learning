@@ -6,7 +6,9 @@ Month 1 采用 fail-fast：遇到第一个错误就抛出 InstanceValidationErro
 
 from __future__ import annotations
 
-from .models import Instance
+import math
+
+from .models import Instance, Job, Machine, Operation
 
 
 class InstanceValidationError(ValueError):
@@ -20,6 +22,14 @@ def _check_unique(values: list[str], label: str) -> None:
 
 def validate_instance(instance: Instance) -> None:
     """校验 Instance 的字段、唯一性、引用完整性与 Job↔Operation 双向一致性。"""
+    entities: tuple[Job | Operation | Machine, ...] = (
+        *instance.jobs,
+        *instance.operations,
+        *instance.machines,
+    )
+    for entity in entities:
+        if not isinstance(entity.id, str) or not entity.id.strip():
+            raise InstanceValidationError("id must be a nonempty string")
     machine_ids_list = [m.id for m in instance.machines]
     job_ids_list = [j.id for j in instance.jobs]
     operation_ids_list = [o.id for o in instance.operations]
@@ -36,25 +46,29 @@ def validate_instance(instance: Instance) -> None:
     job_by_id = {job.id: job for job in instance.jobs}
 
     for job in instance.jobs:
+        if not job.operation_ids:
+            raise InstanceValidationError(f"job {job.id}: no operations")
+        if type(job.release_time) is not int or (
+            job.due_date is not None and type(job.due_date) is not int
+        ):
+            raise InstanceValidationError("release_time/due_date must be integers")
+        if (
+            isinstance(job.weight, bool)
+            or not isinstance(job.weight, (int, float))
+            or not math.isfinite(job.weight)
+        ):
+            raise InstanceValidationError("weight must be finite numeric")
         if job.release_time < 0:
-            raise InstanceValidationError(
-                f"job {job.id}: release_time must be >= 0"
-            )
+            raise InstanceValidationError(f"job {job.id}: release_time must be >= 0")
 
         if job.due_date is not None and job.due_date < 0:
-            raise InstanceValidationError(
-                f"job {job.id}: due_date must be >= 0"
-            )
+            raise InstanceValidationError(f"job {job.id}: due_date must be >= 0")
 
         if job.weight <= 0:
-            raise InstanceValidationError(
-                f"job {job.id}: weight must be > 0"
-            )
+            raise InstanceValidationError(f"job {job.id}: weight must be > 0")
 
         if len(job.operation_ids) != len(set(job.operation_ids)):
-            raise InstanceValidationError(
-                f"job {job.id}: duplicate operation ids"
-            )
+            raise InstanceValidationError(f"job {job.id}: duplicate operation ids")
 
         for operation_id in job.operation_ids:
             if operation_id not in operation_ids:
@@ -70,20 +84,18 @@ def validate_instance(instance: Instance) -> None:
                 )
 
     for op in instance.operations:
+        if type(op.processing_time) is not int:
+            raise InstanceValidationError("processing_time must be an integer")
         if op.processing_time <= 0:
             raise InstanceValidationError(
                 f"operation {op.id}: processing_time must be > 0"
             )
 
         if op.job_id not in job_ids:
-            raise InstanceValidationError(
-                f"operation {op.id}: unknown job {op.job_id}"
-            )
+            raise InstanceValidationError(f"operation {op.id}: unknown job {op.job_id}")
 
         if not op.eligible_machine_ids:
-            raise InstanceValidationError(
-                f"operation {op.id}: no eligible machines"
-            )
+            raise InstanceValidationError(f"operation {op.id}: no eligible machines")
 
         for machine_id in op.eligible_machine_ids:
             if machine_id not in machine_ids:

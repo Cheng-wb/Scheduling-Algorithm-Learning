@@ -44,10 +44,10 @@ JSON → Parser → Instance → Validator → 可信输入
 
 | 规则 | 全称 | 排序键（从小到大） | 最优于 | 直觉 |
 |---|---|---|---|---|
-| SPT | Shortest Processing Time | `p_j` | `1||ΣCj` | 短任务先做，减少排队 |
-| EDD | Earliest Due Date | `d_j` | `1||Lmax` | 最紧急的交期先做 |
-| WSPT | Weighted SPT（Smith 规则） | `p_j / w_j` | `1||ΣwjCj` | 单位权重耗时越短越优先 |
-| LPT | Longest Processing Time | `-p_j`（降序） | `P||Cmax`（Day 5） | 长任务先放，平衡并行机负载 |
+| SPT | Shortest Processing Time | `p_j` | `1\|\|ΣCj` | 短任务先做，减少排队 |
+| EDD | Earliest Due Date | `d_j` | `1\|\|Lmax` | 最紧急的交期先做 |
+| WSPT | Weighted SPT（Smith 规则） | `p_j / w_j` | `1\|\|ΣwjCj` | 单位权重耗时越短越优先 |
+| LPT | Longest Processing Time | `-p_j`（降序） | `P\|\|Cmax`（Day 5） | 长任务先放，平衡并行机负载 |
 
 注意三点：
 
@@ -323,10 +323,10 @@ Lmax：L1=-2, L2=-2, L3=-1, L4=6 → 6；ΣTj = 6
 
 | 规则 | 保证最优的前提 | 失效场景 |
 |---|---|---|
-| SPT | `1||ΣCj`（无 rj、无权重） | 有 rj 时（NP-hard）；目标换成 ΣwjCj 时也不保证 |
-| EDD | `1||Lmax`（无 rj） | 有 rj 时；对 ΣTj 只是启发式（ΣTj 单机即 NP-hard） |
-| WSPT | `1||ΣwjCj`（无 rj） | 有 rj 时；权重为 0 或负时无意义（输入已校验 weight>0） |
-| LPT | `P||Cmax` 的列表调度（Day 5） | 单机上对 ΣCj/ΣTj/ΣwjCj 都很差 |
+| SPT | `1\|\|ΣCj`（无 rj、无权重） | 有 rj 时（NP-hard）；目标换成 ΣwjCj 时也不保证 |
+| EDD | `1\|\|Lmax`（无 rj） | 有 rj 时；对 ΣTj 只是启发式（ΣTj 单机即 NP-hard） |
+| WSPT | `1\|\|ΣwjCj`（无 rj） | 有 rj 时；权重为 0 或负时无意义（输入已校验 weight>0） |
+| LPT | `P\|\|Cmax` 的列表调度（Day 5） | 单机上对 ΣCj/ΣTj/ΣwjCj 都很差 |
 
 记忆要点：**任何「无 rj 时最优」的结论，加了 rj 大概率就不再最优**；而「规则」的价值在于它简单、确定、可解释，作为基线永远有用。
 
