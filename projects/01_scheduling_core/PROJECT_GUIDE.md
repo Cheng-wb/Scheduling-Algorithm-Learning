@@ -88,20 +88,47 @@ python examples/m1w4d4_reproduce.py artifacts/month1_refactored
 | search.py | Random/First/Best/Multi-start/SA | W3D1–5 |
 | benchmark.py | 批量运行、失败、汇总与图表 | W4 |
 
-tests/test_month1.py 包含十个手算实例、三条解码轨迹、五个枚举对拍、九类损坏排程、预算/复现/失败注入测试；原有五个测试文件继续保留。
+tests/test_month1.py 包含十个手算实例、三条解码轨迹、五个枚举对拍、九类损坏排程、预算/复现/失败注入测试。连同 Week 1 反例断言与各模块单元测试，当前收集到 127 条测试（`python -m pytest --collect-only -q`），分布在 8 个测试文件中。
 
-## 每周实验入口
+## 每日实验入口
 
-以下路径从仓库根目录执行，也支持 IDE 直接运行：
+以下路径从仓库根目录执行，也支持 IDE 直接运行。每个脚本对应一天的学习笔记，其预期输出写在笔记的「实验」一节。
 
 ```powershell
-python projects/01_scheduling_core/examples/m1w1d2_exercises.py
-python projects/01_scheduling_core/examples/m1w1d3_pipeline.py
-python projects/01_scheduling_core/examples/m1w1d4_rules.py
-python projects/01_scheduling_core/examples/m1w1d5_parallel.py
-python projects/01_scheduling_core/examples/m1w2d6_verification.py
-python projects/01_scheduling_core/examples/m1w3d6_search.py
+# Week 1：问题语言、输入模型与经典规则
+python projects/01_scheduling_core/examples/m1w1d2_exercises.py     # 数据模型练习
+python projects/01_scheduling_core/examples/m1w1d3_pipeline.py      # JSON→校验→排程→指标
+python projects/01_scheduling_core/examples/m1w1d4_rules.py         # 四条单机规则对比
+python projects/01_scheduling_core/examples/m1w1d5_parallel.py      # 并行 LPT + 下界 + Gantt
+python projects/01_scheduling_core/examples/m1w1d7_review.py        # 规则最优性 + 失效反例
+
+# Week 2：解表示、邻域与独立验证器
+python projects/01_scheduling_core/examples/m1w2d1_candidate.py     # Candidate 与表示冗余
+python projects/01_scheduling_core/examples/m1w2d2_decoder.py       # 三条精确解码轨迹
+python projects/01_scheduling_core/examples/m1w2d3_neighborhoods.py # swap / insert / reassign
+python projects/01_scheduling_core/examples/m1w2d4_validator.py     # 九类破坏排程诊断
+python projects/01_scheduling_core/examples/m1w2d5_generator.py     # 实例生成与输入质量
+python projects/01_scheduling_core/examples/m1w2d6_verification.py  # 解码 / 枚举 / 可行性验收
+python projects/01_scheduling_core/examples/m1w2d7_review.py        # 表示与验证复盘
+
+# Week 3：局部搜索与模拟退火
+python projects/01_scheduling_core/examples/m1w3d1_random.py        # 搜索契约与 Random Search
+python projects/01_scheduling_core/examples/m1w3d2_first.py         # First Improvement
+python projects/01_scheduling_core/examples/m1w3d3_best.py          # Best Improvement
+python projects/01_scheduling_core/examples/m1w3d4_multistart.py    # Multi-start 与预算分配
+python projects/01_scheduling_core/examples/m1w3d5_sa.py            # 模拟退火与接受率
+python projects/01_scheduling_core/examples/m1w3d6_search.py        # 五种搜索方法对比
+python projects/01_scheduling_core/examples/m1w3d7_review.py        # 搜索方法复盘
+
+# Week 4：Benchmark 与科研式实验
+python projects/01_scheduling_core/examples/m1w4d2_instances.py     # 基准实例集与输入 hash
+python projects/01_scheduling_core/examples/m1w4d3_schema.py        # 结果 schema 与可追溯性
+python projects/01_scheduling_core/examples/m1w4d5_stats.py         # 统计表与图表数据
+python projects/01_scheduling_core/examples/m1w4d6_sensitivity.py   # 温度敏感性分析
+python projects/01_scheduling_core/examples/m1w4d7_review.py        # 月度复盘与验收对应
 ```
+
+W4D1 与 W4D4 的实验入口就是下面的 benchmark 与复现命令，不再另设脚本。
 
 ## 输出文件
 
