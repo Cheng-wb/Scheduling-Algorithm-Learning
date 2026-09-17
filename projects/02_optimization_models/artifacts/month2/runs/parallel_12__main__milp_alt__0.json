@@ -12,9 +12,9 @@
     "best_bound": 39.0,
     "gap": 0.0,
     "iterations": 8,
-    "build_time": 0.161611,
-    "solve_time": 1.259902,
-    "wall_time": 1.421513
+    "build_time": 0.153299,
+    "solve_time": 1.232307,
+    "wall_time": 1.385605
   },
   "detail": {
     "formulation": "time_indexed",

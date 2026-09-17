@@ -12,9 +12,9 @@
     "best_bound": 85.0,
     "gap": 0.0,
     "iterations": 0,
-    "build_time": 0.004965,
-    "solve_time": 0.006712,
-    "wall_time": 0.011676
+    "build_time": 0.0042,
+    "solve_time": 0.005856,
+    "wall_time": 0.010056
   },
   "detail": {
     "backend": "cbc",
@@ -40,7 +40,7 @@
     "solver_status": "OPTIMAL",
     "nodes": 0,
     "iterations": 0,
-    "solver_wall_time": 11,
+    "solver_wall_time": 10,
     "termination_reason": "proved optimal",
     "max_time_round_residual": 0.0,
     "solver_objective": 85.0,

@@ -11,10 +11,10 @@
     "objective": 71.0,
     "best_bound": 24.0,
     "gap": 0.6619718309859155,
-    "iterations": 49641,
-    "build_time": 0.002203,
-    "solve_time": 10.000979,
-    "wall_time": 10.003182
+    "iterations": 49613,
+    "build_time": 0.002374,
+    "solve_time": 10.001366,
+    "wall_time": 10.00374
   },
   "detail": {
     "cp_status": "FEASIBLE",
@@ -24,10 +24,10 @@
     "time_limit": 10.0,
     "num_search_workers": 1,
     "random_seed": 0,
-    "conflicts": 20539,
-    "branches": 49641,
+    "conflicts": 20513,
+    "branches": 49613,
     "booleans": 265,
-    "cp_wall_time": 10.000852700000001,
+    "cp_wall_time": 10.0012399,
     "bound_kind": "solver_objective_bound",
     "cp_objective": 71.0,
     "cp_objective_matches_m1": true,

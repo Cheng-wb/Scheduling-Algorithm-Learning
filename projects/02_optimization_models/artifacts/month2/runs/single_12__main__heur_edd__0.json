@@ -13,8 +13,8 @@
     "gap": null,
     "iterations": null,
     "build_time": 0.0,
-    "solve_time": 0.000129,
-    "wall_time": 0.000129
+    "solve_time": 0.000142,
+    "wall_time": 0.000142
   },
   "detail": {
     "rule": "edd",

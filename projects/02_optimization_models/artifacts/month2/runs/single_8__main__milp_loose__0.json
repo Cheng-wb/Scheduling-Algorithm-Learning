@@ -12,9 +12,9 @@
     "best_bound": 85.0,
     "gap": 0.0,
     "iterations": 124,
-    "build_time": 0.002135,
-    "solve_time": 1.162476,
-    "wall_time": 1.164611
+    "build_time": 0.002305,
+    "solve_time": 1.2166,
+    "wall_time": 1.218905
   },
   "detail": {
     "formulation": "sequence_loose",

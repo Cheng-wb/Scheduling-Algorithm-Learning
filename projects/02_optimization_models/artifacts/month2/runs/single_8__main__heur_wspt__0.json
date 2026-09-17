@@ -13,8 +13,8 @@
     "gap": null,
     "iterations": null,
     "build_time": 0.0,
-    "solve_time": 0.000224,
-    "wall_time": 0.000224
+    "solve_time": 0.000382,
+    "wall_time": 0.000382
   },
   "detail": {
     "rule": "wspt",

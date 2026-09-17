@@ -13,8 +13,8 @@
     "gap": null,
     "iterations": null,
     "build_time": 0.0,
-    "solve_time": 0.00013,
-    "wall_time": 0.00013
+    "solve_time": 9.6e-05,
+    "wall_time": 9.6e-05
   },
   "detail": {
     "rule": "lpt",

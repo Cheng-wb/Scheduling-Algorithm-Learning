@@ -12,9 +12,9 @@
     "best_bound": 39.0,
     "gap": 0.0,
     "iterations": 687,
-    "build_time": 0.00132,
-    "solve_time": 0.018145,
-    "wall_time": 0.019465
+    "build_time": 0.001509,
+    "solve_time": 0.021001,
+    "wall_time": 0.02251
   },
   "detail": {
     "cp_status": "OPTIMAL",
@@ -27,7 +27,7 @@
     "conflicts": 43,
     "branches": 687,
     "booleans": 76,
-    "cp_wall_time": 0.018042000000000002,
+    "cp_wall_time": 0.020861,
     "bound_kind": "solver_objective_bound",
     "cp_objective": 39.0,
     "cp_objective_matches_m1": true,

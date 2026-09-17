@@ -12,9 +12,9 @@
     "best_bound": 29.0,
     "gap": 0.0,
     "iterations": 336,
-    "build_time": 0.002396,
-    "solve_time": 0.015464,
-    "wall_time": 0.01786
+    "build_time": 0.003229,
+    "solve_time": 0.015463,
+    "wall_time": 0.018692
   },
   "detail": {
     "backend": "cp-sat",
@@ -23,7 +23,7 @@
     "seed": 0,
     "time_limit": 10.0,
     "solver_status": "OPTIMAL",
-    "solver_wall_time": 0.015349,
+    "solver_wall_time": 0.015348,
     "branches": 336,
     "conflicts": 27,
     "num_booleans": 75,

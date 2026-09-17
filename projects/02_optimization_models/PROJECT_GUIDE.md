@@ -2,7 +2,7 @@
 
 本项目包含：LP 与对偶、单机与并行机 MILP、CP-SAT 区间模型、模型强化与求解器诊断，以及跨方法的可复现比较框架。
 
-入口：[月度学习索引](../../Month_02_精确算法与参数学习/README.md) · [全年计划](../../LEARNING_PLAN.md) · [M1 项目](../01_scheduling_core/PROJECT_GUIDE.md)。
+入口：[月度学习索引](../../Month_02_精确算法与参数学习/README.md) · [月度报告](../../Month_02_精确算法与参数学习/MONTH2_REPORT.md) · [全年计划](../../LEARNING_PLAN.md) · [M1 项目](../01_scheduling_core/PROJECT_GUIDE.md)。
 
 ## 安装与验证
 
@@ -76,6 +76,67 @@ python -m opt_experiments.benchmark --config configs/month2.json --output artifa
 | `opt_models/strengthening.py` | 对称破缺、warm start、variable fixing | W4D1–D2 |
 | `opt_models/diagnostics.py` | 不可行诊断与冲突定位 | W4D3 |
 | `opt_experiments/benchmark.py` | 跨方法批次、参考值分档、独立验证 | W4D4–D6 |
+
+## 每日实验入口
+
+以下路径从仓库根目录执行，也支持 IDE 直接运行。每个脚本对应一天的学习笔记，其预期输出写在笔记的「实验」一节。
+
+```powershell
+# Week 1：LP、对偶与建模基本功
+python projects/02_optimization_models/examples/m2w1d1_lp_standard_form.py       # 标准型、极点与 slack
+python projects/02_optimization_models/examples/m2w1d2_lp_production.py          # 生产计划 LP 与结果解释
+python projects/02_optimization_models/examples/m2w1d3_transport_assignment.py   # 运输与指派模型
+python projects/02_optimization_models/examples/m2w1d4_duality.py                # 对偶、互补松弛、影子价格
+python projects/02_optimization_models/examples/m2w1d5_sensitivity.py            # 影子价格的局部有效区间
+python projects/02_optimization_models/examples/m2w1d6_tolerances.py             # 原始/对偶对拍与数值容差
+python projects/02_optimization_models/examples/m2w1d7_review.py                 # 第一周复盘
+
+# Week 2：MILP 深化
+python projects/02_optimization_models/examples/m2w2d1_sequence_milp.py          # 首个单机调度 MILP
+python projects/02_optimization_models/examples/m2w2d2_big_m_linearization.py    # indicator 与线性化
+python projects/02_optimization_models/examples/m2w2d3_big_m_variants_lp.py      # loose/tight 与根 LP 界
+python projects/02_optimization_models/examples/m2w2d4_branch_and_bound_walk.py  # 手工走分支定界
+python projects/02_optimization_models/examples/m2w2d5_alt_formulation_equivalence.py  # 替代模型与枚举对拍
+python projects/02_optimization_models/examples/m2w2d6_formulation_comparison.py # formulation 对比
+python projects/02_optimization_models/examples/m2w2d7_why_models_differ.py      # 模型快慢差异溯源
+
+# Week 3：CP-SAT 区间模型
+python projects/02_optimization_models/examples/m2w3d1_intervals.py              # 区间变量与时间缩放
+python projects/02_optimization_models/examples/m2w3d2_parallel_machines.py      # 可选区间与 NoOverlap
+python projects/02_optimization_models/examples/m2w3d3_jsp.py                    # 小型 JSP
+python projects/02_optimization_models/examples/m2w3d4_cumulative.py             # Cumulative 与容量
+python projects/02_optimization_models/examples/m2w3d5_statuses.py               # 五种求解状态
+python projects/02_optimization_models/examples/m2w3d6_milp_vs_cpsat.py          # MILP vs CP-SAT
+python projects/02_optimization_models/examples/m2w3d7_mechanisms.py             # 传播与松弛机制对比
+
+# Week 4：高级 Solver Engineering
+python projects/02_optimization_models/examples/m2w4d1_symmetry.py               # 对称破缺与冗余约束
+python projects/02_optimization_models/examples/m2w4d2_warmstart.py              # hint / 上界割 / 前缀固定
+python projects/02_optimization_models/examples/m2w4d3_diagnostics.py            # 数值缩放与不可行诊断
+python projects/02_optimization_models/examples/m2w4d4_time_limits.py            # 预算、终止原因与 workers
+python projects/02_optimization_models/examples/m2w4d5_unified_result.py         # 统一结果接口
+python projects/02_optimization_models/examples/m2w4d6_selection_matrix.py       # 选择矩阵
+python projects/02_optimization_models/examples/m2w4d7_review.py                 # 月度复盘
+```
+
+各周的独立实验驱动（写入 `artifacts/month2_wN/`）：
+
+```powershell
+python -m opt_experiments.lp_experiments --help    # Week 1（项目目录）
+python -m opt_experiments.w2_formulations          # Week 2
+python -m opt_experiments.w3_cpsat                 # Week 3
+python -m opt_experiments.w4_engineering           # Week 4
+```
+
+## 如何验证一批结果是否可信
+
+```text
+1. metadata.json 的 source_sha256 是否等于当前源码重算的 source_hash()
+2. working_tree_dirty 是否为 False，git_commit 是否指向一个真实提交
+3. 重跑一次，比较 (status, objective, best_bound, gap, validation) 是否逐行一致
+```
+
+正式批次 `artifacts/month2` 三项全部通过，第 3 项在三次独立运行上零差异（59 个 `run_id` 全等）。注意**节点数不在此列**——同一实例同一预算重复运行，节点数可以从 305 变到 16500，而 incumbent 与最终界逐位复现。
 
 ## 输出文件
 

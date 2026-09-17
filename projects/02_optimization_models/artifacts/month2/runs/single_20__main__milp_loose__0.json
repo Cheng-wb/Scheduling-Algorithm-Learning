@@ -11,10 +11,10 @@
     "objective": 1089.0,
     "best_bound": 67.05605123904724,
     "gap": 0.9384241953727757,
-    "iterations": 1139,
-    "build_time": 0.01488,
-    "solve_time": 10.026804,
-    "wall_time": 10.041685
+    "iterations": 926,
+    "build_time": 0.01306,
+    "solve_time": 10.027428,
+    "wall_time": 10.040488
   },
   "detail": {
     "formulation": "sequence_loose",

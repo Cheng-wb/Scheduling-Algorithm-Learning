@@ -11,10 +11,10 @@
     "objective": 73.0,
     "best_bound": 43.0,
     "gap": 0.410958904109589,
-    "iterations": 28,
-    "build_time": 0.635384,
-    "solve_time": 9.537922,
-    "wall_time": 10.173305
+    "iterations": 17,
+    "build_time": 0.567517,
+    "solve_time": 9.518312,
+    "wall_time": 10.085828
   },
   "detail": {
     "formulation": "time_indexed",
