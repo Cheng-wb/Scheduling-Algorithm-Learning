@@ -1,0 +1,105 @@
+{
+  "run_id": "single_8__main__milp_warmstart__0",
+  "spec": {
+    "objective": "total_tardiness",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "milp_warmstart",
+    "status": "OPTIMAL",
+    "objective": 85.0,
+    "best_bound": 85.0,
+    "gap": 0.0,
+    "iterations": 0,
+    "build_time": 0.005857,
+    "solve_time": 0.007326,
+    "wall_time": 0.013183
+  },
+  "detail": {
+    "backend": "cbc",
+    "objective_name": "total_tardiness",
+    "seed": 0,
+    "time_limit": 10.0,
+    "num_variables": 88,
+    "num_constraints": 47,
+    "horizon": 71,
+    "fixed_prefix": 0,
+    "fixed_variables": 0,
+    "free_variables": 8,
+    "seed_rule": "spt",
+    "seed_objective": 85.0,
+    "rule_objectives": {
+      "spt": 85.0,
+      "edd": 85.0,
+      "wspt": 101.0,
+      "lpt": 195.0,
+      "parallel_lpt": 248.0
+    },
+    "hint_kind": "MIP start via CBC SetHint (advisory, not enforced)",
+    "hint_positions": 8,
+    "objective_cutoff": 85.0,
+    "cutoff_kind": "valid inequality obj <= seed objective",
+    "solver_status": "OPTIMAL",
+    "nodes": 0,
+    "iterations": 0,
+    "solver_wall_time": 13,
+    "termination_reason": "proved optimal",
+    "max_time_round_residual": 0.0,
+    "solver_objective": 85.0,
+    "objective_residual": 0.0
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 2,
+        "end_time": 5
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 5,
+        "end_time": 9
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 9,
+        "end_time": 12
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 12,
+        "end_time": 20
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 20,
+        "end_time": 28
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 28,
+        "end_time": 36
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 36,
+        "end_time": 47
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 47,
+        "end_time": 63
+      }
+    ]
+  }
+}

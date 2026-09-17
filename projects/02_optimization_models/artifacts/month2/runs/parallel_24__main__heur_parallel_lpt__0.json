@@ -1,0 +1,172 @@
+{
+  "run_id": "parallel_24__main__heur_parallel_lpt__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "heur_parallel_lpt",
+    "status": "FEASIBLE",
+    "objective": 75.0,
+    "best_bound": null,
+    "gap": null,
+    "iterations": null,
+    "build_time": 0.0,
+    "solve_time": 0.000391,
+    "wall_time": 0.000391
+  },
+  "detail": {
+    "rule": "parallel_lpt",
+    "bound_kind": "none"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J022_O0",
+        "machine_id": "M0",
+        "start_time": 1,
+        "end_time": 19
+      },
+      {
+        "operation_id": "J012_O0",
+        "machine_id": "M1",
+        "start_time": 2,
+        "end_time": 18
+      },
+      {
+        "operation_id": "J020_O0",
+        "machine_id": "M2",
+        "start_time": 8,
+        "end_time": 24
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M1",
+        "start_time": 18,
+        "end_time": 33
+      },
+      {
+        "operation_id": "J023_O0",
+        "machine_id": "M0",
+        "start_time": 19,
+        "end_time": 34
+      },
+      {
+        "operation_id": "J013_O0",
+        "machine_id": "M2",
+        "start_time": 24,
+        "end_time": 38
+      },
+      {
+        "operation_id": "J016_O0",
+        "machine_id": "M1",
+        "start_time": 33,
+        "end_time": 47
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 34,
+        "end_time": 47
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M2",
+        "start_time": 38,
+        "end_time": 50
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 47,
+        "end_time": 59
+      },
+      {
+        "operation_id": "J009_O0",
+        "machine_id": "M1",
+        "start_time": 47,
+        "end_time": 56
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M2",
+        "start_time": 50,
+        "end_time": 58
+      },
+      {
+        "operation_id": "J010_O0",
+        "machine_id": "M1",
+        "start_time": 56,
+        "end_time": 64
+      },
+      {
+        "operation_id": "J011_O0",
+        "machine_id": "M2",
+        "start_time": 58,
+        "end_time": 66
+      },
+      {
+        "operation_id": "J021_O0",
+        "machine_id": "M0",
+        "start_time": 59,
+        "end_time": 67
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M1",
+        "start_time": 64,
+        "end_time": 69
+      },
+      {
+        "operation_id": "J014_O0",
+        "machine_id": "M2",
+        "start_time": 66,
+        "end_time": 71
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 67,
+        "end_time": 70
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M1",
+        "start_time": 69,
+        "end_time": 72
+      },
+      {
+        "operation_id": "J017_O0",
+        "machine_id": "M0",
+        "start_time": 70,
+        "end_time": 73
+      },
+      {
+        "operation_id": "J015_O0",
+        "machine_id": "M2",
+        "start_time": 71,
+        "end_time": 73
+      },
+      {
+        "operation_id": "J018_O0",
+        "machine_id": "M1",
+        "start_time": 72,
+        "end_time": 74
+      },
+      {
+        "operation_id": "J019_O0",
+        "machine_id": "M0",
+        "start_time": 73,
+        "end_time": 75
+      },
+      {
+        "operation_id": "J008_O0",
+        "machine_id": "M2",
+        "start_time": 73,
+        "end_time": 74
+      }
+    ]
+  }
+}

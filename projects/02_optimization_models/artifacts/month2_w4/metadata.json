@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "source_sha256": "71caf0facca5b9962a835c3c6a838d64dc85834eec1b7b32c69ed6379c10ca59",
+  "budget_unit": "one solver call under an explicit time limit",
+  "time_limits_seconds": [
+    1.0,
+    3.0,
+    10.0
+  ],
+  "note": "强化消融与 warm start 消融都用小实例；诊断用 3s 预算限制删除过滤的代价"
+}

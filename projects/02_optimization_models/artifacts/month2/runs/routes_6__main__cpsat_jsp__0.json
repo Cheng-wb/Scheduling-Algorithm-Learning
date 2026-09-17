@@ -1,0 +1,113 @@
+{
+  "run_id": "routes_6__main__cpsat_jsp__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "cpsat_jsp",
+    "status": "OPTIMAL",
+    "objective": 56.0,
+    "best_bound": 56.0,
+    "gap": 0.0,
+    "iterations": 903,
+    "build_time": 0.001983,
+    "solve_time": 0.031235,
+    "wall_time": 0.033218
+  },
+  "detail": {
+    "cp_status": "OPTIMAL",
+    "time_scale": 1,
+    "objective_divisor": 1.0,
+    "horizon": 163,
+    "time_limit": 10.0,
+    "num_search_workers": 1,
+    "random_seed": 0,
+    "conflicts": 178,
+    "branches": 903,
+    "booleans": 77,
+    "cp_wall_time": 0.031127900000000003,
+    "bound_kind": "solver_objective_bound",
+    "cp_objective": 56.0,
+    "cp_objective_matches_m1": true,
+    "raw_best_bound": 56.0
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M2",
+        "start_time": 14,
+        "end_time": 19
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M2",
+        "start_time": 19,
+        "end_time": 34
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 22
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M1",
+        "start_time": 40,
+        "end_time": 56
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 26,
+        "end_time": 41
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M2",
+        "start_time": 45,
+        "end_time": 56
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 7
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M2",
+        "start_time": 7,
+        "end_time": 14
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 22,
+        "end_time": 40
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 41,
+        "end_time": 56
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 26
+      },
+      {
+        "operation_id": "J005_O1",
+        "machine_id": "M2",
+        "start_time": 34,
+        "end_time": 45
+      }
+    ]
+  }
+}

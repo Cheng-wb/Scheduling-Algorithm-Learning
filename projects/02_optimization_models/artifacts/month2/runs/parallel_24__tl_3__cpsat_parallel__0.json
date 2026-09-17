@@ -1,0 +1,185 @@
+{
+  "run_id": "parallel_24__tl_3__cpsat_parallel__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 3.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "cpsat_parallel",
+    "status": "FEASIBLE",
+    "objective": 71.0,
+    "best_bound": 24.0,
+    "gap": 0.6619718309859155,
+    "iterations": 17206,
+    "build_time": 0.002177,
+    "solve_time": 3.001796,
+    "wall_time": 3.003973
+  },
+  "detail": {
+    "cp_status": "FEASIBLE",
+    "time_scale": 1,
+    "objective_divisor": 1.0,
+    "horizon": 222,
+    "time_limit": 3.0,
+    "num_search_workers": 1,
+    "random_seed": 0,
+    "conflicts": 6771,
+    "branches": 17206,
+    "booleans": 264,
+    "cp_wall_time": 3.0016707,
+    "bound_kind": "solver_objective_bound",
+    "cp_objective": 71.0,
+    "cp_objective_matches_m1": true,
+    "raw_best_bound": 24.0
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 9,
+        "end_time": 12
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M1",
+        "start_time": 59,
+        "end_time": 71
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M2",
+        "start_time": 13,
+        "end_time": 25
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M2",
+        "start_time": 25,
+        "end_time": 30
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 14,
+        "end_time": 27
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M2",
+        "start_time": 45,
+        "end_time": 53
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M2",
+        "start_time": 30,
+        "end_time": 45
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 61,
+        "end_time": 64
+      },
+      {
+        "operation_id": "J008_O0",
+        "machine_id": "M2",
+        "start_time": 70,
+        "end_time": 71
+      },
+      {
+        "operation_id": "J009_O0",
+        "machine_id": "M2",
+        "start_time": 53,
+        "end_time": 62
+      },
+      {
+        "operation_id": "J010_O0",
+        "machine_id": "M2",
+        "start_time": 62,
+        "end_time": 70
+      },
+      {
+        "operation_id": "J011_O0",
+        "machine_id": "M2",
+        "start_time": 5,
+        "end_time": 13
+      },
+      {
+        "operation_id": "J012_O0",
+        "machine_id": "M1",
+        "start_time": 27,
+        "end_time": 43
+      },
+      {
+        "operation_id": "J013_O0",
+        "machine_id": "M1",
+        "start_time": 43,
+        "end_time": 57
+      },
+      {
+        "operation_id": "J014_O0",
+        "machine_id": "M0",
+        "start_time": 66,
+        "end_time": 71
+      },
+      {
+        "operation_id": "J015_O0",
+        "machine_id": "M2",
+        "start_time": 0,
+        "end_time": 2
+      },
+      {
+        "operation_id": "J016_O0",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 14
+      },
+      {
+        "operation_id": "J017_O0",
+        "machine_id": "M2",
+        "start_time": 2,
+        "end_time": 5
+      },
+      {
+        "operation_id": "J018_O0",
+        "machine_id": "M1",
+        "start_time": 57,
+        "end_time": 59
+      },
+      {
+        "operation_id": "J019_O0",
+        "machine_id": "M0",
+        "start_time": 64,
+        "end_time": 66
+      },
+      {
+        "operation_id": "J020_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 46
+      },
+      {
+        "operation_id": "J021_O0",
+        "machine_id": "M0",
+        "start_time": 1,
+        "end_time": 9
+      },
+      {
+        "operation_id": "J022_O0",
+        "machine_id": "M0",
+        "start_time": 12,
+        "end_time": 30
+      },
+      {
+        "operation_id": "J023_O0",
+        "machine_id": "M0",
+        "start_time": 46,
+        "end_time": 61
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "jobs": [
+    {
+      "id": "J0",
+      "operation_ids": [
+        "J0_O0"
+      ],
+      "release_time": 0,
+      "due_date": null,
+      "weight": 1.0
+    },
+    {
+      "id": "J1",
+      "operation_ids": [
+        "J1_O0"
+      ],
+      "release_time": 0,
+      "due_date": null,
+      "weight": 1.0
+    },
+    {
+      "id": "J2",
+      "operation_ids": [
+        "J2_O0"
+      ],
+      "release_time": 0,
+      "due_date": null,
+      "weight": 1.0
+    },
+    {
+      "id": "J3",
+      "operation_ids": [
+        "J3_O0"
+      ],
+      "release_time": 0,
+      "due_date": null,
+      "weight": 1.0
+    }
+  ],
+  "operations": [
+    {
+      "id": "J0_O0",
+      "job_id": "J0",
+      "processing_time": 8,
+      "eligible_machine_ids": [
+        "M0",
+        "M1"
+      ]
+    },
+    {
+      "id": "J1_O0",
+      "job_id": "J1",
+      "processing_time": 7,
+      "eligible_machine_ids": [
+        "M0",
+        "M1"
+      ]
+    },
+    {
+      "id": "J2_O0",
+      "job_id": "J2",
+      "processing_time": 6,
+      "eligible_machine_ids": [
+        "M0",
+        "M1"
+      ]
+    },
+    {
+      "id": "J3_O0",
+      "job_id": "J3",
+      "processing_time": 5,
+      "eligible_machine_ids": [
+        "M0",
+        "M1"
+      ]
+    }
+  ],
+  "machines": [
+    {
+      "id": "M0",
+      "name": "M0"
+    },
+    {
+      "id": "M1",
+      "name": "M1"
+    }
+  ]
+}

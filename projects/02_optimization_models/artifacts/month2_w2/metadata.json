@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-17T12:18:30.055771+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "git_commit": "5cab5529ca969289bda51385259a3c962e135f12",
+  "working_tree_dirty": true,
+  "source_sha256": "e0813a87e933f98bd09f51130195e4fbbbdf5be67121db8a99569d77e55b148f",
+  "seed": 0,
+  "elapsed_seconds": 27.279,
+  "unavailable_modules": [],
+  "registered_methods": [
+    "cpsat_cumulative",
+    "cpsat_jsp",
+    "cpsat_parallel",
+    "cpsat_symmetry",
+    "heur_edd",
+    "heur_lpt",
+    "heur_parallel_lpt",
+    "heur_spt",
+    "heur_wspt",
+    "milp_alt",
+    "milp_fixing",
+    "milp_loose",
+    "milp_tight",
+    "milp_warmstart"
+  ],
+  "instance_specs": [
+    {
+      "name": "single_a",
+      "generator": {
+        "seed": 50,
+        "jobs": 8,
+        "machines": 1
+      },
+      "objective": "total_tardiness",
+      "time_limit": 10.0,
+      "methods": [
+        "milp_tight",
+        "milp_loose",
+        "milp_alt"
+      ]
+    },
+    {
+      "name": "single_c",
+      "generator": {
+        "seed": 60,
+        "jobs": 15,
+        "machines": 1
+      },
+      "objective": "total_tardiness",
+      "time_limit": 10.0,
+      "methods": [
+        "milp_tight",
+        "milp_loose",
+        "milp_alt"
+      ]
+    },
+    {
+      "name": "parallel_a",
+      "generator": {
+        "seed": 52,
+        "jobs": 8,
+        "machines": 3
+      },
+      "objective": "makespan",
+      "time_limit": 10.0,
+      "methods": [
+        "milp_alt",
+        "heur_parallel_lpt"
+      ]
+    }
+  ],
+  "oracle_limit": 100000,
+  "budget_unit": "one solver call under a shared wall-clock time limit",
+  "root_lp_note": "root_lp 组只解 LP relaxation；此时 objective 为 None（没有可行排程），best_bound 是该 formulation 的有效下界。"
+}

@@ -1,0 +1,172 @@
+{
+  "jobs": [
+    {
+      "id": "J000",
+      "operation_ids": [
+        "J000_O0"
+      ],
+      "release_time": 0,
+      "due_date": 13,
+      "weight": 5.0
+    },
+    {
+      "id": "J001",
+      "operation_ids": [
+        "J001_O0"
+      ],
+      "release_time": 5,
+      "due_date": 29,
+      "weight": 4.0
+    },
+    {
+      "id": "J002",
+      "operation_ids": [
+        "J002_O0"
+      ],
+      "release_time": 2,
+      "due_date": 5,
+      "weight": 2.0
+    },
+    {
+      "id": "J003",
+      "operation_ids": [
+        "J003_O0"
+      ],
+      "release_time": 2,
+      "due_date": 23,
+      "weight": 3.0
+    },
+    {
+      "id": "J004",
+      "operation_ids": [
+        "J004_O0"
+      ],
+      "release_time": 10,
+      "due_date": 32,
+      "weight": 1.0
+    },
+    {
+      "id": "J005",
+      "operation_ids": [
+        "J005_O0"
+      ],
+      "release_time": 8,
+      "due_date": 11,
+      "weight": 4.0
+    },
+    {
+      "id": "J006",
+      "operation_ids": [
+        "J006_O0"
+      ],
+      "release_time": 0,
+      "due_date": 22,
+      "weight": 2.0
+    },
+    {
+      "id": "J007",
+      "operation_ids": [
+        "J007_O0"
+      ],
+      "release_time": 2,
+      "due_date": 6,
+      "weight": 2.0
+    }
+  ],
+  "operations": [
+    {
+      "id": "J000_O0",
+      "job_id": "J000",
+      "processing_time": 9,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J001_O0",
+      "job_id": "J001",
+      "processing_time": 16,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J002_O0",
+      "job_id": "J002",
+      "processing_time": 2,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J003_O0",
+      "job_id": "J003",
+      "processing_time": 14,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J004_O0",
+      "job_id": "J004",
+      "processing_time": 15,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J005_O0",
+      "job_id": "J005",
+      "processing_time": 2,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J006_O0",
+      "job_id": "J006",
+      "processing_time": 15,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "id": "J007_O0",
+      "job_id": "J007",
+      "processing_time": 3,
+      "eligible_machine_ids": [
+        "M0",
+        "M1",
+        "M2"
+      ]
+    }
+  ],
+  "machines": [
+    {
+      "id": "M0",
+      "name": "Machine 0"
+    },
+    {
+      "id": "M1",
+      "name": "Machine 1"
+    },
+    {
+      "id": "M2",
+      "name": "Machine 2"
+    }
+  ]
+}

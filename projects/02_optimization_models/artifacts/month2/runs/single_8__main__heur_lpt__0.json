@@ -1,0 +1,76 @@
+{
+  "run_id": "single_8__main__heur_lpt__0",
+  "spec": {
+    "objective": "total_tardiness",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "heur_lpt",
+    "status": "FEASIBLE",
+    "objective": 195.0,
+    "best_bound": null,
+    "gap": null,
+    "iterations": null,
+    "build_time": 0.0,
+    "solve_time": 0.00013,
+    "wall_time": 0.00013
+  },
+  "detail": {
+    "rule": "lpt",
+    "bound_kind": "none"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 2,
+        "end_time": 5
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 5,
+        "end_time": 21
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 21,
+        "end_time": 32
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 32,
+        "end_time": 40
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 40,
+        "end_time": 48
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 48,
+        "end_time": 56
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 56,
+        "end_time": 60
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 60,
+        "end_time": 63
+      }
+    ]
+  }
+}

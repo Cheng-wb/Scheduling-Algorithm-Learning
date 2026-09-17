@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-17T13:03:49.740948+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "git_commit": "5cab5529ca969289bda51385259a3c962e135f12",
+  "working_tree_dirty": true,
+  "source_sha256": "71caf0facca5b9962a835c3c6a838d64dc85834eec1b7b32c69ed6379c10ca59",
+  "config_sha256": "61e73c6ce5a1b2d096973363bf303b2b7f3773d7a818eeb298f5cc8a0277a45e",
+  "time_limit_seconds": 10.0,
+  "unavailable_modules": [],
+  "budget_unit": "one solver call under a shared wall-clock time limit",
+  "registered_methods": [
+    "cpsat_cumulative",
+    "cpsat_jsp",
+    "cpsat_parallel",
+    "cpsat_symmetry",
+    "heur_edd",
+    "heur_lpt",
+    "heur_parallel_lpt",
+    "heur_spt",
+    "heur_wspt",
+    "milp_alt",
+    "milp_fixing",
+    "milp_loose",
+    "milp_tight",
+    "milp_warmstart"
+  ]
+}

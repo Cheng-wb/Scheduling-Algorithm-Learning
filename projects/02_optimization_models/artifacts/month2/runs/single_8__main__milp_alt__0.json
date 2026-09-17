@@ -1,0 +1,91 @@
+{
+  "run_id": "single_8__main__milp_alt__0",
+  "spec": {
+    "objective": "total_tardiness",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "milp_alt",
+    "status": "OPTIMAL",
+    "objective": 85.0,
+    "best_bound": 85.0,
+    "gap": 0.0,
+    "iterations": 0,
+    "build_time": 0.035152,
+    "solve_time": 0.17815,
+    "wall_time": 0.213302
+  },
+  "detail": {
+    "formulation": "time_indexed",
+    "relaxed": false,
+    "solver_status": "OPTIMAL",
+    "solver_id": "CBC_MIXED_INTEGER_PROGRAMMING",
+    "machines": 1,
+    "horizon": 71,
+    "deadline": null,
+    "time_indexed_vars": 467,
+    "variables": 475,
+    "constraints": 85,
+    "binaries": 467,
+    "nonzeros": 4366,
+    "seed": 0,
+    "seed_effective": false,
+    "time_limit": 10.0,
+    "solver_objective": 85.0,
+    "iterations_kind": "branch_and_bound"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 2,
+        "end_time": 5
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 5,
+        "end_time": 9
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 9,
+        "end_time": 12
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 12,
+        "end_time": 20
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 20,
+        "end_time": 28
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 28,
+        "end_time": 36
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 36,
+        "end_time": 47
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 47,
+        "end_time": 63
+      }
+    ]
+  }
+}

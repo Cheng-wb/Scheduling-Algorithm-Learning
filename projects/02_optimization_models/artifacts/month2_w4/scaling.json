@@ -1,0 +1,21 @@
+{
+  "jobs": 6,
+  "operations": 6,
+  "machines": 1,
+  "horizon": 67,
+  "coefficient_max": 67,
+  "coefficient_min": 2,
+  "span": 33.5,
+  "big_m": {
+    "loose": 402.0,
+    "pair_max": 65.0,
+    "pair_min": 60.0
+  },
+  "tight_model_span": 33.5,
+  "big_m_span": 201.0,
+  "notes": [
+    "Big-M 取值来自 Week 2 的 loose_big_m / pair_big_m（只读调用），本模块自己的模型不使用 Big-M。",
+    "紧模型的最大系数是 horizon，因此 span = horizon / min p；松模型的最大系数是 Big-M，量级通常高出一到两个数量级。",
+    "解析下界（makespan）为 60，把上界收紧到接近最优值可以同时改善数值与传播。"
+  ]
+}

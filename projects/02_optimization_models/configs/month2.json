@@ -1,0 +1,98 @@
+{
+  "seeds": [0],
+  "time_limit_seconds": 10.0,
+  "sensitivity": [
+    {"label": "tl_3", "method": "milp_tight", "time_limit": 3.0},
+    {"label": "tl_3", "method": "cpsat_parallel", "time_limit": 3.0},
+    {"label": "tl_30", "method": "milp_tight", "time_limit": 30.0},
+    {"label": "tl_30", "method": "cpsat_parallel", "time_limit": 30.0}
+  ],
+  "instances": [
+    {
+      "name": "single_8",
+      "kind": "scheduling",
+      "generator": {"seed": 50, "jobs": 8, "machines": 1},
+      "objective": "total_tardiness",
+      "methods": [
+        "milp_tight",
+        "milp_loose",
+        "milp_alt",
+        "milp_warmstart",
+        "milp_fixing",
+        "heur_spt",
+        "heur_edd",
+        "heur_wspt",
+        "heur_lpt"
+      ]
+    },
+    {
+      "name": "single_12",
+      "kind": "scheduling",
+      "generator": {"seed": 51, "jobs": 12, "machines": 1},
+      "objective": "total_tardiness",
+      "methods": [
+        "milp_tight",
+        "milp_loose",
+        "milp_alt",
+        "milp_warmstart",
+        "milp_fixing",
+        "heur_spt",
+        "heur_edd",
+        "heur_wspt",
+        "heur_lpt"
+      ]
+    },
+    {
+      "name": "single_20",
+      "kind": "scheduling",
+      "generator": {"seed": 70, "jobs": 20, "machines": 1},
+      "objective": "total_tardiness",
+      "methods": [
+        "milp_tight",
+        "milp_loose",
+        "milp_alt",
+        "milp_warmstart",
+        "milp_fixing",
+        "heur_spt",
+        "heur_edd",
+        "heur_wspt",
+        "heur_lpt"
+      ]
+    },
+    {
+      "name": "parallel_8",
+      "kind": "scheduling",
+      "generator": {"seed": 52, "jobs": 8, "machines": 3},
+      "objective": "makespan",
+      "methods": ["cpsat_parallel", "cpsat_symmetry", "milp_alt", "heur_parallel_lpt"]
+    },
+    {
+      "name": "parallel_12",
+      "kind": "scheduling",
+      "generator": {"seed": 53, "jobs": 12, "machines": 3},
+      "objective": "makespan",
+      "methods": ["cpsat_parallel", "cpsat_symmetry", "milp_alt", "heur_parallel_lpt"]
+    },
+    {
+      "name": "parallel_24",
+      "kind": "scheduling",
+      "generator": {"seed": 72, "jobs": 24, "machines": 3},
+      "objective": "makespan",
+      "methods": ["cpsat_parallel", "cpsat_symmetry", "milp_alt", "heur_parallel_lpt"]
+    },
+    {
+      "name": "routes_6",
+      "kind": "scheduling",
+      "generator": {"seed": 54, "jobs": 6, "machines": 3, "operations_per_job": 2},
+      "objective": "makespan",
+      "methods": ["cpsat_jsp", "cpsat_parallel"]
+    },
+    {
+      "name": "routes_10",
+      "kind": "scheduling",
+      "generator": {"seed": 71, "jobs": 10, "machines": 3, "operations_per_job": 2},
+      "objective": "makespan",
+      "methods": ["cpsat_jsp", "cpsat_parallel"]
+    }
+  ]
+}

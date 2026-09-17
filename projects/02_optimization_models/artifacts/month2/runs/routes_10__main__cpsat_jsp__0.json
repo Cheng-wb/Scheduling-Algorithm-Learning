@@ -1,0 +1,161 @@
+{
+  "run_id": "routes_10__main__cpsat_jsp__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "cpsat_jsp",
+    "status": "FEASIBLE",
+    "objective": 71.0,
+    "best_bound": 37.0,
+    "gap": 0.4788732394366197,
+    "iterations": 67970,
+    "build_time": 0.002483,
+    "solve_time": 10.001015,
+    "wall_time": 10.003498
+  },
+  "detail": {
+    "cp_status": "FEASIBLE",
+    "time_scale": 1,
+    "objective_divisor": 1.0,
+    "horizon": 216,
+    "time_limit": 10.0,
+    "num_search_workers": 1,
+    "random_seed": 0,
+    "conflicts": 38490,
+    "branches": 67970,
+    "booleans": 164,
+    "cp_wall_time": 10.000892100000002,
+    "bound_kind": "solver_objective_bound",
+    "cp_objective": 71.0,
+    "cp_objective_matches_m1": true,
+    "raw_best_bound": 37.0
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M2",
+        "start_time": 10,
+        "end_time": 21
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M2",
+        "start_time": 21,
+        "end_time": 38
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M1",
+        "start_time": 3,
+        "end_time": 12
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M1",
+        "start_time": 12,
+        "end_time": 17
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 17,
+        "end_time": 20
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M2",
+        "start_time": 50,
+        "end_time": 57
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M1",
+        "start_time": 20,
+        "end_time": 40
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M2",
+        "start_time": 64,
+        "end_time": 71
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 12,
+        "end_time": 29
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M2",
+        "start_time": 38,
+        "end_time": 50
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 12
+      },
+      {
+        "operation_id": "J005_O1",
+        "machine_id": "M1",
+        "start_time": 60,
+        "end_time": 66
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M1",
+        "start_time": 40,
+        "end_time": 60
+      },
+      {
+        "operation_id": "J006_O1",
+        "machine_id": "M0",
+        "start_time": 68,
+        "end_time": 69
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M2",
+        "start_time": 57,
+        "end_time": 64
+      },
+      {
+        "operation_id": "J007_O1",
+        "machine_id": "M1",
+        "start_time": 66,
+        "end_time": 71
+      },
+      {
+        "operation_id": "J008_O0",
+        "machine_id": "M0",
+        "start_time": 49,
+        "end_time": 64
+      },
+      {
+        "operation_id": "J008_O1",
+        "machine_id": "M0",
+        "start_time": 64,
+        "end_time": 68
+      },
+      {
+        "operation_id": "J009_O0",
+        "machine_id": "M2",
+        "start_time": 2,
+        "end_time": 10
+      },
+      {
+        "operation_id": "J009_O1",
+        "machine_id": "M0",
+        "start_time": 29,
+        "end_time": 49
+      }
+    ]
+  }
+}

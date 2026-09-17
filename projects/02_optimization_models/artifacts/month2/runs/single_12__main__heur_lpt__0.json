@@ -1,0 +1,100 @@
+{
+  "run_id": "single_12__main__heur_lpt__0",
+  "spec": {
+    "objective": "total_tardiness",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "heur_lpt",
+    "status": "FEASIBLE",
+    "objective": 719.0,
+    "best_bound": null,
+    "gap": null,
+    "iterations": null,
+    "build_time": 0.0,
+    "solve_time": 0.000149,
+    "wall_time": 0.000149
+  },
+  "detail": {
+    "rule": "lpt",
+    "bound_kind": "none"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 1,
+        "end_time": 2
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 3,
+        "end_time": 9
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 9,
+        "end_time": 27
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 27,
+        "end_time": 46
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 46,
+        "end_time": 64
+      },
+      {
+        "operation_id": "J008_O0",
+        "machine_id": "M0",
+        "start_time": 64,
+        "end_time": 82
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 82,
+        "end_time": 99
+      },
+      {
+        "operation_id": "J009_O0",
+        "machine_id": "M0",
+        "start_time": 99,
+        "end_time": 115
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 115,
+        "end_time": 128
+      },
+      {
+        "operation_id": "J010_O0",
+        "machine_id": "M0",
+        "start_time": 128,
+        "end_time": 140
+      },
+      {
+        "operation_id": "J011_O0",
+        "machine_id": "M0",
+        "start_time": 140,
+        "end_time": 152
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 152,
+        "end_time": 160
+      }
+    ]
+  }
+}

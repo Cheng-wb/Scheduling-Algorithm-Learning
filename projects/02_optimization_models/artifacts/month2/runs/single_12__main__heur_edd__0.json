@@ -1,0 +1,100 @@
+{
+  "run_id": "single_12__main__heur_edd__0",
+  "spec": {
+    "objective": "total_tardiness",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "heur_edd",
+    "status": "FEASIBLE",
+    "objective": 543.0,
+    "best_bound": null,
+    "gap": null,
+    "iterations": null,
+    "build_time": 0.0,
+    "solve_time": 0.000129,
+    "wall_time": 0.000129
+  },
+  "detail": {
+    "rule": "edd",
+    "bound_kind": "none"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 1,
+        "end_time": 2
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 3,
+        "end_time": 9
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 9,
+        "end_time": 17
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 17,
+        "end_time": 30
+      },
+      {
+        "operation_id": "J011_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 42
+      },
+      {
+        "operation_id": "J010_O0",
+        "machine_id": "M0",
+        "start_time": 42,
+        "end_time": 54
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 54,
+        "end_time": 72
+      },
+      {
+        "operation_id": "J008_O0",
+        "machine_id": "M0",
+        "start_time": 72,
+        "end_time": 90
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 90,
+        "end_time": 108
+      },
+      {
+        "operation_id": "J009_O0",
+        "machine_id": "M0",
+        "start_time": 108,
+        "end_time": 124
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 124,
+        "end_time": 141
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 141,
+        "end_time": 160
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "run_id": "parallel_12__main__heur_parallel_lpt__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "heur_parallel_lpt",
+    "status": "FEASIBLE",
+    "objective": 46.0,
+    "best_bound": null,
+    "gap": null,
+    "iterations": null,
+    "build_time": 0.0,
+    "solve_time": 0.000236,
+    "wall_time": 0.000236
+  },
+  "detail": {
+    "rule": "parallel_lpt",
+    "bound_kind": "none"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 3,
+        "end_time": 23
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M1",
+        "start_time": 7,
+        "end_time": 24
+      },
+      {
+        "operation_id": "J009_O0",
+        "machine_id": "M2",
+        "start_time": 10,
+        "end_time": 27
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 23,
+        "end_time": 35
+      },
+      {
+        "operation_id": "J008_O0",
+        "machine_id": "M1",
+        "start_time": 24,
+        "end_time": 36
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M2",
+        "start_time": 27,
+        "end_time": 35
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 35,
+        "end_time": 43
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M2",
+        "start_time": 35,
+        "end_time": 41
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 36,
+        "end_time": 41
+      },
+      {
+        "operation_id": "J011_O0",
+        "machine_id": "M1",
+        "start_time": 41,
+        "end_time": 46
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M2",
+        "start_time": 41,
+        "end_time": 43
+      },
+      {
+        "operation_id": "J010_O0",
+        "machine_id": "M0",
+        "start_time": 43,
+        "end_time": 45
+      }
+    ]
+  }
+}

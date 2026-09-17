@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "week": "M2-W3 CP-SAT 区间模型",
+  "created_utc": "2026-09-17T12:18:10.272157+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "git_commit": "5cab5529ca969289bda51385259a3c962e135f12",
+  "working_tree_dirty": true,
+  "source_sha256": "e0813a87e933f98bd09f51130195e4fbbbdf5be67121db8a99569d77e55b148f",
+  "budget_unit": "one solver call under a shared wall-clock time limit",
+  "time_limit_seconds": 5.0,
+  "unavailable_modules": [],
+  "registered_methods": [
+    "cpsat_cumulative",
+    "cpsat_jsp",
+    "cpsat_parallel",
+    "cpsat_symmetry",
+    "heur_edd",
+    "heur_lpt",
+    "heur_parallel_lpt",
+    "heur_spt",
+    "heur_wspt",
+    "milp_alt",
+    "milp_fixing",
+    "milp_loose",
+    "milp_tight",
+    "milp_warmstart"
+  ],
+  "milp_available": true,
+  "milp_methods_present": [
+    "milp_tight",
+    "milp_loose",
+    "milp_alt"
+  ],
+  "milp_methods_missing": [],
+  "milp_note": "Week 2 的 opt_models/milp_scheduling.py 已落地，MILP 对照方法 ['milp_tight', 'milp_loose', 'milp_alt'] 全部可用，本批次的跨范式比较是实测值。",
+  "instance_hashes": {
+    "w3_parallel_small": "3aa8680b5b421f4d37288d7c120c8fa21bb7e92d4a2022fe4ffa3f7824b876f9",
+    "w3_parallel_tight": "7fdfce97e05d98621f66a9f19d92c6bdd37810b4c27a1b6ad545159cf086dd62",
+    "w3_jsp_2x2": "fbbb9c9e72abda3f1e244d398c7c184f7f2161d94623c86d1d58ed3491ff1499",
+    "w3_cumulative_small": "0a9a4a10f7d2483d59d0da6411c760ac5e89cb092aa9161fd4e59754fc7e5170",
+    "w3_single_8": "9cfd97c6b891f78650fe8a60294fd8c54eb774f4b3126aba9dc75b72602ef824",
+    "w3_single_12": "53359129ce8699cf7e186e58baff0d6f221ac4debb21e04dfc4f1c7c7247696b",
+    "w3_parallel_8": "01b40050c8ce27a7ae6cd0f27b766830c216def31464919ef1ac6f9d548670a1",
+    "w3_parallel_12": "2cfee1ab5c5b8053f2fcc8f82b5fed090e783330c677da957b81b9701616c194",
+    "w3_routes_6": "7871173b9866f68d15f0d883f7d0174d082848e4c588da98ab530689665d8384"
+  },
+  "references": {
+    "w3_parallel_small": {
+      "value": 6.0,
+      "kind": "hand_computed",
+      "objective": "makespan"
+    },
+    "w3_parallel_tight": {
+      "value": 13.0,
+      "kind": "hand_computed",
+      "objective": "makespan"
+    },
+    "w3_jsp_2x2": {
+      "value": 7.0,
+      "kind": "hand_computed",
+      "objective": "makespan"
+    },
+    "w3_cumulative_small": {
+      "value": null,
+      "kind": "per_group",
+      "objective": "makespan"
+    },
+    "w3_single_8": {
+      "value": null,
+      "kind": "cross_checked",
+      "objective": "total_tardiness"
+    },
+    "w3_single_12": {
+      "value": null,
+      "kind": "cross_checked",
+      "objective": "total_tardiness"
+    },
+    "w3_parallel_8": {
+      "value": null,
+      "kind": "cross_checked",
+      "objective": "makespan"
+    },
+    "w3_parallel_12": {
+      "value": null,
+      "kind": "cross_checked",
+      "objective": "makespan"
+    },
+    "w3_routes_6": {
+      "value": null,
+      "kind": "cross_checked",
+      "objective": "makespan"
+    }
+  }
+}

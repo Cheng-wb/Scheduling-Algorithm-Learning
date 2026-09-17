@@ -1,0 +1,76 @@
+{
+  "run_id": "single_8__main__heur_wspt__0",
+  "spec": {
+    "objective": "total_tardiness",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "heur_wspt",
+    "status": "FEASIBLE",
+    "objective": 101.0,
+    "best_bound": null,
+    "gap": null,
+    "iterations": null,
+    "build_time": 0.0,
+    "solve_time": 0.000224,
+    "wall_time": 0.000224
+  },
+  "detail": {
+    "rule": "wspt",
+    "bound_kind": "none"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 2,
+        "end_time": 5
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 5,
+        "end_time": 9
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 9,
+        "end_time": 12
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 12,
+        "end_time": 20
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 20,
+        "end_time": 31
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 31,
+        "end_time": 39
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 39,
+        "end_time": 55
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 55,
+        "end_time": 63
+      }
+    ]
+  }
+}

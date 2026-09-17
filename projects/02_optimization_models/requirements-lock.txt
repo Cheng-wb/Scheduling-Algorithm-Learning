@@ -1,0 +1,27 @@
+# Verified environment: Python 3.14.6, Windows.
+# 注意：本次验证的 .venv 中**没有** ruff / black / mypy / pre-commit（M1 的
+# requirements-lock.txt 记录过它们，之后被移除）。因此 M2 的证据只包含 pytest，
+# 未包含 lint / formatter / 类型检查。要跑它们请先安装 requirements-dev.txt。
+absl-py==2.5.0
+colorama==0.4.6
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.64.0
+immutabledict==4.3.1
+iniconfig==2.3.0
+kiwisolver==1.5.1
+matplotlib==3.11.1
+numpy==2.5.3
+ortools==9.15.6755
+packaging==26.3
+pandas==3.0.5
+pillow==12.3.0
+pluggy==1.6.0
+protobuf==6.33.6
+Pygments==2.21.0
+pyparsing==3.3.2
+pytest==9.1.1
+python-dateutil==2.9.0.post0
+six==1.17.0
+typing_extensions==4.16.0
+tzdata==2026.3

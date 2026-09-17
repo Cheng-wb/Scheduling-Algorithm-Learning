@@ -1,0 +1,76 @@
+{
+  "run_id": "parallel_8__main__heur_parallel_lpt__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "heur_parallel_lpt",
+    "status": "FEASIBLE",
+    "objective": 31.0,
+    "best_bound": null,
+    "gap": null,
+    "iterations": null,
+    "build_time": 0.0,
+    "solve_time": 0.000171,
+    "wall_time": 0.000171
+  },
+  "detail": {
+    "rule": "parallel_lpt",
+    "bound_kind": "none"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 5,
+        "end_time": 21
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 10,
+        "end_time": 25
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M2",
+        "start_time": 0,
+        "end_time": 15
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M2",
+        "start_time": 15,
+        "end_time": 29
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 21,
+        "end_time": 30
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M1",
+        "start_time": 25,
+        "end_time": 28
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 28,
+        "end_time": 30
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M2",
+        "start_time": 29,
+        "end_time": 31
+      }
+    ]
+  }
+}

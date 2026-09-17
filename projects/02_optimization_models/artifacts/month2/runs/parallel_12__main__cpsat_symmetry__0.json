@@ -1,0 +1,118 @@
+{
+  "run_id": "parallel_12__main__cpsat_symmetry__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "cpsat_symmetry",
+    "status": "OPTIMAL",
+    "objective": 39.0,
+    "best_bound": 39.0,
+    "gap": 0.0,
+    "iterations": 3513,
+    "build_time": 0.002704,
+    "solve_time": 0.093151,
+    "wall_time": 0.095855
+  },
+  "detail": {
+    "backend": "cp-sat",
+    "objective_name": "makespan",
+    "workers": 1,
+    "seed": 0,
+    "time_limit": 10.0,
+    "solver_status": "OPTIMAL",
+    "solver_wall_time": 0.092762,
+    "branches": 3513,
+    "conflicts": 456,
+    "num_booleans": 184,
+    "horizon": 124,
+    "lower_bound_analytic": 38,
+    "symmetry_breaking_applied": true,
+    "machine_symmetry_detected": true,
+    "redundant_constraints": 13,
+    "symmetry_rows": 2,
+    "hint_given": false,
+    "termination_reason": "proved optimal",
+    "solver_objective": 39.0,
+    "objective_residual": 0.0
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 6,
+        "end_time": 26
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M1",
+        "start_time": 20,
+        "end_time": 37
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 8,
+        "end_time": 20
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 26,
+        "end_time": 31
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 31,
+        "end_time": 39
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M2",
+        "start_time": 2,
+        "end_time": 10
+      },
+      {
+        "operation_id": "J008_O0",
+        "machine_id": "M2",
+        "start_time": 27,
+        "end_time": 39
+      },
+      {
+        "operation_id": "J009_O0",
+        "machine_id": "M2",
+        "start_time": 10,
+        "end_time": 27
+      },
+      {
+        "operation_id": "J010_O0",
+        "machine_id": "M1",
+        "start_time": 37,
+        "end_time": 39
+      },
+      {
+        "operation_id": "J011_O0",
+        "machine_id": "M1",
+        "start_time": 1,
+        "end_time": 6
+      }
+    ]
+  }
+}

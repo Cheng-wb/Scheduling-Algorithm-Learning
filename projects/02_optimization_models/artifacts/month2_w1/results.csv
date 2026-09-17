@@ -1,0 +1,38 @@
+name,kind,note,sense,num_variables,num_rows,status,primal_objective,dual_objective,duality_gap,dual_status,dual_involution_ok,max_constraint_residual,max_reduced_cost_identity,max_complementarity,max_dual_feasibility_violation,complementarity_ok,solve_time
+prod_2d,production,两变量两约束：Day 1 用它枚举极点,max,2,2,OPTIMAL,2200.0,2200.0000000000005,4.547473508864641e-13,OPTIMAL,True,0.0,0.0,2.368475785867001e-13,7.105427357601002e-15,True,0.000691
+prod_base,production,三产品两资源 + 三条需求上限：本周主算例,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803003e-13,0.0,True,0.00012
+prod_infeasible,production,x_P2 <= 50 与 x_P2 >= 60 直接冲突：故意不可行,max,3,6,INFEASIBLE,,,,INFEASIBLE,,,,,,,3.2e-05
+transport_base,transportation,2 源 3 汇产销平衡：等式行、自由对偶变量,min,6,5,OPTIMAL,180.0,180.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,0.000108
+assign_base,assignment,3x3 指派：LP relaxation 恰好给出整数解,min,9,6,OPTIMAL,9.0,9.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,0.000129
+cap_M_60,sensitivity_capacity,capacity_M,max,3,5,OPTIMAL,1600.0,1600.0,0.0,OPTIMAL,True,0.0,0.0,1.421085471520201e-13,0.0,True,0.000193
+cap_M_70,sensitivity_capacity,capacity_M,max,3,5,OPTIMAL,1800.0,1800.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803008e-13,0.0,True,0.000103
+cap_M_80,sensitivity_capacity,capacity_M,max,3,5,OPTIMAL,2000.0,2000.0,0.0,OPTIMAL,True,0.0,0.0,0.0,7.105427357601002e-15,True,0.000103
+cap_M_90,sensitivity_capacity,capacity_M,max,3,5,OPTIMAL,2150.0,2150.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,0.000108
+cap_M_100,sensitivity_capacity,capacity_M,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803003e-13,0.0,True,0.000129
+cap_M_110,sensitivity_capacity,capacity_M,max,3,5,OPTIMAL,2450.0,2450.0,0.0,OPTIMAL,True,0.0,0.0,4.2632564145606006e-13,0.0,True,0.000103
+cap_M_120,sensitivity_capacity,capacity_M,max,3,5,OPTIMAL,2600.0,2600.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,9.9e-05
+cap_M_130,sensitivity_capacity,capacity_M,max,3,5,OPTIMAL,2600.0,2600.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,9.7e-05
+cap_M_140,sensitivity_capacity,capacity_M,max,3,5,OPTIMAL,2600.0,2600.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,0.000103
+cap_L_40,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,1600.0,1600.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,8.9e-05
+cap_L_50,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,1850.0,1850.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,9.6e-05
+cap_L_60,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2100.0,2100.0,0.0,OPTIMAL,True,0.0,0.0,1.7763568394002505e-13,0.0,True,0.000113
+cap_L_70,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2200.0,2200.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803003e-13,0.0,True,0.000112
+cap_L_80,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803003e-13,0.0,True,0.000109
+cap_L_90,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2399.9999999999995,2400.0,4.547473508864641e-13,OPTIMAL,True,0.0,0.0,2.368475785867001e-13,7.105427357601002e-15,True,9.8e-05
+cap_L_100,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2466.666666666666,2466.6666666666665,4.547473508864641e-13,OPTIMAL,True,0.0,0.0,2.368475785867001e-13,7.105427357601002e-15,True,0.000111
+cap_L_110,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2533.333333333333,2533.333333333333,0.0,OPTIMAL,True,0.0,0.0,2.368475785867001e-13,7.105427357601002e-15,True,9.7e-05
+cap_L_120,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2600.0,2600.0,0.0,OPTIMAL,True,0.0,0.0,1.4210854715202006e-13,7.105427357601002e-15,True,0.000102
+cap_L_130,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2650.0,2649.9999999999995,4.547473508864641e-13,OPTIMAL,True,0.0,0.0,2.842170943040402e-13,0.0,True,0.000105
+cap_L_140,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2700.0,2699.9999999999995,4.547473508864641e-13,OPTIMAL,True,0.0,0.0,2.842170943040402e-13,0.0,True,0.000175
+cap_L_150,sensitivity_capacity,capacity_L,max,3,5,OPTIMAL,2749.9999999999995,2749.9999999999995,0.0,OPTIMAL,True,0.0,0.0,3.552713678800501e-13,0.0,True,0.000541
+profit_P2_25,sensitivity_profit,profit_P2,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803013e-13,0.0,True,0.000137
+profit_P2_30,sensitivity_profit,profit_P2,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803003e-13,0.0,True,0.000103
+profit_P2_35,sensitivity_profit,profit_P2,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803e-13,0.0,True,0.000112
+profit_P2_40,sensitivity_profit,profit_P2,max,3,5,OPTIMAL,2399.9999999999995,2400.0,4.547473508864641e-13,OPTIMAL,True,0.0,0.0,3.7895612573872017e-13,0.0,True,0.000127
+profit_P2_45,sensitivity_profit,profit_P2,max,3,5,OPTIMAL,2500.000000000001,2500.0,9.094947017729282e-13,OPTIMAL,True,2.842170943040401e-14,0.0,5.684341886080799e-13,7.105427357601002e-15,True,0.000106
+demand_P1_10,sensitivity_demand,max_demand_P1,max,3,5,OPTIMAL,2150.0,2150.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,0.000105
+demand_P1_15,sensitivity_demand,max_demand_P1,max,3,5,OPTIMAL,2225.0,2225.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,0.0001
+demand_P1_20,sensitivity_demand,max_demand_P1,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,9.6e-05
+demand_P1_25,sensitivity_demand,max_demand_P1,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,0.0,0.0,True,0.000108
+demand_P1_30,sensitivity_demand,max_demand_P1,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803003e-13,0.0,True,0.000108
+demand_P1_40,sensitivity_demand,max_demand_P1,max,3,5,OPTIMAL,2300.0,2300.0,0.0,OPTIMAL,True,0.0,0.0,2.1316282072803003e-13,0.0,True,9.7e-05

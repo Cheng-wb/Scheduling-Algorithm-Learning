@@ -1,0 +1,129 @@
+{
+  "run_id": "single_12__main__milp_warmstart__0",
+  "spec": {
+    "objective": "total_tardiness",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "milp_warmstart",
+    "status": "OPTIMAL",
+    "objective": 532.0,
+    "best_bound": 532.0,
+    "gap": 0.0,
+    "iterations": 0,
+    "build_time": 0.007941,
+    "solve_time": 0.023915,
+    "wall_time": 0.031856
+  },
+  "detail": {
+    "backend": "cbc",
+    "objective_name": "total_tardiness",
+    "seed": 0,
+    "time_limit": 10.0,
+    "num_variables": 180,
+    "num_constraints": 71,
+    "horizon": 168,
+    "fixed_prefix": 0,
+    "fixed_variables": 0,
+    "free_variables": 12,
+    "seed_rule": "spt",
+    "seed_objective": 532.0,
+    "rule_objectives": {
+      "spt": 532.0,
+      "edd": 543.0,
+      "wspt": 568.0,
+      "lpt": 719.0,
+      "parallel_lpt": 1056.0
+    },
+    "hint_kind": "MIP start via CBC SetHint (advisory, not enforced)",
+    "hint_positions": 12,
+    "objective_cutoff": 532.0,
+    "cutoff_kind": "valid inequality obj <= seed objective",
+    "solver_status": "OPTIMAL",
+    "nodes": 0,
+    "iterations": 0,
+    "solver_wall_time": 31,
+    "termination_reason": "proved optimal",
+    "max_time_round_residual": 0.0,
+    "solver_objective": 532.0,
+    "objective_residual": 0.0
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 1,
+        "end_time": 2
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 3,
+        "end_time": 9
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 9,
+        "end_time": 17
+      },
+      {
+        "operation_id": "J011_O0",
+        "machine_id": "M0",
+        "start_time": 17,
+        "end_time": 29
+      },
+      {
+        "operation_id": "J010_O0",
+        "machine_id": "M0",
+        "start_time": 29,
+        "end_time": 41
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 41,
+        "end_time": 54
+      },
+      {
+        "operation_id": "J009_O0",
+        "machine_id": "M0",
+        "start_time": 54,
+        "end_time": 70
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 70,
+        "end_time": 87
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 87,
+        "end_time": 105
+      },
+      {
+        "operation_id": "J008_O0",
+        "machine_id": "M0",
+        "start_time": 105,
+        "end_time": 123
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 123,
+        "end_time": 141
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 141,
+        "end_time": 160
+      }
+    ]
+  }
+}

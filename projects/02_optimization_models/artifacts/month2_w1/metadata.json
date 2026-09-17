@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-17T10:25:25.239783+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "git_commit": "5cab5529ca969289bda51385259a3c962e135f12",
+  "working_tree_dirty": true,
+  "source_sha256": "3da8fa25bc0283221687912ae21afcf72757ac542f5281160a2f6b864d96e337",
+  "tolerance": 1e-09,
+  "tolerance_rationale": "GLOP 的原始/对偶可行性容差在 1e-8 量级；事后对拍取更严的 1e-9，用来区分「数值尘埃」与「真的违反」。",
+  "scenarios": 37,
+  "scenarios_with_optimal": 36,
+  "glop_status_caveat": "实测：本环境的 GLOP 后端对无界 LP 也返回状态码 2（INFEASIBLE），UNBOUNDED（3）不会出现。状态 2 只能读作「没有最优解」。",
+  "solver_backend": "OR-Tools pywraplp / GLOP (continuous LP)",
+  "output_dir": "D:\\code\\Scheduling-Algorithm-Learning\\projects\\02_optimization_models\\artifacts\\month2_w1"
+}

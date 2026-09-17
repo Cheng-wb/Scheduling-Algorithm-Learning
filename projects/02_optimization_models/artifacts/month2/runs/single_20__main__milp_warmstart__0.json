@@ -1,0 +1,177 @@
+{
+  "run_id": "single_20__main__milp_warmstart__0",
+  "spec": {
+    "objective": "total_tardiness",
+    "time_limit": 10.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "milp_warmstart",
+    "status": "OPTIMAL",
+    "objective": 903.0,
+    "best_bound": 903.0,
+    "gap": 0.0,
+    "iterations": 0,
+    "build_time": 0.015803,
+    "solve_time": 0.035957,
+    "wall_time": 0.05176
+  },
+  "detail": {
+    "backend": "cbc",
+    "objective_name": "total_tardiness",
+    "seed": 0,
+    "time_limit": 10.0,
+    "num_variables": 460,
+    "num_constraints": 119,
+    "horizon": 185,
+    "fixed_prefix": 0,
+    "fixed_variables": 0,
+    "free_variables": 20,
+    "seed_rule": "spt",
+    "seed_objective": 903.0,
+    "rule_objectives": {
+      "spt": 903.0,
+      "edd": 922.0,
+      "wspt": 1003.0,
+      "lpt": 2094.0,
+      "parallel_lpt": 2271.0
+    },
+    "hint_kind": "MIP start via CBC SetHint (advisory, not enforced)",
+    "hint_positions": 20,
+    "objective_cutoff": 903.0,
+    "cutoff_kind": "valid inequality obj <= seed objective",
+    "solver_status": "OPTIMAL",
+    "nodes": 0,
+    "iterations": 0,
+    "solver_wall_time": 51,
+    "termination_reason": "proved optimal",
+    "max_time_round_residual": 0.0,
+    "solver_objective": 903.0,
+    "objective_residual": 0.0
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J013_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 3
+      },
+      {
+        "operation_id": "J011_O0",
+        "machine_id": "M0",
+        "start_time": 3,
+        "end_time": 6
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 6,
+        "end_time": 10
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 10,
+        "end_time": 13
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 13,
+        "end_time": 17
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 17,
+        "end_time": 21
+      },
+      {
+        "operation_id": "J016_O0",
+        "machine_id": "M0",
+        "start_time": 21,
+        "end_time": 25
+      },
+      {
+        "operation_id": "J015_O0",
+        "machine_id": "M0",
+        "start_time": 25,
+        "end_time": 30
+      },
+      {
+        "operation_id": "J019_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 35
+      },
+      {
+        "operation_id": "J009_O0",
+        "machine_id": "M0",
+        "start_time": 35,
+        "end_time": 40
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 40,
+        "end_time": 47
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 47,
+        "end_time": 56
+      },
+      {
+        "operation_id": "J018_O0",
+        "machine_id": "M0",
+        "start_time": 56,
+        "end_time": 66
+      },
+      {
+        "operation_id": "J014_O0",
+        "machine_id": "M0",
+        "start_time": 66,
+        "end_time": 79
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 79,
+        "end_time": 92
+      },
+      {
+        "operation_id": "J010_O0",
+        "machine_id": "M0",
+        "start_time": 92,
+        "end_time": 107
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 107,
+        "end_time": 122
+      },
+      {
+        "operation_id": "J008_O0",
+        "machine_id": "M0",
+        "start_time": 122,
+        "end_time": 138
+      },
+      {
+        "operation_id": "J012_O0",
+        "machine_id": "M0",
+        "start_time": 138,
+        "end_time": 156
+      },
+      {
+        "operation_id": "J017_O0",
+        "machine_id": "M0",
+        "start_time": 156,
+        "end_time": 175
+      }
+    ]
+  }
+}
