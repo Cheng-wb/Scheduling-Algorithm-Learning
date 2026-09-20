@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-20T08:07:53.622862+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "git_commit": "dfb77a3356807f5c5a85db04b7799072716dfa46",
+  "working_tree_dirty": true,
+  "source_sha256": "8c752073b1a47c8ec965ed69e0e9c64bc532e733e31780b8607e7272273338fb",
+  "time_limit_seconds": 15.0,
+  "unavailable_modules": [],
+  "registered_methods": [
+    "fjsp_cpsat",
+    "fjsp_cpsat_calendar",
+    "fjsp_cpsat_full",
+    "fjsp_cpsat_multiobj",
+    "fjsp_cpsat_qualified",
+    "fjsp_cpsat_setup",
+    "fjsp_loadbalance",
+    "fjsp_random",
+    "fjsp_shortest",
+    "flow_johnson",
+    "flow_neh",
+    "jsp_cpsat",
+    "jsp_priority"
+  ],
+  "ablation_chain": [
+    {
+      "stage": "base",
+      "adds": "机器相关工时 + 柔性 + 释放/交期"
+    },
+    {
+      "stage": "+setup",
+      "adds": "sequence-dependent setup（工序族换型）"
+    },
+    {
+      "stage": "+calendar",
+      "adds": "机器日历（可用窗）"
+    },
+    {
+      "stage": "+qualification",
+      "adds": "机器资质（谁能做）"
+    },
+    {
+      "stage": "+worker",
+      "adds": "次生资源能力 + 容量（谁能开、同时开几个）"
+    },
+    {
+      "stage": "+locked",
+      "adds": "WIP / 锁定工序（已在机不可再选）"
+    }
+  ],
+  "objective": "makespan",
+  "seed": 0,
+  "budget_unit": "one solver call under a shared wall-clock time limit"
+}

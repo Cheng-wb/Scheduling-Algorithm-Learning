@@ -1,0 +1,1520 @@
+{
+  "tiny_tradeoff__cmax_only__none": {
+    "schedule_key": "M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 9,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__tardiness_light__none": {
+    "schedule_key": "M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 9,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__tardiness_heavy__none": {
+    "schedule_key": "M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 2,
+        "worker_id": null
+      },
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 10,
+        "end_time": 16,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__tardiness_only__none": {
+    "schedule_key": "M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 2,
+        "worker_id": null
+      },
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 10,
+        "end_time": 16,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__setup_only__none": {
+    "schedule_key": "M0:A@0-6,B@11-13,D@7-11;M1:C@0-5",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 11,
+        "end_time": 13,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__balanced__none": {
+    "schedule_key": "M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 9,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__cmax_only__trivial": {
+    "schedule_key": "M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 9,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__tardiness_light__trivial": {
+    "schedule_key": "M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 9,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__tardiness_heavy__trivial": {
+    "schedule_key": "M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 2,
+        "worker_id": null
+      },
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 10,
+        "end_time": 16,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__tardiness_only__trivial": {
+    "schedule_key": "M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 2,
+        "worker_id": null
+      },
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 10,
+        "end_time": 16,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__setup_only__trivial": {
+    "schedule_key": "M0:A@0-6,B@11-13,D@7-11;M1:C@0-5",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 11,
+        "end_time": 13,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__balanced__trivial": {
+    "schedule_key": "M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 9,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__cmax_only__ideal": {
+    "schedule_key": "M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 9,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__tardiness_light__ideal": {
+    "schedule_key": "M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 2,
+        "worker_id": null
+      },
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 10,
+        "end_time": 16,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__tardiness_heavy__ideal": {
+    "schedule_key": "M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 2,
+        "worker_id": null
+      },
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 10,
+        "end_time": 16,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__tardiness_only__ideal": {
+    "schedule_key": "M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",
+    "operations": [
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 2,
+        "worker_id": null
+      },
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 10,
+        "end_time": 16,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M1",
+        "start_time": 6,
+        "end_time": 8,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__setup_only__ideal": {
+    "schedule_key": "M0:A@0-6,B@11-13,D@7-11;M1:C@0-5",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 11,
+        "end_time": 13,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      }
+    ]
+  },
+  "tiny_tradeoff__balanced__ideal": {
+    "schedule_key": "M0:A@0-6,B@7-9,D@9-13;M1:C@0-5",
+    "operations": [
+      {
+        "operation_id": "A",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 6,
+        "worker_id": null
+      },
+      {
+        "operation_id": "B",
+        "machine_id": "M0",
+        "start_time": 7,
+        "end_time": 9,
+        "worker_id": null
+      },
+      {
+        "operation_id": "D",
+        "machine_id": "M0",
+        "start_time": 9,
+        "end_time": 13,
+        "worker_id": null
+      },
+      {
+        "operation_id": "C",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 5,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__cmax_only__none": {
+    "schedule_key": "M0:J001_O0@8-26,J001_O1@31-48,J003_O0@0-8,J003_O1@48-56,J004_O1@61-69;M1:J000_O0@3-21,J000_O1@54-67,J002_O0@21-39,J002_O1@67-69,J004_O0@44-54",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 26,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 31,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M0",
+        "start_time": 48,
+        "end_time": 56,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 61,
+        "end_time": 69,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M1",
+        "start_time": 3,
+        "end_time": 21,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 21,
+        "end_time": 39,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 44,
+        "end_time": 54,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 54,
+        "end_time": 67,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 67,
+        "end_time": 69,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__tardiness_light__none": {
+    "schedule_key": "M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 22,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 53,
+        "end_time": 70,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 1,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 11,
+        "end_time": 24,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 24,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 42,
+        "end_time": 60,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 65,
+        "end_time": 67,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__tardiness_heavy__none": {
+    "schedule_key": "M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 22,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 53,
+        "end_time": 70,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 1,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 11,
+        "end_time": 24,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 24,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 42,
+        "end_time": 60,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 65,
+        "end_time": 67,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__tardiness_only__none": {
+    "schedule_key": "M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 22,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 53,
+        "end_time": 70,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 1,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 11,
+        "end_time": 24,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 24,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 42,
+        "end_time": 60,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 65,
+        "end_time": 67,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__setup_only__none": {
+    "schedule_key": "M0:J000_O1@20-46,J001_O1@87-104,J002_O1@84-87,J003_O1@104-112,J004_O0@1-17;M1:J000_O0@2-20,J001_O0@30-66,J002_O0@66-84,J003_O0@84-94,J004_O1@20-30",
+    "operations": [
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 1,
+        "end_time": 17,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M0",
+        "start_time": 20,
+        "end_time": 46,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M0",
+        "start_time": 84,
+        "end_time": 87,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 87,
+        "end_time": 104,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M0",
+        "start_time": 104,
+        "end_time": 112,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M1",
+        "start_time": 2,
+        "end_time": 20,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M1",
+        "start_time": 20,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M1",
+        "start_time": 30,
+        "end_time": 66,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 66,
+        "end_time": 84,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M1",
+        "start_time": 84,
+        "end_time": 94,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__balanced__none": {
+    "schedule_key": "M0:J000_O0@8-22,J001_O0@30-48,J002_O0@48-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J001_O1@48-69,J002_O1@70-72,J003_O1@11-24,J004_O0@1-11",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 22,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 48,
+        "end_time": 70,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 1,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 11,
+        "end_time": 24,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 24,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M1",
+        "start_time": 48,
+        "end_time": 69,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 70,
+        "end_time": 72,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__cmax_only__trivial": {
+    "schedule_key": "M0:J001_O0@8-26,J001_O1@31-48,J003_O0@0-8,J003_O1@48-56,J004_O1@61-69;M1:J000_O0@3-21,J000_O1@54-67,J002_O0@21-39,J002_O1@67-69,J004_O0@44-54",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 26,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 31,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M0",
+        "start_time": 48,
+        "end_time": 56,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 61,
+        "end_time": 69,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M1",
+        "start_time": 3,
+        "end_time": 21,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 21,
+        "end_time": 39,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 44,
+        "end_time": 54,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 54,
+        "end_time": 67,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 67,
+        "end_time": 69,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__tardiness_light__trivial": {
+    "schedule_key": "M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 22,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 53,
+        "end_time": 70,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 1,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 11,
+        "end_time": 24,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 24,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 42,
+        "end_time": 60,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 65,
+        "end_time": 67,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__tardiness_heavy__trivial": {
+    "schedule_key": "M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 22,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 53,
+        "end_time": 70,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 1,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 11,
+        "end_time": 24,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 24,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 42,
+        "end_time": 60,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 65,
+        "end_time": 67,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__tardiness_only__trivial": {
+    "schedule_key": "M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 22,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 53,
+        "end_time": 70,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 1,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 11,
+        "end_time": 24,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 24,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 42,
+        "end_time": 60,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 65,
+        "end_time": 67,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__setup_only__trivial": {
+    "schedule_key": "M0:J000_O1@20-46,J001_O1@87-104,J002_O1@84-87,J003_O1@104-112,J004_O0@1-17;M1:J000_O0@2-20,J001_O0@30-66,J002_O0@66-84,J003_O0@84-94,J004_O1@20-30",
+    "operations": [
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 1,
+        "end_time": 17,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M0",
+        "start_time": 20,
+        "end_time": 46,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M0",
+        "start_time": 84,
+        "end_time": 87,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M0",
+        "start_time": 87,
+        "end_time": 104,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M0",
+        "start_time": 104,
+        "end_time": 112,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M1",
+        "start_time": 2,
+        "end_time": 20,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M1",
+        "start_time": 20,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M1",
+        "start_time": 30,
+        "end_time": 66,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M1",
+        "start_time": 66,
+        "end_time": 84,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M1",
+        "start_time": 84,
+        "end_time": 94,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__balanced__trivial": {
+    "schedule_key": "M0:J000_O0@8-22,J001_O0@30-48,J002_O0@48-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J001_O1@48-69,J002_O1@70-72,J003_O1@11-24,J004_O0@1-11",
+    "operations": [
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 8,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 8,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 22,
+        "end_time": 30,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 30,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 48,
+        "end_time": 70,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 1,
+        "end_time": 11,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 11,
+        "end_time": 24,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 24,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M1",
+        "start_time": 48,
+        "end_time": 69,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 70,
+        "end_time": 72,
+        "worker_id": null
+      }
+    ]
+  },
+  "plant_batch__cmax_only__ideal": {
+    "schedule_key": "",
+    "operations": []
+  },
+  "plant_batch__tardiness_light__ideal": {
+    "schedule_key": "",
+    "operations": []
+  },
+  "plant_batch__tardiness_heavy__ideal": {
+    "schedule_key": "",
+    "operations": []
+  },
+  "plant_batch__tardiness_only__ideal": {
+    "schedule_key": "",
+    "operations": []
+  },
+  "plant_batch__setup_only__ideal": {
+    "schedule_key": "",
+    "operations": []
+  },
+  "plant_batch__balanced__ideal": {
+    "schedule_key": "",
+    "operations": []
+  }
+}

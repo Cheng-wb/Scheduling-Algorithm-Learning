@@ -1,0 +1,205 @@
+{
+  "jobs": [
+    {
+      "id": "J0",
+      "operation_ids": [
+        "A",
+        "B"
+      ],
+      "release_time": 0,
+      "due_date": 14,
+      "weight": 1.0,
+      "priority": 0
+    },
+    {
+      "id": "J1",
+      "operation_ids": [
+        "C",
+        "D"
+      ],
+      "release_time": 0,
+      "due_date": 12,
+      "weight": 1.0,
+      "priority": 0
+    }
+  ],
+  "operations": [
+    {
+      "id": "A",
+      "job_id": "J0",
+      "position": 0,
+      "machine_times": [
+        [
+          "M0",
+          5
+        ],
+        [
+          "M1",
+          4
+        ]
+      ],
+      "family": "F0",
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "B",
+      "job_id": "J0",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          6
+        ],
+        [
+          "M1",
+          5
+        ]
+      ],
+      "family": "F0",
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "C",
+      "job_id": "J1",
+      "position": 0,
+      "machine_times": [
+        [
+          "M0",
+          4
+        ],
+        [
+          "M1",
+          6
+        ]
+      ],
+      "family": "F1",
+      "locked_machine_id": "M1",
+      "locked_start": 20
+    },
+    {
+      "id": "D",
+      "job_id": "J1",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          5
+        ],
+        [
+          "M1",
+          5
+        ]
+      ],
+      "family": "F1",
+      "locked_machine_id": null,
+      "locked_start": null
+    }
+  ],
+  "machines": [
+    {
+      "id": "M0",
+      "name": "M0",
+      "calendar_id": "CAL0",
+      "group": null
+    },
+    {
+      "id": "M1",
+      "name": "M1",
+      "calendar_id": "CAL1",
+      "group": null
+    }
+  ],
+  "calendars": [
+    {
+      "id": "CAL0",
+      "windows": [
+        [
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "CAL1",
+      "windows": [
+        [
+          0,
+          10
+        ],
+        [
+          16,
+          40
+        ]
+      ]
+    }
+  ],
+  "maintenances": [],
+  "qualifications": [
+    {
+      "machine_id": "M0",
+      "family": "F0"
+    },
+    {
+      "machine_id": "M1",
+      "family": "F0"
+    },
+    {
+      "machine_id": "M1",
+      "family": "F1"
+    }
+  ],
+  "workers": [
+    {
+      "id": "W0",
+      "name": "小张",
+      "machine_ids": [
+        "M0"
+      ],
+      "capacity": 1
+    },
+    {
+      "id": "W1",
+      "name": "小李",
+      "machine_ids": [
+        "M1"
+      ],
+      "capacity": 1
+    },
+    {
+      "id": "W2",
+      "name": "多面手",
+      "machine_ids": [
+        "M0",
+        "M1"
+      ],
+      "capacity": 1
+    }
+  ],
+  "setups": [
+    {
+      "from_family": "F0",
+      "to_family": "F0",
+      "minutes": 0
+    },
+    {
+      "from_family": "F0",
+      "to_family": "F1",
+      "minutes": 3
+    },
+    {
+      "from_family": "F1",
+      "to_family": "F0",
+      "minutes": 4
+    },
+    {
+      "from_family": "F1",
+      "to_family": "F1",
+      "minutes": 0
+    }
+  ],
+  "meta": {
+    "name": "ablation"
+  }
+}

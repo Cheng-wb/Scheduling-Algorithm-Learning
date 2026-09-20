@@ -1,0 +1,29 @@
+instance,operations,machines,method,status,objective,best_bound,build_time_s,solve_time_s,iterations,reference_kind,reference
+tiny_2x2,4,2,fjsp_random,FEASIBLE,7.0,,3.8e-05,0.000144,,oracle,2.0
+tiny_2x2,4,2,fjsp_shortest,FEASIBLE,2.0,,9e-06,0.000118,,oracle,2.0
+tiny_2x2,4,2,fjsp_loadbalance,FEASIBLE,2.0,,2.3e-05,0.000107,,oracle,2.0
+tiny_2x2,4,2,fjsp_cpsat,OPTIMAL,2.0,2.0,0.001423,0.008721,38,oracle,2.0
+gap_2x2,4,2,fjsp_random,FEASIBLE,15.0,,4e-05,0.000114,,oracle,10.0
+gap_2x2,4,2,fjsp_shortest,FEASIBLE,10.0,,7e-06,0.000106,,oracle,10.0
+gap_2x2,4,2,fjsp_loadbalance,FEASIBLE,10.0,,1.8e-05,0.000112,,oracle,10.0
+gap_2x2,4,2,fjsp_cpsat,OPTIMAL,10.0,10.0,0.001264,0.004485,41,oracle,10.0
+assign_2x3,4,3,fjsp_random,FEASIBLE,14.0,,3.8e-05,0.000121,,oracle,10.0
+assign_2x3,4,3,fjsp_shortest,FEASIBLE,11.0,,8e-06,0.000116,,oracle,10.0
+assign_2x3,4,3,fjsp_loadbalance,FEASIBLE,13.0,,2e-05,0.000115,,oracle,10.0
+assign_2x3,4,3,fjsp_cpsat,OPTIMAL,10.0,10.0,0.001101,0.007647,87,oracle,10.0
+jsp_fixed_2x2,4,2,fjsp_random,FEASIBLE,7.0,,3.3e-05,0.000112,,oracle,7.0
+jsp_fixed_2x2,4,2,fjsp_shortest,FEASIBLE,7.0,,5e-06,0.000106,,oracle,7.0
+jsp_fixed_2x2,4,2,fjsp_loadbalance,FEASIBLE,7.0,,1.5e-05,0.000107,,oracle,7.0
+jsp_fixed_2x2,4,2,fjsp_cpsat,OPTIMAL,7.0,7.0,0.000896,0.002132,5,oracle,7.0
+jsp_6x4 (s102),18,4,fjsp_random,FEASIBLE,74.0,,6.7e-05,0.000471,,cpsat_only,
+jsp_6x4 (s102),18,4,fjsp_shortest,FEASIBLE,74.0,,1.7e-05,0.000454,,cpsat_only,
+jsp_6x4 (s102),18,4,fjsp_loadbalance,FEASIBLE,74.0,,5.2e-05,0.000459,,cpsat_only,
+jsp_6x4 (s102),18,4,fjsp_cpsat,OPTIMAL,67.0,67.0,0.001722,0.006752,55,cpsat_only,
+fjsp_6x4_f2 (s104),18,4,fjsp_random,FEASIBLE,87.0,,6.9e-05,0.000485,,cpsat_only,
+fjsp_6x4_f2 (s104),18,4,fjsp_shortest,FEASIBLE,67.0,,2.3e-05,0.000466,,cpsat_only,
+fjsp_6x4_f2 (s104),18,4,fjsp_loadbalance,FEASIBLE,61.0,,6.5e-05,0.00047,,cpsat_only,
+fjsp_6x4_f2 (s104),18,4,fjsp_cpsat,OPTIMAL,42.0,42.0,0.002129,0.032764,622,cpsat_only,
+fjsp_10x5_f3 (s105),30,5,fjsp_random,FEASIBLE,115.0,,0.000102,0.001023,,cpsat_only,
+fjsp_10x5_f3 (s105),30,5,fjsp_shortest,FEASIBLE,111.0,,5e-05,0.000983,,cpsat_only,
+fjsp_10x5_f3 (s105),30,5,fjsp_loadbalance,FEASIBLE,90.0,,0.000132,0.000998,,cpsat_only,
+fjsp_10x5_f3 (s105),30,5,fjsp_cpsat,OPTIMAL,56.0,56.0,0.004201,4.383569,21259,cpsat_only,

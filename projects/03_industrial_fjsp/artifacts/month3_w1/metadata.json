@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-09-20T08:00:07.080554+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "git_commit": "dfb77a3356807f5c5a85db04b7799072716dfa46",
+  "working_tree_dirty": true,
+  "source_sha256": "80bc3507d20659703db5bc329c4c704f965bdafd0c02956309cd0084e801af19",
+  "time_limit_seconds": 30.0,
+  "instances": [
+    "flow_5x3",
+    "flow_8x4",
+    "jsp_6x4",
+    "jsp_8x5"
+  ]
+}

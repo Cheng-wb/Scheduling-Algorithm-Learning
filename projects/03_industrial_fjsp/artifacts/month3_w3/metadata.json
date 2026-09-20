@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-20T07:57:59.560646+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "git_commit": "dfb77a3356807f5c5a85db04b7799072716dfa46",
+  "working_tree_dirty": true,
+  "source_sha256": "d3eee264301aac7b929f849fc0f3136b864d930b61ddea578c5c1df2a0bd61f7",
+  "sweep_sha256": "89d056231ff8a3f4f9c80a1c57bb11a6a228c6de6098ca65dd1a761efd3f6556",
+  "method": "fjsp_cpsat_multiobj",
+  "time_limit_seconds": 30.0,
+  "seed": 0,
+  "sweep_settings": [
+    {
+      "label": "cmax_only",
+      "alpha": 1.0,
+      "beta": 0.0,
+      "gamma": 0.0
+    },
+    {
+      "label": "tardiness_light",
+      "alpha": 1.0,
+      "beta": 0.25,
+      "gamma": 0.0
+    },
+    {
+      "label": "tardiness_heavy",
+      "alpha": 1.0,
+      "beta": 4.0,
+      "gamma": 0.0
+    },
+    {
+      "label": "tardiness_only",
+      "alpha": 0.0,
+      "beta": 1.0,
+      "gamma": 0.0
+    },
+    {
+      "label": "setup_only",
+      "alpha": 0.0,
+      "beta": 0.0,
+      "gamma": 1.0
+    },
+    {
+      "label": "balanced",
+      "alpha": 1.0,
+      "beta": 1.0,
+      "gamma": 1.0
+    }
+  ],
+  "normalization_modes": [
+    "none",
+    "trivial",
+    "ideal"
+  ],
+  "instance_sha256": {
+    "tiny_tradeoff": "5189c2af0714936197b8ea76e94bed268ab7641281fe31e3494880974d9edddd",
+    "plant_batch": "f189799a459050f2813a0c8b25e08a8d2236cab055f8bfa09f8cf6ba0f8a5dd1"
+  },
+  "ideal_points": {
+    "tiny_tradeoff": {
+      "optima": {
+        "makespan": {
+          "value": 9.0,
+          "status": "OPTIMAL",
+          "best_bound": 9.0,
+          "schedule_key": "M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",
+          "validation": []
+        },
+        "total_tardiness": {
+          "value": 2.0,
+          "status": "OPTIMAL",
+          "best_bound": 2.0,
+          "schedule_key": "M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",
+          "validation": []
+        },
+        "total_setup_time": {
+          "value": 1.0,
+          "status": "OPTIMAL",
+          "best_bound": 1.0,
+          "schedule_key": "M0:A@0-6,B@11-13,D@7-11;M1:C@0-5",
+          "validation": []
+        }
+      },
+      "divisors": {
+        "cmax": 9.0,
+        "total_tardiness": 2.0,
+        "setup": 1.0
+      },
+      "skip_reason": "",
+      "note": "ideal point = 三个单目标各自的最好值；理想点上三个归一化分量都取到 1"
+    },
+    "plant_batch": {
+      "optima": {
+        "makespan": {
+          "value": 69.0,
+          "status": "OPTIMAL",
+          "best_bound": 69.0,
+          "schedule_key": "M0:J001_O0@8-26,J001_O1@31-48,J003_O0@0-8,J003_O1@48-56,J004_O1@61-69;M1:J000_O0@3-21,J000_O1@54-67,J002_O0@21-39,J002_O1@67-69,J004_O0@44-54",
+          "validation": []
+        },
+        "total_tardiness": {
+          "value": 95.0,
+          "status": "OPTIMAL",
+          "best_bound": 95.0,
+          "schedule_key": "M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",
+          "validation": []
+        },
+        "total_setup_time": {
+          "value": 0.0,
+          "status": "OPTIMAL",
+          "best_bound": 0.0,
+          "schedule_key": "M0:J000_O1@20-46,J001_O1@87-104,J002_O1@84-87,J003_O1@104-112,J004_O0@1-17;M1:J000_O0@2-20,J001_O0@30-66,J002_O0@66-84,J003_O0@84-94,J004_O1@20-30",
+          "validation": []
+        }
+      },
+      "divisors": null,
+      "skip_reason": "setup: 单目标最优值为 0，分母为 0（理想点归一化在此分量上无定义）",
+      "note": "ideal point = 三个单目标各自的最好值；理想点上三个归一化分量都取到 1"
+    }
+  },
+  "unavailable_modules": [],
+  "registered_methods": [
+    "fjsp_cpsat",
+    "fjsp_cpsat_calendar",
+    "fjsp_cpsat_full",
+    "fjsp_cpsat_multiobj",
+    "fjsp_cpsat_qualified",
+    "fjsp_cpsat_setup",
+    "fjsp_loadbalance",
+    "fjsp_random",
+    "fjsp_shortest",
+    "flow_johnson",
+    "flow_neh",
+    "jsp_cpsat",
+    "jsp_priority"
+  ],
+  "validation": "every row's schedule passed the independent validator"
+}

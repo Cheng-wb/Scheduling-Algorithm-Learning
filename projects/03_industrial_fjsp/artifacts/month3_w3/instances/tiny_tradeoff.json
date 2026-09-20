@@ -1,0 +1,137 @@
+{
+  "jobs": [
+    {
+      "id": "J0",
+      "operation_ids": [
+        "A"
+      ],
+      "release_time": 0,
+      "due_date": 100,
+      "weight": 1.0,
+      "priority": 0
+    },
+    {
+      "id": "J1",
+      "operation_ids": [
+        "B"
+      ],
+      "release_time": 0,
+      "due_date": 1,
+      "weight": 1.0,
+      "priority": 0
+    },
+    {
+      "id": "J2",
+      "operation_ids": [
+        "C"
+      ],
+      "release_time": 0,
+      "due_date": 4,
+      "weight": 1.0,
+      "priority": 0
+    },
+    {
+      "id": "J3",
+      "operation_ids": [
+        "D"
+      ],
+      "release_time": 0,
+      "due_date": 30,
+      "weight": 1.0,
+      "priority": 0
+    }
+  ],
+  "operations": [
+    {
+      "id": "A",
+      "job_id": "J0",
+      "position": 0,
+      "machine_times": [
+        [
+          "M0",
+          6
+        ]
+      ],
+      "family": "F0",
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "B",
+      "job_id": "J1",
+      "position": 0,
+      "machine_times": [
+        [
+          "M0",
+          2
+        ]
+      ],
+      "family": "F1",
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "C",
+      "job_id": "J2",
+      "position": 0,
+      "machine_times": [
+        [
+          "M1",
+          5
+        ]
+      ],
+      "family": "F0",
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "D",
+      "job_id": "J3",
+      "position": 0,
+      "machine_times": [
+        [
+          "M0",
+          4
+        ],
+        [
+          "M1",
+          2
+        ]
+      ],
+      "family": "F1",
+      "locked_machine_id": null,
+      "locked_start": null
+    }
+  ],
+  "machines": [
+    {
+      "id": "M0",
+      "name": "M0",
+      "calendar_id": null,
+      "group": null
+    },
+    {
+      "id": "M1",
+      "name": "M1",
+      "calendar_id": null,
+      "group": null
+    }
+  ],
+  "calendars": [],
+  "maintenances": [],
+  "qualifications": [],
+  "workers": [],
+  "setups": [
+    {
+      "from_family": "F0",
+      "to_family": "F1",
+      "minutes": 1
+    },
+    {
+      "from_family": "F1",
+      "to_family": "F0",
+      "minutes": 8
+    }
+  ],
+  "meta": {}
+}

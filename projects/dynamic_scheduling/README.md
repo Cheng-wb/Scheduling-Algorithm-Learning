@@ -14,7 +14,7 @@
 
 ## 首个实现任务
 
-在 shop_scheduling 或 routing 中选择一个已验证静态模型作为后端，动态层不复制算法。
+在 03_industrial_fjsp 或 routing 中选择一个已验证静态模型作为后端，动态层不复制算法。
 
 ## 交付
 

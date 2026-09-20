@@ -1,0 +1,37 @@
+instance,setting,alpha,beta,gamma,normalization_mode,d_cmax,d_total_tardiness,d_setup,status,model_status,objective,best_bound,weighted_raw,weighted_normalized,cmax,total_tardiness,setup,solve_time,schedule_key,validation
+tiny_tradeoff,cmax_only,1.0,0.0,0.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,9.0,9.0,9.0,9.0,9.0,9.0,2.0,0.013532,"M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,tardiness_light,1.0,0.25,0.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,11.25,11.25,11.25,11.25,9.0,9.0,2.0,0.011488,"M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,tardiness_heavy,1.0,4.0,0.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,24.0,24.0,24.0,24.0,16.0,2.0,9.0,0.013459,"M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,tardiness_only,0.0,1.0,0.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,2.0,2.0,2.0,2.0,16.0,2.0,9.0,0.010234,"M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,setup_only,0.0,0.0,1.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,1.0,1.0,1.0,1.0,13.0,13.0,1.0,0.008906,"M0:A@0-6,B@11-13,D@7-11;M1:C@0-5",ok
+tiny_tradeoff,balanced,1.0,1.0,1.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,20.0,20.0,20.0,20.0,9.0,9.0,2.0,0.017136,"M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,cmax_only,1.0,0.0,0.0,trivial,50.0,115.0,32.0,FEASIBLE,OPTIMAL,9.0,,9.0,0.18,9.0,9.0,2.0,0.01277,"M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,tardiness_light,1.0,0.25,0.0,trivial,50.0,115.0,32.0,FEASIBLE,OPTIMAL,11.25,,11.25,0.19956521739130434,9.0,9.0,2.0,0.021597,"M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,tardiness_heavy,1.0,4.0,0.0,trivial,50.0,115.0,32.0,FEASIBLE,OPTIMAL,24.0,,24.0,0.38956521739130434,16.0,2.0,9.0,0.020742,"M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,tardiness_only,0.0,1.0,0.0,trivial,50.0,115.0,32.0,FEASIBLE,OPTIMAL,2.0,,2.0,0.017391304347826087,16.0,2.0,9.0,0.010623,"M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,setup_only,0.0,0.0,1.0,trivial,50.0,115.0,32.0,FEASIBLE,OPTIMAL,1.0,,1.0,0.03125,13.0,13.0,1.0,0.009441,"M0:A@0-6,B@11-13,D@7-11;M1:C@0-5",ok
+tiny_tradeoff,balanced,1.0,1.0,1.0,trivial,50.0,115.0,32.0,FEASIBLE,OPTIMAL,20.0,,20.0,0.3207608695652174,9.0,9.0,2.0,0.016984,"M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,cmax_only,1.0,0.0,0.0,ideal,9.0,2.0,1.0,FEASIBLE,OPTIMAL,9.0,,9.0,1.0,9.0,9.0,2.0,0.013345,"M0:A@0-6,B@7-9;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,tardiness_light,1.0,0.25,0.0,ideal,9.0,2.0,1.0,FEASIBLE,OPTIMAL,16.5,,16.5,2.0277777777777777,16.0,2.0,9.0,0.026048,"M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,tardiness_heavy,1.0,4.0,0.0,ideal,9.0,2.0,1.0,FEASIBLE,OPTIMAL,24.0,,24.0,5.777777777777778,16.0,2.0,9.0,0.018183,"M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,tardiness_only,0.0,1.0,0.0,ideal,9.0,2.0,1.0,FEASIBLE,OPTIMAL,2.0,,2.0,1.0,16.0,2.0,9.0,0.009843,"M0:A@10-16,B@0-2;M1:C@0-5,D@6-8",ok
+tiny_tradeoff,setup_only,0.0,0.0,1.0,ideal,9.0,2.0,1.0,FEASIBLE,OPTIMAL,1.0,,1.0,1.0,13.0,13.0,1.0,0.008641,"M0:A@0-6,B@11-13,D@7-11;M1:C@0-5",ok
+tiny_tradeoff,balanced,1.0,1.0,1.0,ideal,9.0,2.0,1.0,FEASIBLE,OPTIMAL,23.0,,23.0,6.944444444444445,13.0,9.0,1.0,0.015876,"M0:A@0-6,B@7-9,D@9-13;M1:C@0-5",ok
+plant_batch,cmax_only,1.0,0.0,0.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,69.0,69.0,69.0,69.0,69.0,176.0,15.0,0.584994,"M0:J001_O0@8-26,J001_O1@31-48,J003_O0@0-8,J003_O1@48-56,J004_O1@61-69;M1:J000_O0@3-21,J000_O1@54-67,J002_O0@21-39,J002_O1@67-69,J004_O0@44-54",ok
+plant_batch,tardiness_light,1.0,0.25,0.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,93.75,93.75,93.75,93.75,70.0,95.0,15.0,4.291148,"M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",ok
+plant_batch,tardiness_heavy,1.0,4.0,0.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,450.0,450.0,450.0,450.0,70.0,95.0,15.0,6.563864,"M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",ok
+plant_batch,tardiness_only,0.0,1.0,0.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,95.0,95.0,95.0,95.0,70.0,95.0,15.0,9.744694,"M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",ok
+plant_batch,setup_only,0.0,0.0,1.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,0.0,0.0,0.0,0.0,112.0,246.0,0.0,0.085539,"M0:J000_O1@20-46,J001_O1@87-104,J002_O1@84-87,J003_O1@104-112,J004_O0@1-17;M1:J000_O0@2-20,J001_O0@30-66,J002_O0@66-84,J003_O0@84-94,J004_O1@20-30",ok
+plant_batch,balanced,1.0,1.0,1.0,none,1.0,1.0,1.0,OPTIMAL,OPTIMAL,171.0,171.0,171.0,171.0,72.0,99.0,0.0,13.655346,"M0:J000_O0@8-22,J001_O0@30-48,J002_O0@48-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J001_O1@48-69,J002_O1@70-72,J003_O1@11-24,J004_O0@1-11",ok
+plant_batch,cmax_only,1.0,0.0,0.0,trivial,229.0,1012.0,50.0,FEASIBLE,OPTIMAL,69.0,,69.0,0.30131004366812225,69.0,176.0,15.0,0.787012,"M0:J001_O0@8-26,J001_O1@31-48,J003_O0@0-8,J003_O1@48-56,J004_O1@61-69;M1:J000_O0@3-21,J000_O1@54-67,J002_O0@21-39,J002_O1@67-69,J004_O0@44-54",ok
+plant_batch,tardiness_light,1.0,0.25,0.0,trivial,229.0,1012.0,50.0,FEASIBLE,OPTIMAL,93.75,,93.75,0.3291452353418368,70.0,95.0,15.0,2.655178,"M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",ok
+plant_batch,tardiness_heavy,1.0,4.0,0.0,trivial,229.0,1012.0,50.0,FEASIBLE,OPTIMAL,450.0,,450.0,0.6811709270414416,70.0,95.0,15.0,24.791021,"M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",ok
+plant_batch,tardiness_only,0.0,1.0,0.0,trivial,229.0,1012.0,50.0,FEASIBLE,OPTIMAL,95.0,,95.0,0.09387351778656126,70.0,95.0,15.0,8.888452,"M0:J000_O0@8-22,J001_O0@30-48,J001_O1@53-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J002_O0@42-60,J002_O1@65-67,J003_O1@11-24,J004_O0@1-11",ok
+plant_batch,setup_only,0.0,0.0,1.0,trivial,229.0,1012.0,50.0,FEASIBLE,OPTIMAL,0.0,,0.0,0.0,112.0,246.0,0.0,0.093821,"M0:J000_O1@20-46,J001_O1@87-104,J002_O1@84-87,J003_O1@104-112,J004_O0@1-17;M1:J000_O0@2-20,J001_O0@30-66,J002_O0@66-84,J003_O0@84-94,J004_O1@20-30",ok
+plant_batch,balanced,1.0,1.0,1.0,trivial,229.0,1012.0,50.0,FEASIBLE,OPTIMAL,171.0,,171.0,0.4122365673058667,72.0,99.0,0.0,5.047605,"M0:J000_O0@8-22,J001_O0@30-48,J002_O0@48-70,J003_O0@0-8,J004_O1@22-30;M1:J000_O1@24-37,J001_O1@48-69,J002_O1@70-72,J003_O1@11-24,J004_O0@1-11",ok
+plant_batch,cmax_only,1.0,0.0,0.0,ideal,,,,SKIPPED,SKIPPED,,,,,,,,,,ideal point unavailable (a single-objective optimum is 0 or unknown)
+plant_batch,tardiness_light,1.0,0.25,0.0,ideal,,,,SKIPPED,SKIPPED,,,,,,,,,,ideal point unavailable (a single-objective optimum is 0 or unknown)
+plant_batch,tardiness_heavy,1.0,4.0,0.0,ideal,,,,SKIPPED,SKIPPED,,,,,,,,,,ideal point unavailable (a single-objective optimum is 0 or unknown)
+plant_batch,tardiness_only,0.0,1.0,0.0,ideal,,,,SKIPPED,SKIPPED,,,,,,,,,,ideal point unavailable (a single-objective optimum is 0 or unknown)
+plant_batch,setup_only,0.0,0.0,1.0,ideal,,,,SKIPPED,SKIPPED,,,,,,,,,,ideal point unavailable (a single-objective optimum is 0 or unknown)
+plant_batch,balanced,1.0,1.0,1.0,ideal,,,,SKIPPED,SKIPPED,,,,,,,,,,ideal point unavailable (a single-objective optimum is 0 or unknown)
