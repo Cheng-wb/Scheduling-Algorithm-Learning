@@ -1,0 +1,163 @@
+{
+  "run_id": "flow_5x3__main__flow_johnson__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 15.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "flow_johnson",
+    "status": "FEASIBLE",
+    "objective": 78.0,
+    "best_bound": null,
+    "gap": null,
+    "iterations": null,
+    "build_time": 0.0,
+    "solve_time": 0.000292,
+    "wall_time": 0.000292,
+    "cmax": 78.0,
+    "total_tardiness": 63.0,
+    "setup": 0.0
+  },
+  "detail": {
+    "route": [
+      "M0",
+      "M1",
+      "M2"
+    ],
+    "job_sequence": [
+      "J002",
+      "J000",
+      "J001",
+      "J003",
+      "J004"
+    ],
+    "applicability": "johnson_on_bottleneck_pair",
+    "applies_directly": false,
+    "bottleneck_pair": [
+      "M0",
+      "M1"
+    ],
+    "machine_loads": {
+      "M0": 48,
+      "M1": 62,
+      "M2": 45
+    },
+    "release_times_all_zero": true,
+    "optimality_certificate": "",
+    "optimality_note": "Johnson 只对 2 台机器精确；本结果是在瓶颈机对上的 Johnson 排列，解码到完整路线，**没有最优性保证**",
+    "has_bound": false,
+    "objective_used_for_evaluation": "makespan",
+    "objective_used_for_construction": "makespan"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 4,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 4,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O2",
+        "machine_id": "M2",
+        "start_time": 22,
+        "end_time": 26,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 4,
+        "end_time": 9,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 22,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O2",
+        "machine_id": "M2",
+        "start_time": 37,
+        "end_time": 52,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 9,
+        "end_time": 22,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M1",
+        "start_time": 37,
+        "end_time": 49,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O2",
+        "machine_id": "M2",
+        "start_time": 52,
+        "end_time": 66,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 22,
+        "end_time": 37,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 49,
+        "end_time": 58,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O2",
+        "machine_id": "M2",
+        "start_time": 66,
+        "end_time": 68,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 37,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M1",
+        "start_time": 58,
+        "end_time": 66,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O2",
+        "machine_id": "M2",
+        "start_time": 68,
+        "end_time": 78,
+        "worker_id": null
+      }
+    ]
+  }
+}

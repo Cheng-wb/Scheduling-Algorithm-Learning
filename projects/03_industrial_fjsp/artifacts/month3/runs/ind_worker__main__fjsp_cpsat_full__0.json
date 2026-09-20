@@ -1,0 +1,174 @@
+{
+  "run_id": "ind_worker__main__fjsp_cpsat_full__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 15.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "fjsp_cpsat_full",
+    "status": "FEASIBLE",
+    "objective": 97.0,
+    "best_bound": 41.0,
+    "gap": 0.5773195876288659,
+    "iterations": 147984,
+    "build_time": 0.016156,
+    "solve_time": 15.004627,
+    "wall_time": 15.020783,
+    "cmax": 97.0,
+    "total_tardiness": 187.0,
+    "setup": 40.0
+  },
+  "detail": {
+    "setup_encoding": "exact_slot_chain",
+    "undefined_setup_directions": 0,
+    "hint_source": "greedy_list_schedule",
+    "hint_accepted": true,
+    "hint_value": 115.0,
+    "solver": "ortools.cp_model.CpSolver",
+    "num_search_workers": 1,
+    "cp_model_presolve": false,
+    "linearization_level": 0,
+    "seed_effective": true,
+    "iterations_kind": "cp_sat_branches",
+    "model_variables": 322,
+    "model_constraints": 407,
+    "horizon": 401,
+    "exact_setup": true,
+    "model_objective_exact": true,
+    "objective_scale": 1,
+    "solver_best_bound": 41.0,
+    "bound_kind": "cp_sat_bound"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M1",
+        "start_time": 33,
+        "end_time": 47,
+        "worker_id": "W1"
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 58,
+        "end_time": 66,
+        "worker_id": "W1"
+      },
+      {
+        "operation_id": "J000_O2",
+        "machine_id": "M1",
+        "start_time": 90,
+        "end_time": 97,
+        "worker_id": "W0"
+      },
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M3",
+        "start_time": 10,
+        "end_time": 21,
+        "worker_id": "W1"
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M1",
+        "start_time": 21,
+        "end_time": 23,
+        "worker_id": "W1"
+      },
+      {
+        "operation_id": "J001_O2",
+        "machine_id": "M0",
+        "start_time": 28,
+        "end_time": 41,
+        "worker_id": "W0"
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 11,
+        "end_time": 21,
+        "worker_id": "W0"
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M0",
+        "start_time": 21,
+        "end_time": 28,
+        "worker_id": "W0"
+      },
+      {
+        "operation_id": "J002_O2",
+        "machine_id": "M3",
+        "start_time": 80,
+        "end_time": 87,
+        "worker_id": "W0"
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M2",
+        "start_time": 0,
+        "end_time": 10,
+        "worker_id": "W1"
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M2",
+        "start_time": 23,
+        "end_time": 33,
+        "worker_id": "W1"
+      },
+      {
+        "operation_id": "J003_O2",
+        "machine_id": "M2",
+        "start_time": 84,
+        "end_time": 97,
+        "worker_id": "W1"
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M1",
+        "start_time": 0,
+        "end_time": 11,
+        "worker_id": "W0"
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M0",
+        "start_time": 47,
+        "end_time": 58,
+        "worker_id": "W1"
+      },
+      {
+        "operation_id": "J004_O2",
+        "machine_id": "M2",
+        "start_time": 61,
+        "end_time": 80,
+        "worker_id": "W0"
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M3",
+        "start_time": 41,
+        "end_time": 61,
+        "worker_id": "W0"
+      },
+      {
+        "operation_id": "J005_O1",
+        "machine_id": "M1",
+        "start_time": 66,
+        "end_time": 84,
+        "worker_id": "W1"
+      },
+      {
+        "operation_id": "J005_O2",
+        "machine_id": "M0",
+        "start_time": 87,
+        "end_time": 90,
+        "worker_id": "W0"
+      }
+    ]
+  }
+}

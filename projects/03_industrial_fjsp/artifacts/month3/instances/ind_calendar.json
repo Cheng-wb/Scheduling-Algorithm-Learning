@@ -1,0 +1,608 @@
+{
+  "jobs": [
+    {
+      "id": "J000",
+      "operation_ids": [
+        "J000_O0",
+        "J000_O1",
+        "J000_O2"
+      ],
+      "release_time": 0,
+      "due_date": 51,
+      "weight": 5.0,
+      "priority": 0
+    },
+    {
+      "id": "J001",
+      "operation_ids": [
+        "J001_O0",
+        "J001_O1",
+        "J001_O2"
+      ],
+      "release_time": 0,
+      "due_date": 64,
+      "weight": 1.0,
+      "priority": 0
+    },
+    {
+      "id": "J002",
+      "operation_ids": [
+        "J002_O0",
+        "J002_O1",
+        "J002_O2"
+      ],
+      "release_time": 0,
+      "due_date": 30,
+      "weight": 5.0,
+      "priority": 0
+    },
+    {
+      "id": "J003",
+      "operation_ids": [
+        "J003_O0",
+        "J003_O1",
+        "J003_O2"
+      ],
+      "release_time": 0,
+      "due_date": 28,
+      "weight": 2.0,
+      "priority": 0
+    },
+    {
+      "id": "J004",
+      "operation_ids": [
+        "J004_O0",
+        "J004_O1",
+        "J004_O2"
+      ],
+      "release_time": 0,
+      "due_date": 62,
+      "weight": 3.0,
+      "priority": 0
+    },
+    {
+      "id": "J005",
+      "operation_ids": [
+        "J005_O0",
+        "J005_O1",
+        "J005_O2"
+      ],
+      "release_time": 0,
+      "due_date": 32,
+      "weight": 5.0,
+      "priority": 0
+    },
+    {
+      "id": "J006",
+      "operation_ids": [
+        "J006_O0",
+        "J006_O1",
+        "J006_O2"
+      ],
+      "release_time": 0,
+      "due_date": 27,
+      "weight": 4.0,
+      "priority": 0
+    },
+    {
+      "id": "J007",
+      "operation_ids": [
+        "J007_O0",
+        "J007_O1",
+        "J007_O2"
+      ],
+      "release_time": 0,
+      "due_date": 41,
+      "weight": 1.0,
+      "priority": 0
+    }
+  ],
+  "operations": [
+    {
+      "id": "J000_O0",
+      "job_id": "J000",
+      "position": 0,
+      "machine_times": [
+        [
+          "M1",
+          2
+        ],
+        [
+          "M2",
+          3
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J000_O1",
+      "job_id": "J000",
+      "position": 1,
+      "machine_times": [
+        [
+          "M2",
+          10
+        ],
+        [
+          "M3",
+          16
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J000_O2",
+      "job_id": "J000",
+      "position": 2,
+      "machine_times": [
+        [
+          "M1",
+          32
+        ],
+        [
+          "M2",
+          20
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J001_O0",
+      "job_id": "J001",
+      "position": 0,
+      "machine_times": [
+        [
+          "M0",
+          40
+        ],
+        [
+          "M3",
+          20
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J001_O1",
+      "job_id": "J001",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          16
+        ],
+        [
+          "M2",
+          13
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J001_O2",
+      "job_id": "J001",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          9
+        ],
+        [
+          "M1",
+          7
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J002_O0",
+      "job_id": "J002",
+      "position": 0,
+      "machine_times": [
+        [
+          "M0",
+          13
+        ],
+        [
+          "M2",
+          8
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J002_O1",
+      "job_id": "J002",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          1
+        ],
+        [
+          "M2",
+          2
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J002_O2",
+      "job_id": "J002",
+      "position": 2,
+      "machine_times": [
+        [
+          "M1",
+          10
+        ],
+        [
+          "M2",
+          17
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J003_O0",
+      "job_id": "J003",
+      "position": 0,
+      "machine_times": [
+        [
+          "M2",
+          10
+        ],
+        [
+          "M3",
+          16
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J003_O1",
+      "job_id": "J003",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          7
+        ],
+        [
+          "M1",
+          11
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J003_O2",
+      "job_id": "J003",
+      "position": 2,
+      "machine_times": [
+        [
+          "M1",
+          1
+        ],
+        [
+          "M3",
+          2
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J004_O0",
+      "job_id": "J004",
+      "position": 0,
+      "machine_times": [
+        [
+          "M1",
+          14
+        ],
+        [
+          "M2",
+          11
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J004_O1",
+      "job_id": "J004",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          17
+        ],
+        [
+          "M1",
+          34
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J004_O2",
+      "job_id": "J004",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          11
+        ],
+        [
+          "M2",
+          14
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J005_O0",
+      "job_id": "J005",
+      "position": 0,
+      "machine_times": [
+        [
+          "M2",
+          7
+        ],
+        [
+          "M3",
+          4
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J005_O1",
+      "job_id": "J005",
+      "position": 1,
+      "machine_times": [
+        [
+          "M1",
+          12
+        ],
+        [
+          "M3",
+          6
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J005_O2",
+      "job_id": "J005",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          10
+        ],
+        [
+          "M3",
+          12
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J006_O0",
+      "job_id": "J006",
+      "position": 0,
+      "machine_times": [
+        [
+          "M0",
+          14
+        ],
+        [
+          "M1",
+          17
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J006_O1",
+      "job_id": "J006",
+      "position": 1,
+      "machine_times": [
+        [
+          "M1",
+          3
+        ],
+        [
+          "M2",
+          2
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J006_O2",
+      "job_id": "J006",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          1
+        ],
+        [
+          "M3",
+          2
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J007_O0",
+      "job_id": "J007",
+      "position": 0,
+      "machine_times": [
+        [
+          "M1",
+          30
+        ],
+        [
+          "M2",
+          19
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J007_O1",
+      "job_id": "J007",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          6
+        ],
+        [
+          "M3",
+          10
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J007_O2",
+      "job_id": "J007",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          1
+        ],
+        [
+          "M3",
+          1
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    }
+  ],
+  "machines": [
+    {
+      "id": "M0",
+      "name": "Machine 0",
+      "calendar_id": "CAL0",
+      "group": "G0"
+    },
+    {
+      "id": "M1",
+      "name": "Machine 1",
+      "calendar_id": "CAL0",
+      "group": "G1"
+    },
+    {
+      "id": "M2",
+      "name": "Machine 2",
+      "calendar_id": "CAL0",
+      "group": "G0"
+    },
+    {
+      "id": "M3",
+      "name": "Machine 3",
+      "calendar_id": "CAL0",
+      "group": "G1"
+    }
+  ],
+  "calendars": [
+    {
+      "id": "CAL0",
+      "windows": [
+        [
+          0,
+          57
+        ],
+        [
+          67,
+          114
+        ]
+      ]
+    }
+  ],
+  "maintenances": [
+    {
+      "id": "MT0",
+      "machine_id": "M0",
+      "windows": [
+        [
+          5,
+          8
+        ]
+      ]
+    },
+    {
+      "id": "MT1",
+      "machine_id": "M1",
+      "windows": [
+        [
+          12,
+          15
+        ]
+      ]
+    }
+  ],
+  "qualifications": [],
+  "workers": [],
+  "setups": [],
+  "meta": {
+    "seed": 201,
+    "jobs": 8,
+    "machines": 4,
+    "operations_per_job": 3,
+    "flexibility": 2,
+    "flow_shop": false
+  }
+}

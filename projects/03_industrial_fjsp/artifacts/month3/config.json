@@ -1,0 +1,210 @@
+{
+  "_note": "方法表按实例裁剪：基础模型 `fjsp_cpsat` 只建模机器选择 + precedence，遇到换型 / 日历 / 维护 / 资质 / 次生资源会在求解前**主动拒绝**（抛 ValueError），因此 ind_* 四个实例只列真正能处理对应约束的模型。拒绝行为本身由 Week 3/4 的消融驱动演示（artifacts/month3_w3、month3_w4），不放进正式批次免得多出无信息量的 FAILED 行。",
+  "seeds": [
+    0
+  ],
+  "time_limit_seconds": 15.0,
+  "sensitivity": [
+    {
+      "label": "tl_5",
+      "method": "jsp_cpsat",
+      "time_limit": 5.0
+    },
+    {
+      "label": "tl_30",
+      "method": "jsp_cpsat",
+      "time_limit": 30.0
+    },
+    {
+      "label": "tl_5",
+      "method": "fjsp_cpsat",
+      "time_limit": 5.0
+    },
+    {
+      "label": "tl_30",
+      "method": "fjsp_cpsat",
+      "time_limit": 30.0
+    }
+  ],
+  "instances": [
+    {
+      "name": "flow_5x3",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 100,
+        "jobs": 5,
+        "machines": 3,
+        "operations_per_job": 3,
+        "flow_shop": true,
+        "flexibility": 1
+      },
+      "objective": "makespan",
+      "methods": [
+        "flow_johnson",
+        "flow_neh",
+        "jsp_priority",
+        "jsp_cpsat"
+      ]
+    },
+    {
+      "name": "flow_8x4",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 101,
+        "jobs": 8,
+        "machines": 4,
+        "operations_per_job": 4,
+        "flow_shop": true,
+        "flexibility": 1
+      },
+      "objective": "makespan",
+      "methods": [
+        "flow_johnson",
+        "flow_neh",
+        "jsp_priority",
+        "jsp_cpsat"
+      ]
+    },
+    {
+      "name": "jsp_6x4",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 102,
+        "jobs": 6,
+        "machines": 4,
+        "operations_per_job": 3,
+        "flexibility": 1
+      },
+      "objective": "makespan",
+      "methods": [
+        "jsp_priority",
+        "jsp_cpsat"
+      ]
+    },
+    {
+      "name": "jsp_8x5",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 103,
+        "jobs": 8,
+        "machines": 5,
+        "operations_per_job": 4,
+        "flexibility": 1
+      },
+      "objective": "makespan",
+      "methods": [
+        "jsp_priority",
+        "jsp_cpsat"
+      ]
+    },
+    {
+      "name": "fjsp_6x4_f2",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 104,
+        "jobs": 6,
+        "machines": 4,
+        "operations_per_job": 3,
+        "flexibility": 2
+      },
+      "objective": "makespan",
+      "methods": [
+        "fjsp_random",
+        "fjsp_shortest",
+        "fjsp_loadbalance",
+        "fjsp_cpsat"
+      ]
+    },
+    {
+      "name": "fjsp_10x5_f3",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 105,
+        "jobs": 10,
+        "machines": 5,
+        "operations_per_job": 3,
+        "flexibility": 3
+      },
+      "objective": "makespan",
+      "methods": [
+        "fjsp_random",
+        "fjsp_shortest",
+        "fjsp_loadbalance",
+        "fjsp_cpsat"
+      ]
+    },
+    {
+      "name": "ind_setup",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 200,
+        "jobs": 8,
+        "machines": 4,
+        "operations_per_job": 3,
+        "flexibility": 2,
+        "setup_families": 3
+      },
+      "objective": "weighted_sum",
+      "methods": [
+        "fjsp_cpsat_setup",
+        "fjsp_cpsat_multiobj"
+      ]
+    },
+    {
+      "name": "ind_calendar",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 201,
+        "jobs": 8,
+        "machines": 4,
+        "operations_per_job": 3,
+        "flexibility": 2,
+        "calendar_windows": 1,
+        "maintenance_count": 2
+      },
+      "objective": "makespan",
+      "methods": [
+        "fjsp_cpsat_calendar"
+      ]
+    },
+    {
+      "name": "ind_worker",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 202,
+        "jobs": 6,
+        "machines": 4,
+        "operations_per_job": 3,
+        "flexibility": 2,
+        "worker_count": 2,
+        "setup_families": 2
+      },
+      "objective": "makespan",
+      "methods": [
+        "fjsp_cpsat_full"
+      ]
+    },
+    {
+      "name": "ind_qualified",
+      "kind": "fjsp",
+      "generator": {
+        "seed": 203,
+        "jobs": 8,
+        "machines": 5,
+        "operations_per_job": 3,
+        "flexibility": 3,
+        "setup_families": 3,
+        "calendar_windows": 1,
+        "maintenance_count": 2,
+        "worker_count": 3,
+        "locked_count": 1,
+        "release_max": 6
+      },
+      "objective": "weighted_sum",
+      "methods": [
+        "fjsp_cpsat_qualified",
+        "fjsp_cpsat_full"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-20T08:37:21.326913+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "git_commit": "1380ba0dc52b8d4497abb29abe0c8bfdf7c072e0",
+  "working_tree_dirty": false,
+  "source_sha256": "8c752073b1a47c8ec965ed69e0e9c64bc532e733e31780b8607e7272273338fb",
+  "config_sha256": "2db6ae393bfdbd1f764acbc7322c3cff3e6e7238d284da2c80cff2dbc610e34d",
+  "time_limit_seconds": 15.0,
+  "unavailable_modules": [],
+  "registered_methods": [
+    "fjsp_cpsat",
+    "fjsp_cpsat_calendar",
+    "fjsp_cpsat_full",
+    "fjsp_cpsat_multiobj",
+    "fjsp_cpsat_qualified",
+    "fjsp_cpsat_setup",
+    "fjsp_loadbalance",
+    "fjsp_random",
+    "fjsp_shortest",
+    "flow_johnson",
+    "flow_neh",
+    "jsp_cpsat",
+    "jsp_priority"
+  ],
+  "budget_unit": "one solver call under a shared wall-clock time limit"
+}

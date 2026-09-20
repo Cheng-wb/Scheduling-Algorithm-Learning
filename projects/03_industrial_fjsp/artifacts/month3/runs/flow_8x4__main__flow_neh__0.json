@@ -1,0 +1,311 @@
+{
+  "run_id": "flow_8x4__main__flow_neh__0",
+  "spec": {
+    "objective": "makespan",
+    "time_limit": 15.0,
+    "seed": 0
+  },
+  "result": {
+    "method": "flow_neh",
+    "status": "FEASIBLE",
+    "objective": 127.0,
+    "best_bound": null,
+    "gap": null,
+    "iterations": null,
+    "build_time": 0.0,
+    "solve_time": 0.005814,
+    "wall_time": 0.005814,
+    "cmax": 127.0,
+    "total_tardiness": 186.0,
+    "setup": 0.0
+  },
+  "detail": {
+    "route": [
+      "M0",
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "job_sequence": [
+      "J001",
+      "J006",
+      "J002",
+      "J005",
+      "J000",
+      "J007",
+      "J004",
+      "J003"
+    ],
+    "insertion_order": [
+      "J000",
+      "J004",
+      "J001",
+      "J005",
+      "J002",
+      "J007",
+      "J006",
+      "J003"
+    ],
+    "insertion_positions": [
+      0,
+      1,
+      0,
+      1,
+      1,
+      4,
+      1,
+      7
+    ],
+    "insertion_makespans": [
+      56,
+      71,
+      73,
+      84,
+      94,
+      107,
+      121,
+      127
+    ],
+    "evaluated_insertions": 36,
+    "machine_loads": {
+      "M0": 67,
+      "M1": 109,
+      "M2": 90,
+      "M3": 89
+    },
+    "optimality_certificate": "",
+    "optimality_note": "NEH 是启发式：m>=3 的 flow shop 是 NP-hard，NEH 没有最优性保证；平局时保留最靠前的插入位置",
+    "has_bound": false,
+    "objective_used_for_evaluation": "makespan",
+    "objective_used_for_construction": "makespan"
+  },
+  "validation": [],
+  "schedule": {
+    "operations": [
+      {
+        "operation_id": "J001_O0",
+        "machine_id": "M0",
+        "start_time": 0,
+        "end_time": 2,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O1",
+        "machine_id": "M1",
+        "start_time": 2,
+        "end_time": 19,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O2",
+        "machine_id": "M2",
+        "start_time": 19,
+        "end_time": 26,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J001_O3",
+        "machine_id": "M3",
+        "start_time": 26,
+        "end_time": 46,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J006_O0",
+        "machine_id": "M0",
+        "start_time": 2,
+        "end_time": 5,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J006_O1",
+        "machine_id": "M1",
+        "start_time": 19,
+        "end_time": 33,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J006_O2",
+        "machine_id": "M2",
+        "start_time": 33,
+        "end_time": 48,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J006_O3",
+        "machine_id": "M3",
+        "start_time": 48,
+        "end_time": 58,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O0",
+        "machine_id": "M0",
+        "start_time": 5,
+        "end_time": 15,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O1",
+        "machine_id": "M1",
+        "start_time": 33,
+        "end_time": 49,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O2",
+        "machine_id": "M2",
+        "start_time": 49,
+        "end_time": 56,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J002_O3",
+        "machine_id": "M3",
+        "start_time": 58,
+        "end_time": 69,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J005_O0",
+        "machine_id": "M0",
+        "start_time": 15,
+        "end_time": 26,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J005_O1",
+        "machine_id": "M1",
+        "start_time": 49,
+        "end_time": 57,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J005_O2",
+        "machine_id": "M2",
+        "start_time": 57,
+        "end_time": 70,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J005_O3",
+        "machine_id": "M3",
+        "start_time": 70,
+        "end_time": 84,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O0",
+        "machine_id": "M0",
+        "start_time": 26,
+        "end_time": 45,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O1",
+        "machine_id": "M1",
+        "start_time": 57,
+        "end_time": 64,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O2",
+        "machine_id": "M2",
+        "start_time": 70,
+        "end_time": 88,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J000_O3",
+        "machine_id": "M3",
+        "start_time": 88,
+        "end_time": 100,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J007_O0",
+        "machine_id": "M0",
+        "start_time": 45,
+        "end_time": 49,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J007_O1",
+        "machine_id": "M1",
+        "start_time": 64,
+        "end_time": 84,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J007_O2",
+        "machine_id": "M2",
+        "start_time": 88,
+        "end_time": 99,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J007_O3",
+        "machine_id": "M3",
+        "start_time": 100,
+        "end_time": 109,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O0",
+        "machine_id": "M0",
+        "start_time": 49,
+        "end_time": 64,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O1",
+        "machine_id": "M1",
+        "start_time": 84,
+        "end_time": 102,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O2",
+        "machine_id": "M2",
+        "start_time": 102,
+        "end_time": 114,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J004_O3",
+        "machine_id": "M3",
+        "start_time": 114,
+        "end_time": 121,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O0",
+        "machine_id": "M0",
+        "start_time": 64,
+        "end_time": 67,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O1",
+        "machine_id": "M1",
+        "start_time": 102,
+        "end_time": 111,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O2",
+        "machine_id": "M2",
+        "start_time": 114,
+        "end_time": 121,
+        "worker_id": null
+      },
+      {
+        "operation_id": "J003_O3",
+        "machine_id": "M3",
+        "start_time": 121,
+        "end_time": 127,
+        "worker_id": null
+      }
+    ]
+  }
+}

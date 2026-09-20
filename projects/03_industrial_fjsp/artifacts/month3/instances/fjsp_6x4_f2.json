@@ -1,0 +1,441 @@
+{
+  "jobs": [
+    {
+      "id": "J000",
+      "operation_ids": [
+        "J000_O0",
+        "J000_O1",
+        "J000_O2"
+      ],
+      "release_time": 0,
+      "due_date": 19,
+      "weight": 1.0,
+      "priority": 0
+    },
+    {
+      "id": "J001",
+      "operation_ids": [
+        "J001_O0",
+        "J001_O1",
+        "J001_O2"
+      ],
+      "release_time": 0,
+      "due_date": 46,
+      "weight": 4.0,
+      "priority": 0
+    },
+    {
+      "id": "J002",
+      "operation_ids": [
+        "J002_O0",
+        "J002_O1",
+        "J002_O2"
+      ],
+      "release_time": 0,
+      "due_date": 19,
+      "weight": 1.0,
+      "priority": 0
+    },
+    {
+      "id": "J003",
+      "operation_ids": [
+        "J003_O0",
+        "J003_O1",
+        "J003_O2"
+      ],
+      "release_time": 0,
+      "due_date": 44,
+      "weight": 4.0,
+      "priority": 0
+    },
+    {
+      "id": "J004",
+      "operation_ids": [
+        "J004_O0",
+        "J004_O1",
+        "J004_O2"
+      ],
+      "release_time": 0,
+      "due_date": 44,
+      "weight": 1.0,
+      "priority": 0
+    },
+    {
+      "id": "J005",
+      "operation_ids": [
+        "J005_O0",
+        "J005_O1",
+        "J005_O2"
+      ],
+      "release_time": 0,
+      "due_date": 32,
+      "weight": 2.0,
+      "priority": 0
+    }
+  ],
+  "operations": [
+    {
+      "id": "J000_O0",
+      "job_id": "J000",
+      "position": 0,
+      "machine_times": [
+        [
+          "M1",
+          1
+        ],
+        [
+          "M2",
+          1
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J000_O1",
+      "job_id": "J000",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          10
+        ],
+        [
+          "M2",
+          13
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J000_O2",
+      "job_id": "J000",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          1
+        ],
+        [
+          "M1",
+          1
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J001_O0",
+      "job_id": "J001",
+      "position": 0,
+      "machine_times": [
+        [
+          "M1",
+          2
+        ],
+        [
+          "M2",
+          3
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J001_O1",
+      "job_id": "J001",
+      "position": 1,
+      "machine_times": [
+        [
+          "M1",
+          9
+        ],
+        [
+          "M2",
+          7
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J001_O2",
+      "job_id": "J001",
+      "position": 2,
+      "machine_times": [
+        [
+          "M1",
+          20
+        ],
+        [
+          "M2",
+          25
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J002_O0",
+      "job_id": "J002",
+      "position": 0,
+      "machine_times": [
+        [
+          "M1",
+          4
+        ],
+        [
+          "M3",
+          2
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J002_O1",
+      "job_id": "J002",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          16
+        ],
+        [
+          "M2",
+          8
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J002_O2",
+      "job_id": "J002",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          2
+        ],
+        [
+          "M3",
+          4
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J003_O0",
+      "job_id": "J003",
+      "position": 0,
+      "machine_times": [
+        [
+          "M2",
+          6
+        ],
+        [
+          "M3",
+          10
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J003_O1",
+      "job_id": "J003",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          11
+        ],
+        [
+          "M1",
+          22
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J003_O2",
+      "job_id": "J003",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          11
+        ],
+        [
+          "M1",
+          18
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J004_O0",
+      "job_id": "J004",
+      "position": 0,
+      "machine_times": [
+        [
+          "M2",
+          14
+        ],
+        [
+          "M3",
+          18
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J004_O1",
+      "job_id": "J004",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          16
+        ],
+        [
+          "M1",
+          8
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J004_O2",
+      "job_id": "J004",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          6
+        ],
+        [
+          "M2",
+          10
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J005_O0",
+      "job_id": "J005",
+      "position": 0,
+      "machine_times": [
+        [
+          "M0",
+          4
+        ],
+        [
+          "M3",
+          5
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J005_O1",
+      "job_id": "J005",
+      "position": 1,
+      "machine_times": [
+        [
+          "M0",
+          12
+        ],
+        [
+          "M3",
+          20
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    },
+    {
+      "id": "J005_O2",
+      "job_id": "J005",
+      "position": 2,
+      "machine_times": [
+        [
+          "M0",
+          5
+        ],
+        [
+          "M3",
+          4
+        ]
+      ],
+      "family": null,
+      "locked_machine_id": null,
+      "locked_start": null
+    }
+  ],
+  "machines": [
+    {
+      "id": "M0",
+      "name": "Machine 0",
+      "calendar_id": null,
+      "group": "G0"
+    },
+    {
+      "id": "M1",
+      "name": "Machine 1",
+      "calendar_id": null,
+      "group": "G1"
+    },
+    {
+      "id": "M2",
+      "name": "Machine 2",
+      "calendar_id": null,
+      "group": "G0"
+    },
+    {
+      "id": "M3",
+      "name": "Machine 3",
+      "calendar_id": null,
+      "group": "G1"
+    }
+  ],
+  "calendars": [],
+  "maintenances": [],
+  "qualifications": [],
+  "workers": [],
+  "setups": [],
+  "meta": {
+    "seed": 104,
+    "jobs": 6,
+    "machines": 4,
+    "operations_per_job": 3,
+    "flexibility": 2,
+    "flow_shop": false
+  }
+}
