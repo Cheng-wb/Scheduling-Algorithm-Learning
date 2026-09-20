@@ -45,7 +45,7 @@ Day 1 结束时，流水线长这样：
 选择「用函数推导时间」而不是「把时间直接放进 `Candidate`」，有三个理由：
 
 1. **决策与时间是一一对应的推导关系。** 同一个 `Candidate` 每次 `decode` 必须给出同一个 `Schedule`，这一点必须是显然的。写成函数之后，「时间算错」只可能出现在一个地方。
-2. **Week 1 已经有三套时间推进逻辑。** `list_schedule`（单机 non-delay）、`parallel_lpt`（并行机选机）各自内嵌了一套。多工序 + 释放时间 + 机器资格同时出现时，三套逻辑无法拼在一起；`decode` 把它们合并成**一条公共路径**（Day 5 第 13 节已经预告过这个委托结构）。
+2. **Week 1 已经有三套时间推进逻辑。** `list_schedule`（单机 non-delay）、`parallel_lpt`（并行机选机）各自内嵌了一套。多工序 + 释放时间 + 机器资格同时出现时，三套逻辑无法拼在一起；`decode` 把它们合并成**一条公共路径**（Week 1 Day 5 第 13 节已经预告过这个委托结构）。
 3. **求解与评价彻底分离。** 搜索只改 `Candidate`，`decode` 只负责把它变成 `Schedule`，`objective` 只负责给 `Schedule` 打分。任何一环都不越界，实验才可能公平比较。
 
 一句话：**`decode` 是「决策空间」与「时间轴」之间唯一的桥。**
@@ -141,11 +141,11 @@ release(作业)       释放时间约束：工序不早于作业就绪
 而且它不是该实例上 ΣCj 最好的排程（13 > 8）
 ```
 
-三点要一起记住：append-only 是**实现选择**而非调度理论的要求，它让程序易懂、行为可预测；它可能让某些「本来能找到」的好解够不到——左移这类改良动作不在当前实现的邻域里；因此「解码结果可行」只说明**满足约束**，不说明**质量好**，可行性与质量是两件事，Day 4 的验证器只管前者。
+三点要一起记住：append-only 是**实现选择**而非调度理论的要求，它让程序易懂、行为可预测；它可能让某些「本来能找到」的好解够不到——左移这类改良动作不在当前实现的邻域里；因此「解码结果可行」只说明**满足约束**，不说明**质量好**，可行性与质量是两件事，独立验证器只管前者。
 
 ### 4.3 `order` 不是时间顺序
 
-`Schedule.operations` 是**构造顺序**，不是按 `start_time` 排序的展示顺序（第 5.5 节给出反例）。Week 1 第 5 天的 Gantt 导出之所以要显式排序 `(machine_id, start_time, operation_id)`，就是为了把「构造顺序」整理成「展示顺序」——两件事不要混为一谈。Day 4 的独立验证器也明确「不假设工序列表按时间排序」。
+`Schedule.operations` 是**构造顺序**，不是按 `start_time` 排序的展示顺序（第 5.5 节给出反例）。Week 1 Day 5 的 Gantt 导出之所以要显式排序 `(machine_id, start_time, operation_id)`，就是为了把「构造顺序」整理成「展示顺序」——两件事不要混为一谈。独立验证器也明确「不假设工序列表按时间排序」。
 
 ### 4.4 解码器不需要平局决胜
 
@@ -327,11 +327,11 @@ M1: C[0,1)                无空闲
 共 n 步 → 约 O(n²)，再加上两个 validate 的检查开销
 ```
 
-n 是工序总数。Month 1 的实例规模下这个量级完全够用；**先把可验证的实现做对，增量评估与优先队列加速留给 M5**（那时搜索的评价次数会上几个数量级）。
+n 是工序总数。Month 1 的实例规模下这个量级完全够用；**先把可验证的实现做对，增量评估与优先队列加速不在本周范围**（评价次数上几个数量级时，成本结构才会改变）。
 
 ### 6.4 同一文件里的 `initial_candidate`
 
-[decoder.py](../../projects/01_scheduling_core/scheduling_algorithms/decoder.py) 里还有一个 `initial_candidate(instance)`，做的是「LPT 优先级 + 最早完工指派」，产出第一个 `Candidate`。Week 1 第 5 天的 `parallel_lpt` 就是 `decode(instance, initial_candidate(instance))` 的两行组合。
+[decoder.py](../../projects/01_scheduling_core/scheduling_algorithms/decoder.py) 里还有一个 `initial_candidate(instance)`，做的是「LPT 优先级 + 最早完工指派」，产出第一个 `Candidate`。Week 1 Day 5 的 `parallel_lpt` 就是 `decode(instance, initial_candidate(instance))` 的两行组合。
 
 把它放在这里而不是 `rules.py`，是因为它的产物是 `Candidate` 而不是 `Schedule`：**谁定义 `Candidate` 的构造，谁就负责给出一个合法的起点**。多工序时它只是一个通用初始解，不再具备 `P||Cmax` 意义上的排序含义。
 

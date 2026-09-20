@@ -53,7 +53,7 @@ JSON → Parser → Instance → Validator → 可信输入
 | `Q` | Uniform（均匀并行机） | `p_ij = p_j / s_i` | 机器有速度 `s_i`，同样任务在快机上更快 |
 | `R` | Unrelated（无关并行机） | `p_ij` 逐机器不同 | 最一般，任务在每台机器上时间都不同 |
 
-今天**只做 `P`（同质并行机）**：同一个 job 在任何机器上加工时间都相同，所以现有 `Operation.processing_time` 这一个字段就够用，无需扩展模型。`Q` 和 `R` 需要「机器相关加工时间」，是后续（M2 的 flexible 模型）才引入的内容。
+今天**只做 `P`（同质并行机）**：同一个 job 在任何机器上加工时间都相同，所以现有 `Operation.processing_time` 这一个字段就够用，无需扩展模型。`Q` 和 `R` 需要「机器相关加工时间」，不在今天实现的范围。
 
 完整记号 `P||Cmax`：
 
@@ -100,7 +100,7 @@ M1：8 + 5 = 13；M2：7 + 6 = 13  →  Cmax = 13，完美平衡
 
 ## 6. 最小选机表示：`eligible_machine_ids` vs `machine_id`
 
-这是今天要修正的一个重要概念。旧的笔记把「机器指派」描述成「一个元组，位置与 `instance.operations` 一一对应」——那是 Week 2 的 `Candidate.assignments` **中间表示**，不是今天要教的最小选机表示。
+这是今天要修正的一个重要概念。旧的笔记把「机器指派」描述成「一个元组，位置与 `instance.operations` 一一对应」——那是一种更重的**中间表示**，不是今天要教的最小选机表示。
 
 最小选机表示只有两个字段，一个在输入、一个在输出：
 
@@ -327,7 +327,7 @@ def parallel_makespan_lower_bound(instance: Instance) -> int:
     return max(longest, math.ceil(total / machine_count))
 ```
 
-注意：`parallel_lpt` 要求「每个 job 恰好一道工序」，不满足时抛 `ValueError`；多工序是 Week 2 decoder 的内容，今天不涉及。
+注意：`parallel_lpt` 要求「每个 job 恰好一道工序」，不满足时抛 `ValueError`；多工序不在今天实现的范围。
 
 ---
 

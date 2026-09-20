@@ -73,7 +73,7 @@ def swap(candidate: Candidate, i: int, j: int) -> Candidate:
     return replace(candidate, order=tuple(order))
 ```
 
-`swap` 是**对合**（involution）：交换两次回到原样。这一点被测试直接断言（`swap(swap(candidate, 0, 2), 0, 2) == candidate`），也是 Week 4 里「交换两次恢复」这条回归检查的来源。
+`swap` 是**对合**（involution）：交换两次回到原样。这一点被测试直接断言（`swap(swap(candidate, 0, 2), 0, 2) == candidate`），也是一条可以直接写进回归检查的性质。
 
 ### 3.2 `insert(i, j)`：把一个元素挪到另一个位置
 
@@ -296,7 +296,7 @@ n = 4：swap 6 个
 
 三个算子都用 `dataclasses.replace(candidate, ...)` 创建一个新的 frozen dataclass 实例，原对象的字段一个字节都不动。三个好处：**父解安全**（搜索同时持有「当前解」与「某个邻居」时不会互相污染）、**可比较**（`moved not in seen` 靠的就是 `Candidate` 的相等语义）、**可回溯**（回到上一步只需留着旧对象，不需要「反向移动」）。
 
-这与 Day 5 第 7 节「`machine_ready` 不能塞进输入 `Machine`」是同一条原则的两种体现：**可变状态要么留在算法局部，要么根本不存在。**
+这与 Week 1 Day 5 第 7 节「`machine_ready` 不能塞进输入 `Machine`」是同一条原则的两种体现：**可变状态要么留在算法局部，要么根本不存在。**
 
 ### 6.2 为什么只提供「单点移动」
 

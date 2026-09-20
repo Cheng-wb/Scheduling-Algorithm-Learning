@@ -69,7 +69,7 @@ if restart:
 2. 重启候选先被 `evaluate`（一次解码 + 一次校验 + 一次目标），**这就是「重启消耗 1 次评价」的位置**；然后才成为 `current`。
 3. `segment_start = len(trace) - 1` 把刚刚记录的重启点算作**新段的第 1 项**，而不是旧段的最后一项。
 
-还有一条容易忽略的后果：`status = "LOCAL_OPTIMUM"` 只在 `elif not moved:` 分支里被赋值，而 multi-start 的 `not moved` 会走 `if restart:` 分支。**所以 multi-start 永远不会返回 `LOCAL_OPTIMUM`**（与 Day 6 第 5 节的结论一致）。
+还有一条容易忽略的后果：`status = "LOCAL_OPTIMUM"` 只在 `elif not moved:` 分支里被赋值，而 multi-start 的 `not moved` 会走 `if restart:` 分支。**所以 multi-start 永远不会返回 `LOCAL_OPTIMUM`**。
 
 ---
 

@@ -122,7 +122,7 @@ mean_gap, mean_evaluations, mean_seconds
 | `platform` | 操作系统 | 差异解释 |
 | `git_commit` | 提交哈希 | 源码版本 |
 | `working_tree_dirty` | 工作区是否有未提交改动 | 有改动时提交哈希不足以定位源码 |
-| `source_sha256` | 四个包全部 `*.py` 的联合哈希 | 复现前的第一道闸门（Day 4 第 6 节） |
+| `source_sha256` | 四个包全部 `*.py` 的联合哈希 | 复现前的第一道闸门 |
 | `config_sha256` | 配置文件的字节哈希 | 配置是否被改过 |
 | `budget_unit` | 一次评价的口径 | 「预算 150」到底数的是什么 |
 
@@ -405,7 +405,7 @@ LOCAL_OPTIMUM 出现在: tiny_parallel__main__best__0, tiny_parallel__main__best
 
 1. 第 2 段把保存的排程重新过了一遍 `validate_schedule`（不调用 decoder 的独立验证器），再用 `OBJECTIVES[objective_name]` 重算目标，**没有重新求解**；`42.0 == 42.0` 把结果行的值、保存的排程、目标函数三者钉在一起。
 2. 机器负载 41 / 40 / 35 与 `max(end_time)=42` 的差值 1 不是错误：`J003_O1` 必须等 `J003_O0` 在 25–40 完成后才能开始。**makespan 是作业完工时间的最大值，不是机器负载的最大值**，两者在带 precedence 时可以不相等。
-3. 第 3 段把 `status` 词表与真实计数并排打印：`FAILED` 为 0、`failures.json` 为空数组 `[]`。**零失败只说明这次没失败**，失败路径是否被覆盖是 Day 4 的话题。
+3. 第 3 段把 `status` 词表与真实计数并排打印：`FAILED` 为 0、`failures.json` 为空数组 `[]`。**零失败只说明这次没失败**，失败路径是否被覆盖不在今天的范围。
 4. 第 4 段对全部 162 行复算 `gap`（脚本内断言），参考取值集合是 `[36.0, 38.0, 40.0, 43.0, 90.0, 250.0]`——正是第 4.2 节的六个数。
 
 ---

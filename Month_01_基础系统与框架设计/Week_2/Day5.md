@@ -140,7 +140,7 @@ Operation(oid, jid, p, machine_ids)     # machine_ids = 全部机器的 ID
 
 > **它们是两个独立的 RNG 实例。** 种子数值相同只是巧合，不代表「同一个随机过程」，更不能推出「生成实例和搜索用了同一串随机数」。
 
-因此一个完整的实验记录必须**同时**写下两个种子，并且更稳妥的做法是把**实际生成的输入本身**落盘——这正是 Week 4 做的事：`artifacts/month1_refactored/instances/` 下存着 `parallel_12.json` 等真实输入，`results.csv` 里每一行带一个 `input_sha256` 列（例如 `tiny_single` 是 `e55495a649146422c71d4bbceadd6dcfc4c027a6c3605a643ef53ca6a677986a`）。
+因此一个完整的实验记录必须**同时**写下两个种子，并且更稳妥的做法是把**实际生成的输入本身**落盘——`artifacts/month1_refactored/instances/` 下存着 `parallel_12.json` 等真实输入，`results.csv` 里每一行带一个 `input_sha256` 列（例如 `tiny_single` 是 `e55495a649146422c71d4bbceadd6dcfc4c027a6c3605a643ef53ca6a677986a`）。
 
 **只保存随机种子是不够的**：种子只有在生成器代码一字不改时才可复现。一旦 `generate_instance` 的实现或参数默认值变了，同一个种子会产出不同实例，而所有历史结果都失去参照。**输入哈希把「可复现」从「依赖代码版本」变成「自证」。**
 
@@ -387,7 +387,7 @@ python -m pytest tests/test_month1.py -k 'roundtrip or invalid_inputs or corrupt
 - [ ] 能写出 `p∈[1,20]`、`w∈[1,5]`、`due = r + int(sum(p) * due_factor)` 三条抽取规则。
 - [ ] 能解释为什么必须用局部 `Random(seed)`，「不扰动全局状态」到底防住了什么。
 - [ ] 能说清生成器 `seed` 与算法 `seed` 是两个独立 RNG，以及为什么两者都要记录。
-- [ ] 能说出「只存种子不够」，并解释 Week 4 的 `input_sha256` 解决了什么问题。
+- [ ] 能说出「只存种子不够」，并解释 `input_sha256` 解决了什么问题。
 - [ ] 能区分输入验证器的负例与排程验证器的负例，并说明各自的入口函数。
 - [ ] 能写出 CSV 三表的列名、`|` 分隔规则与「空交期 → `None`」的处理。
 - [ ] 能解释 JSON 浮点工时为什么被拒绝而不是被 `int()` 截断。
@@ -405,7 +405,7 @@ python -m pytest tests/test_month1.py -k 'roundtrip or invalid_inputs or corrupt
 - Q3：交期是相对什么定义的？为什么单机上容易出现大量迟交？
 - Q4：为什么生成器要用 `Random(seed)` 而不是模块级 `random.seed`？
 - Q5：生成器 `seed=3`、算法 `seed=3` 是否表示同一个随机过程？
-- Q6：为什么「只保存随机种子」不足以复现实验？Week 4 用了什么替代方案？
+- Q6：为什么「只保存随机种子」不足以复现实验？替代方案是什么？
 - Q7：生成器产出的实例在「机器资格」这个维度上有什么局限？谁来补这个洞？
 - Q8：输入验证器与排程验证器各处理什么负例？入口函数分别是什么？
 - Q9：CSV 里空的 `due_date` 为什么必须读成 `None` 而不是 0？
@@ -418,7 +418,7 @@ python -m pytest tests/test_month1.py -k 'roundtrip or invalid_inputs or corrupt
 - A3：相对**该作业自身的总工时**。多个作业在单机上互相排队，`Cj` 很容易超过「1.5 倍自身工时」的窗口，所以单机实例上会大面积迟交；这是分布的设计选择。
 - A4：局部 `Random` 持有自己的状态，生成实例不会推进全局 RNG，因此「先生成还是先求解」不影响算法里的随机行为，实验才可复现。
 - A5：不是。它们是两个独立的 RNG 实例，分别描述数据生成与搜索动作；数值相同只是巧合。
-- A6：种子只有在生成器实现与参数默认值一字不改时才可复现。Week 4 把实际生成的输入落盘到 `instances/`，并在 `results.csv` 里记录 `input_sha256`。
+- A6：种子只有在生成器实现与参数默认值一字不改时才可复现。替代方案是把实际生成的输入落盘到 `instances/`，并在 `results.csv` 里记录 `input_sha256`。
 - A7：生成器把所有工序的 `eligible_machine_ids` 设成全部机器，因此「资格受限」完全没被覆盖；由手工构造的实例与 `test_invalid_inputs_and_rule_eligibility` 等测试补上。`route_instance` 里 A 只能上 M0 就是一例。
 - A8：输入验证器处理「问题本身非法」（负工时、重复 ID、引用不存在、空链、非有限权重），入口 `validate_instance`；排程验证器处理「结果非法」（缺工序、重叠、越界指派等），入口 `schedule_errors` / `validate_schedule`。
 - A9：`None` 表示「无交期、不参与 tardiness 目标」；0 会被当成「交期是时刻 0」，让所有作业一律迟交，语义完全变了。
@@ -428,4 +428,4 @@ python -m pytest tests/test_month1.py -k 'roundtrip or invalid_inputs or corrupt
 
 ## 11. 今日一句话总结
 
-> **生成器用局部 `Random(seed)` 把「实例从哪来」变成可复现的一步，`p∈[1,20]`、`w∈[1,5]`、`due = r + int(sum(p) * due_factor)` 定义了实验的全部数据分布；但生成器 seed 不是算法 seed、全机器资格不是全部问题、只存种子不算复现——所以 Week 4 要把真实输入连同 `input_sha256` 一起落盘。**
+> **生成器用局部 `Random(seed)` 把「实例从哪来」变成可复现的一步，`p∈[1,20]`、`w∈[1,5]`、`due = r + int(sum(p) * due_factor)` 定义了实验的全部数据分布；但生成器 seed 不是算法 seed、全机器资格不是全部问题、只存种子不算复现——所以要把真实输入连同 `input_sha256` 一起落盘。**

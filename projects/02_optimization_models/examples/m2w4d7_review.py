@@ -86,12 +86,12 @@ def main() -> None:
     print("  · Cumulative 未进入月末批次：共享实例格式没有资源容量字段，")
     print("    它由 Week 3 自己的容量实验覆盖")
     print("  · 没有跑 lint / 类型检查：验证环境里没有 ruff / black / mypy")
-    print("  · 没有做 M3 的工业约束（换型、日历、工人）")
+    print("  · 没有做工业约束（换型、日历、工人）")
 
     print()
-    print("=== 6. 交给 M3 的接口 ===")
+    print("=== 6. 接口的复用性 ===")
     print("  Instance / Schedule / validate_schedule / objective 一行都不用改；")
-    print("  M3 的 FJSP 只需新增模型，继续注册进同一张表。")
+    print("  更一般的车间模型只需新增模型，继续注册进同一张表。")
     inst = generate_instance(50, jobs=8, machines=1)
     print(f"  自检：注册表可用，示例实例 {len(inst.jobs)} 作业 / {len(inst.machines)} 机器。")
 

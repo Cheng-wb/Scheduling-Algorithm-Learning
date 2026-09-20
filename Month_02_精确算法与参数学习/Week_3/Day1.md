@@ -41,16 +41,6 @@ M2 W3  CP    变量是**集合**，约束保留结构（区间、互斥、容量
 
 第三种形状不是「MILP 的另一种写法」，它的底层数据结构就不一样。今天就做一件事：**把这套结构拆开，一个个零件看清楚**，不要在这时候就去追最优值。
 
-```text
-Day 1  零件：domain / IntervalVar / 传播 / OptionalIntervalVar / 整数缩放   ← 今天
-Day 2  组装：并行机选机 = OptionalIntervalVar + ExactlyOne + NoOverlap
-Day 3  加 precedence：小型 JSP
-Day 4  加资源：Cumulative 有限容量
-Day 5  学会读状态：OPTIMAL / FEASIBLE / UNKNOWN / INFEASIBLE / MODEL_INVALID
-Day 6  跨范式比较：同一实例集上 MILP 与 CP-SAT 各自强在哪
-Day 7  机制复盘：传播 vs 松弛，分支 vs 分支
-```
-
 今天不追求最优值，追求的是「看到 CP-SAT 给你的东西时知道它是什么」。
 
 ---
@@ -135,7 +125,7 @@ M2 的读取逻辑把这件事放在 `_read_schedule` 里一次做对：先找 `
 | `conflict` | 搜索中撞到的矛盾，可记为 nogood | 冲突分析 / 割 |
 | `BestObjectiveBound` | 「最优值不会比这更好」的证明 | 分支定界里的 dual bound |
 
-**这张表里最需要警惕的是最后三行**：两边的界都叫「界」，但产生机制不同（Day 7 会用实测数据把这件事讲清楚）。表里对齐的只是**含义**——「最优值不会低于这个数」——不是**强度**。
+**这张表里最需要警惕的是最后三行**：两边的界都叫「界」，但产生机制不同。表里对齐的只是**含义**——「最优值不会低于这个数」——不是**强度**。
 
 ---
 
@@ -225,7 +215,7 @@ start_k >= 0
 2. 但它**不是传播不动点**：不同变量上打印的界可能松紧不一，彼此之间也不保证自洽；
 3. 所以它适合做**定性观察**（「传播确实沿链走下去了」），不适合当作数值结论引用。
 
-这条经验在 Day 5 讨论求解器状态时会再用一次：**求解器给你的每一个读数，都要先问清它保证的是什么。**
+把这条经验记成一条通用纪律：**求解器给你的每一个读数，都要先问清它保证的是什么。**
 
 ---
 
@@ -242,7 +232,7 @@ start_k >= 0
 | `_objective_expression(...)` | 把 M1 的目标翻译成 CP-SAT 表达式，同时给出还原真实单位的除数 |
 | `_read_schedule(solver, built, time_scale)` | 从求解器读数，还原成 M1 的 `Schedule` |
 | `_solve_built(...)` | 设参数、计时、把结果包成统一 `SolveResult` |
-| `cumulative_profile(...)` | 独立重算容量占用（Day 4 用） |
+| `cumulative_profile(...)` | 独立重算容量占用 |
 
 建模的每一行都对应一句调度语义：
 
@@ -253,12 +243,12 @@ start_k >= 0
 每道工序：AddExactlyOne(presences)            恰好被一台机器加工
 每台机器：AddNoOverlap(该机器上的区间)         机器互斥
 每个 job：Add(ends[前道] <= starts[后道])      工序顺序
-可选：AddCumulative(全部区间, 需求, 容量)      有限容量资源（Day 4）
+可选：AddCumulative(全部区间, 需求, 容量)      有限容量资源
 ```
 
-`prefer_fixed_route` 是给 JSP 用的一个开关：当一道工序只有一个合格机器时，直接建**必选区间**而不是可选区间，`presence` 变量数量变成 0。这样经典 JSP 的模型形状与教科书一致（一工序一区间），也少掉一大堆无用的布尔变量。Day 3 会实测这个开关的效果。
+`prefer_fixed_route` 是给 JSP 用的一个开关：当一道工序只有一个合格机器时，直接建**必选区间**而不是可选区间，`presence` 变量数量变成 0。这样经典 JSP 的模型形状与教科书一致（一工序一区间），也少掉一大堆无用的布尔变量。
 
-还有一个纪律上的细节值得记住：**`build_time` 与 `solve_time` 是分开量的**。前者是建模型的时间，后者是 `solver.Solve` 的时间。跨方法比较时混在一起会得出错误结论——不同建模方式的开销可以差一个数量级，Day 6 的表里能直接看到。
+还有一个纪律上的细节值得记住：**`build_time` 与 `solve_time` 是分开量的**。前者是建模型的时间，后者是 `solver.Solve` 的时间。跨方法比较时混在一起会得出错误结论——不同建模方式的开销可以差一个数量级。
 
 ---
 
@@ -283,7 +273,7 @@ CP-SAT 的变量是**整数变量**，`IntervalVar` 的 `start` / `size` / `end`
 
 M1 的 `processing_time` / `release_time` 本来就是 `int`，所以 `time_scale = 1` 是恒等映射——这不是巧合，是 M1 在数据层就做的选择，Week 3 直接受益。
 
-顺带记住另一处同类的整数化：权重是 `float`，而 CP-SAT 的目标系数必须是整数，所以 `weighted_completion_time` 会把权重乘 1000 取整（`WEIGHT_SCALE`），并在系数退化到 0 时报错而不是悄悄截断。这条会在 Day 2 的练习里碰到。
+顺带记住另一处同类的整数化：权重是 `float`，而 CP-SAT 的目标系数必须是整数，所以 `weighted_completion_time` 会把权重乘 1000 取整（`WEIGHT_SCALE`），并在系数退化到 0 时报错而不是悄悄截断。
 
 ---
 
@@ -355,7 +345,7 @@ M1 的 processing_time / release_time 本来就是 int，所以 time_scale=1 即
 4. **`chain_end0` 是 `[5,25]` 而不是手算的 `[5,20]`**：这是第 4.4 节那个坑的现场证据。求解器回填的是有效但更松的区间，且彼此松紧不一；把它当不动点引用会得出错误结论。
 5. **可选区间让「选机」变成布尔决策**：`opt_presence_M0 -> [0,0]`、`opt_presence_M1 -> [0,1]`，配合脚本里那条 `start <= 4`，求解器必须选 M1（选 M0 时长 7 的区间放不进 `[0,4]`）。`opt_start -> [0,0]` 与 `opt_end -> [7,11]` 就是这次传播的结果。
 
-脚本只打印、不写文件；Week 3 的落盘产物由 [w3_cpsat.py](../../projects/02_optimization_models/opt_experiments/w3_cpsat.py) 统一负责（见 Day 7）。
+脚本只打印、不写文件；Week 3 的落盘产物由 [w3_cpsat.py](../../projects/02_optimization_models/opt_experiments/w3_cpsat.py) 统一负责。
 
 ---
 

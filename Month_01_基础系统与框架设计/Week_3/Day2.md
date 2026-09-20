@@ -48,7 +48,7 @@ N(x) = { y | y = move(x)，且 move 在本月允许的移动集合里 }
 | Best Improvement | 扫完整个邻域，取最好的那个 | 整个邻域 |
 | Simulated Annealing | 随机抽一个邻居，按概率接受 | 1 |
 
-所以「我的邻域比你的算法强」是一句无意义的话。**换邻域和换算法是两个独立实验**：只换移动集合，三种策略的表现会一起变；只换策略，邻域大小和结构不变。Week 3 后面几天（Best、Multi-start、SA）全部复用今天这一份 `neighbors`，唯一变化的是「怎么选」。
+所以「我的邻域比你的算法强」是一句无意义的话。**换邻域和换算法是两个独立实验**：只换移动集合，三种策略的表现会一起变；只换策略，邻域大小和结构不变。任何构建在 `neighbors` 之上的方法都复用今天这一份，唯一变化的是「怎么选」。
 
 `neighbors` 的其中一个设计也值得先记住：它**只产生新 `Candidate`，从不修改传入的 x**。`Candidate` 是 `frozen` 的，`swap` / `insert` / `reassign` 都通过 `dataclasses.replace` 返回新对象。这保证了「父解在扫描过程中绝不被污染」——否则「当前解」会在你不知道的地方变掉。
 
@@ -125,7 +125,7 @@ moved = chosen != scan_current
 `improved = score < chosen_value` 用的是严格小于。等值候选被拒绝有两个后果：
 
 - **好的一面**：不会沿着目标值不变的长平台一路漂移，把预算烧在零收益的移动上。
-- **代价**：如果最优解必须穿过一段等值平台才能到达，First 永远到不了。这时需要 SA 那种「允许等值甚至更差」的移动（Week 3 Day 5）。
+- **代价**：如果最优解必须穿过一段等值平台才能到达，First 永远到不了。这时需要 SA 那种「允许等值甚至更差」的移动。
 
 ### 4.3 扫描顺序敏感，但 `seed` 无关
 
@@ -265,7 +265,7 @@ def _indices(candidate: Candidate, i: int, j: int) -> None:
 | 循环内是否立即移动 | `if config.algorithm != "best" and improved:` 移动并 `break` | 不移动，继续扫完 |
 | 循环结束后 | 已经移动过，`start` 不变 | 用 `chosen` 统一移动一次 |
 
-Best 的「一轮」因此在 `trace` 里表现为一串 `current` 不变、`proposed` 各异的记录，最后一条记录的 `accepted` 才表示这一轮是否真的移动了（Week 3 Day 3 展开）。
+Best 的「一轮」因此在 `trace` 里表现为一串 `current` 不变、`proposed` 各异的记录，最后一条记录的 `accepted` 才表示这一轮是否真的移动了。
 
 ### 6.3 为什么 `moved` 要用比较，而不是布尔标志
 

@@ -1,4 +1,4 @@
-"""M1W4D7 月度复盘：验收证据表、修正后的结果摘要、复现命令、局限与 M2 交接。
+"""M1W4D7 月度复盘：验收证据表、修正后的结果摘要、复现命令、局限与接口边界。
 
 只读 artifacts/month1_refactored：不写文件、不重跑基准、不重新出图。
 """
@@ -225,21 +225,21 @@ def section_four() -> None:
 
 
 def section_five() -> None:
-    print("== 5. Month 2 会复用与扩展什么 ==")
-    print("  直接复用（不重新发明）：")
+    print("== 5. 接口的复用性与本月的边界 ==")
+    print("  这些接口是为复用而设计的（不需要重新发明）：")
     print("    - 同一个 Instance 模型：Job / Operation / Machine，输入不可变、可被多算法公平复用。")
     print("    - 同一个 Schedule 与 Candidate 表示：order + assignments 仍然是解的载体。")
-    print("    - 同一个独立验证器：validate_schedule 不调用 decoder，精确方法也要过同一道闸门。")
+    print("    - 同一个独立验证器：validate_schedule 不调用 decoder，任何方法都要过同一道闸门。")
     print("    - 同一套 Objective：Cmax / ΣCj / ΣTj / ΣwjCj / Lmax 由同一个模块计算。")
-    print("    - 同一批输入与同一批基线结果：精确方法要在这个月的数据上对比，而不是换一批数据自证。")
+    print("    - 同一批输入与同一批基线结果：新方法要在这批数据上对比，而不是换一批数据自证。")
     print()
-    print("  扩展（这个月没有的能力）：")
-    print("    - MILP / CP-SAT：在同样输入上给出 bound，并报告真实的求解器 gap。")
-    print("    - status 词表扩展：从 BASELINE / BUDGET / LOCAL_OPTIMUM 增加到含 OPTIMAL / "
-          "INFEASIBLE / TIME_LIMIT 的求解器状态。")
-    print("    - 参考口径升级：这个月的 best-known gap 不能被当作求解器证明的 gap；")
-    print("      只有在求解器给出 bound 与最优性证明之后，才能写 optimum。")
-    print("    - 规模与资格分布扩展：更大的实例、更一般的机器资格，才有区分度。")
+    print("  本月没有做的（能力边界，不是缺陷而是分阶段推进）：")
+    print("    - 没有 MILP / CP-SAT：给不出 bound，也报不出真实的求解器 gap。")
+    print("    - status 词表只有搜索侧状态：BASELINE / BUDGET / LOCAL_OPTIMUM，")
+    print("      没有 OPTIMAL / INFEASIBLE / TIME_LIMIT 这类求解器状态。")
+    print("    - 参考口径只有 best-known：它只是「与本批最好记录的差异」，")
+    print("      不是求解器证明的 gap，更不能写成 optimum。")
+    print("    - 规模与资格分布有限：更大的实例、更一般的机器资格才有区分度。")
     print()
 
 

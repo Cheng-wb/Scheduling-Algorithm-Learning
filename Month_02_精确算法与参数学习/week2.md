@@ -177,7 +177,7 @@ oracle：exhaustive_optimum 只支持 makespan / total_tardiness / weighted_comp
 | 3 | 求解器的「根界」与纯 LP 界是同一个数吗？ | 不是：presolve / root cuts / strong branching 会抬高它（Day 4 的 0 / 47 / 65） |
 | 4 | 限时结束后该报什么？ | `incumbent` + `best bound` + `gap`，并声明这是搜索进度而非强度 |
 | 5 | 40 job 以上怎么办？ | 回到 sequence 模型或启发式；本周未测更大规模 |
-| 6 | 更强 formulation / 工程取舍从哪来？ | Week 3（CP-SAT：顺序与资源不重叠的直接表达）、Week 4（时间限制、`bound`、`gap` 的取舍） |
+| 6 | 更强 formulation / 工程取舍从哪来？ | 不在本周范围：顺序与资源不重叠的直接表达、时间限制与 `bound` / `gap` 的取舍 |
 
 ## 10. 待个人完成
 

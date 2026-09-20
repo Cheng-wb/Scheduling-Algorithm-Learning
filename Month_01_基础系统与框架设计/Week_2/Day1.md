@@ -67,7 +67,7 @@ JSON → Parser → Instance → Validator → 可信输入
 | `Candidate` | `order`（工序 ID 的排列）+ `assignments`（机器 ID 序列） |
 | `Schedule` | `operations`（`ScheduledOperation` 元组，每项含 `operation_id` / `machine_id` / `start_time` / `end_time`） |
 
-注意三者都**不可变**。这看起来矛盾——搜索难道不需要「变」吗？搜索的「变」体现为**不断产生新的对象**：邻域算子读一个 `Candidate`，产出一个新的 `Candidate`，原来的那个原封不动。这和 Day 5 里「`machine_ready` 必须是算法内部局部字典、不能塞进输入 `Machine`」是同一条原则。
+注意三者都**不可变**。这看起来矛盾——搜索难道不需要「变」吗？搜索的「变」体现为**不断产生新的对象**：邻域算子读一个 `Candidate`，产出一个新的 `Candidate`，原来的那个原封不动。这和 Week 1 Day 5 里「`machine_ready` 必须是算法内部局部字典、不能塞进输入 `Machine`」是同一条原则。
 
 时间只有 `decode` 一处产生，所以「时间对不对」只需要审一个函数；决策只有 `Candidate` 一处表达，所以「决策变没变」只需要比一个元组。**把变化集中到一个最小的对象上，是这一周所有接口设计的出发点。**
 
@@ -80,20 +80,9 @@ sequencing   谁先做      → order
 assignment   在哪台做    → assignments
 ```
 
-Week 1 第 5 天已经论证过 `P||Cmax` 的决策「排序 + 选机，缺一不可」；`Candidate` 就是把那句话直接落成两个字段。**注意它不包含时间**：时间是这两类决策的**后果**，一旦存进 `Candidate`，就会出现「决策说 B 在 M1 而时间是 M0 的时刻」这种自相矛盾的对象。
+Week 1 Day 5 已经论证过 `P||Cmax` 的决策「排序 + 选机，缺一不可」；`Candidate` 就是把那句话直接落成两个字段。**注意它不包含时间**：时间是这两类决策的**后果**，一旦存进 `Candidate`，就会出现「决策说 B 在 M1 而时间是 M0 的时刻」这种自相矛盾的对象。
 
-### 3.2 本周后面六天都在围绕 `Candidate` 展开
-
-```text
-Day 2  Candidate → Schedule          把决策变成时间（decode）
-Day 3  Candidate → Candidate         在决策空间里移动（swap / insert / reassign）
-Day 4  Schedule  → 诊断列表           不信任任何算法输出的独立检查
-Day 5  Param     → Instance          可复现地造出更多输入
-Day 6  Instance  → optimum           极小实例的独立枚举对拍
-Day 7  全链路复盘                     固定接口与已知局限
-```
-
-今天定下的接口一旦松动（例如允许 `Candidate` 携带时间、或允许 `order` 缺工序），后面六天全部要跟着改。**所以今天花在「把接口压到最小」上的时间，是本周最划算的投入。**
+今天定下的接口必须经得起「在它上面继续搭东西」：一旦松动（例如允许 `Candidate` 携带时间、或允许 `order` 缺工序），所有依赖它的代码都要跟着改。**所以今天花在「把接口压到最小」上的时间，是最划算的投入。**
 
 ---
 
@@ -139,7 +128,7 @@ def validate_candidate(instance: Instance, candidate: Candidate) -> None:
 三点补充：
 
 - **`len(...)` 与 `set(...)` 必须同时比。** 只比 `set` 会漏掉「`order` 长度不对但集合相同」的重复情形（例如 `("A","B","C","C")`）。
-- **「不合格机器」是输入约束，不是算法决策。** `eligible_machine_ids` 在 `Operation` 上（Day 5 第 6 节），`assignments` 只是「挑了哪一台」，挑错了就是违反约束。
+- **「不合格机器」是输入约束，不是算法决策。** `eligible_machine_ids` 在 `Operation` 上（Week 1 Day 5 第 6 节），`assignments` 只是「挑了哪一台」，挑错了就是违反约束。
 - **坏输入要当场报错，不要偷偷修复。** 如果邻域算子遇到坏候选就「顺便修一下」，错误会被埋进搜索过程，最后表现为「结果莫名其妙变差」，极难定位。宁可抛 `ValueError`。
 
 ### 4.2 `order` 是优先级列表，不是拓扑序
@@ -195,7 +184,7 @@ M0: C[0,1)  A[2,5)      空闲 [1,2)
 M1: B[5,7)              空闲 [0,5)
 ```
 
-A 被 t=1 选中却仍从 2 开工，这是「释放时间不是改优先级，而是限制开工时刻」的第二次出现（第一次见 Day 4 第 5 节）。
+A 被 t=1 选中却仍从 2 开工，这是「释放时间不是改优先级，而是限制开工时刻」的第二次出现（第一次见 Week 1 Day 4 第 5 节）。
 
 ### 5.3 编码 3：`BCA` / `M0,M0,M1`
 
@@ -233,7 +222,7 @@ M1: C[0,1)              无空闲
 
 **结论**：三个编码的 `Cmax` 都是 7（总工作量 6，最长链 A→B 占 5），差别全在 `ΣCj` 上。编码 2 与编码 3 的 `ΣCj` 相同，但 C 的机器不同——**同一个目标值可以由不同的排程达到**，这也是「目标不是排程的唯一描述」的一个小例子。
 
-顺带记住编码 1 的画面：`M0` 在 `[0,2)` 是空的，而 C 明明指派在 M0 却没有被塞进去。这是 decoder 的 **append-only** 行为，Day 2 第 6 节专门讲。
+顺带记住编码 1 的画面：`M0` 在 `[0,2)` 是空的，而 C 明明指派在 M0 却没有被塞进去。这是 decoder 的 **append-only** 行为。
 
 ### 5.5 表示冗余：24 个候选解只有 12 个不同 Schedule
 
@@ -269,7 +258,7 @@ assignments   : 1 × 2 × 2 = 4 种（A 必须 M0；B、C 各两种）
 不同 Schedule = 12                            需要解码去重才能得到
 ```
 
-**结论**：`n!` 只描述 `order` 的自由度；`assignments` 的贡献是「资格数连乘」。Week 1 第 6 天枚举 384 个组合用的就是这条公式（`4! × 2^4 = 24 × 16 = 384`），只是那时还没有 `Candidate` 这个显式对象。两条线索到这里合上了。
+**结论**：`n!` 只描述 `order` 的自由度；`assignments` 的贡献是「资格数连乘」。Week 1 Day 6 枚举 384 个组合用的就是这条公式（`4! × 2^4 = 24 × 16 = 384`），只是那时还没有 `Candidate` 这个显式对象。两条线索到这里合上了。
 
 ---
 
@@ -292,7 +281,7 @@ class Candidate:
 2. **`tuple` 而不是 `list`。** `Candidate` 要能放进 `set`（邻域去重）、能当 `dict` 的键（搜索的记忆表），`list` 不可哈希会立刻破坏这两件事。
 3. **`validate_candidate` 与 `decode` 分开。** 校验是纯检查，不产出任何东西；`decode` 先校验 `Instance`、再校验 `Candidate`、最后才计算时间。分开写的好处是：邻域算子可以在**不付解码代价**的前提下先筛掉坏候选解。
 
-`decode` 的第一件事就是调用 `validate_candidate`，所以任何算法只要走 `decode`，就自动获得这一层保护。细节留给 Day 2。
+`decode` 的第一件事就是调用 `validate_candidate`，所以任何算法只要走 `decode`，就自动获得这一层保护。细节不在今天展开。
 
 校验链的顺序是**先输入、后决策、再计算**：
 

@@ -39,7 +39,7 @@
 ③ 「MILP 比启发式慢 5 倍。」          —— 没记 build/solve，无法归因
 ```
 
-第 ① 种最普遍也最致命：`series` 求解器在 1 秒和 30 秒下给出的目标值可以差 50%，而两句话读起来一模一样。Day 6 的选择矩阵要建立在「同一预算」的比较上，所以今天先把「预算」这件事本身测穿。
+第 ① 种最普遍也最致命：`series` 求解器在 1 秒和 30 秒下给出的目标值可以差 50%，而两句话读起来一模一样。任何跨方法的比较都必须建立在「同一预算」上，所以今天先把「预算」这件事本身测穿。
 
 知识链的位置：
 
@@ -47,7 +47,6 @@
 Week 2 Day 4  手工走 branch-and-bound，区分 incumbent / bound / gap / nodes
 Week 3 Day 5  五个状态的含义，OUTPUT 只在有解的状态下可读
 Day 4（今天）   把「预算」变成实验变量，并记录终止原因  ← 今天
-Day 5         把这些量收进统一接口（None 不写 0）        ← 明天
 ```
 
 ---
@@ -275,7 +274,7 @@ solve_time = time.perf_counter() - call_started
 1. **`build_time` 的截止点在 `CpSolver()` 之前**：建模型、加约束、注入 `AddHint` 全在建模段里（`AddHint` 在 `build_time` 关闭之前调用）。所以「给初解」的代价被记在建模里，而不是求解里——这是一个有意为之的划分：给建议本身不花求解时间。
 2. **参数赋值不计入任何一段**：`solver.parameters.*` 三行的开销可忽略，但要知道它们落在两段之外，否则加总对不上时会怀疑计时。
 3. **`max_time_in_seconds` 是给整个求解调用的墙钟上限**，不是「每个 worker 各一份」。多 worker 时它们共享这个上限，因此 `workers` 不影响单次调用的时间上限，只影响在这段时间里能搜多少。
-4. **CP-SAT 的规模指标与 CBC 不同名**：这里记的是 `branches` 与 `conflicts`（`solver.NumBranches()` / `solver.NumConflicts()`），CBC 记的是 `nodes` 与 `iterations`。它们都落在接口的 `iterations` 一个字段里，**所以跨后端的 `iterations` 不可直接比较**——这也是 Day 5 统一接口里那条「同一个字段不代表同一件事」的实例。
+4. **CP-SAT 的规模指标与 CBC 不同名**：这里记的是 `branches` 与 `conflicts`（`solver.NumBranches()` / `solver.NumConflicts()`），CBC 记的是 `nodes` 与 `iterations`。它们都落在接口的 `iterations` 一个字段里，**所以跨后端的 `iterations` 不可直接比较**——这正是统一接口里那条「同一个字段不代表同一件事」的实例。
 
 ---
 

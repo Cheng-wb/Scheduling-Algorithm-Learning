@@ -37,15 +37,9 @@ JSP   ：工序之间**有先后**（同一 job 内的链），而且还要抢�
 1. **`AddNoOverlap` 是原生约束**：把「一台机器上谁先谁后」这层组合用一个传播器管住，不用显式枚举排列，也不用 Big-M；
 2. **precedence 是区间之间的关系**：`end_前 <= start_后` 是线性不等式，但它是**在两个变量的域之间**传播的（Day 1 手算过：链把上界一路推下去）。这种「沿连接传播」正是 CP 高效的地方。
 
-Week 3 的路线到这里就走完了三种模型形状：
+Week 3 的模型形状到这里已经出现过两种：并行机，以及加了 precedence 的 JSP。
 
-```text
-Day 2  并行机：工序无先后，只有选机与机器互斥
-Day 3  JSP  ：工序有先后（precedence），机器互斥不变      ← 今天
-Day 4  资源 ：再加一层「有限容量资源」                    （Cumulative）
-```
-
-**注意约束是叠加的，不是替换的**：JSP 模型里 `AddNoOverlap` 一条都没少，只是多了 precedence。Day 4 也一样——加 `AddCumulative` 之后机器互斥仍然在。
+**注意约束是叠加的，不是替换的**：JSP 模型里 `AddNoOverlap` 一条都没少，只是多了 precedence。再往上叠加容量约束时也一样——加 `AddCumulative` 之后机器互斥仍然在。
 
 ---
 

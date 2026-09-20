@@ -51,7 +51,6 @@ rc 恒等式   告诉我「我的公式符号有没有写反」        —— �
 ```text
 Day 5  量出影子价格的区间        区间解释了「什么时候能用」
 Day 6  为整个对拍定下容差          ← 今天
-Day 7  把这些检查整理成复盘清单
 ```
 
 ---
@@ -187,7 +186,7 @@ def max_complementarity_violation(model, solution):
     ...
 ```
 
-`solution.dual_available` 只在该解状态为 `OPTIMAL` 时为真。这一条判断把「没法检查」与「检查通过」彻底分开——**`None != 0`，这是本周贯穿全程的纪律**（Day 2 的 `LPSolution`、Day 6 的核对函数、Day 7 的复盘表都用同一套约定）。
+`solution.dual_available` 只在该解状态为 `OPTIMAL` 时为真。这一条判断把「没法检查」与「检查通过」彻底分开——**`None != 0`，这是本周贯穿全程的纪律**（Day 2 的 `LPSolution`、Day 6 的核对函数都用同一套约定）。
 
 ### 5.2 为什么要另建一个对偶模型
 

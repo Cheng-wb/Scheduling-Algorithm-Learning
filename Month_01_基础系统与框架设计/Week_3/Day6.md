@@ -13,7 +13,7 @@
 1. 说清楚「同一个实例、同一个预算」下六个方法（`lpt` 基线 + 五种搜索）的差异体现在哪几个字段上。
 2. 会用 `evaluations` 与 `status` 区分「用满预算」与「提前停机」，并说出 `BUDGET` / `LOCAL_OPTIMUM` / `BASELINE` 三个状态各自在代码里从哪里来。
 3. 说清楚为什么 `lpt` 在本日只是**共享初始基线**，而不是单机迟交问题的理论最优规则。
-4. 知道逐评价记录在 Week 4 落成 `runs/*.trace.csv`，并能说出六列 `evaluation / proposed / current / best / accepted / temperature` 的含义。
+4. 知道逐评价记录包含六列 `evaluation / proposed / current / best / accepted / temperature`，并能说出每一列的含义。
 5. 会验证「算法返回的最好值 = 轨迹末点的 `best` = 由返回 `Schedule` 重算的目标值」这一条等式链。
 6. 会用「可行性 → 质量 → 成本」三段式顺序分析两次运行的差异，而不是先比较秒数。
 7. 会用**初始值、最好值、改善发生的评价位置、是否到达平台**四个量描述一条曲线。
@@ -63,7 +63,7 @@ Day 5     SA：允许暂时变差，几何降温
 
 - **`objective` 是「历史最好值」，不是「最后一次 `current`」。** SA 会让 `current` 上下浮动（Day 5 第 2 节），返回的必须是历史 `best`。
 - **`evaluations` 不是「迭代次数」。** 一次评价 = 一次完整的「解码 + 独立校验 + 目标计算」。初始化点、被拒绝的候选、no-op、随机重启**全部计入**（`search.py` 模块文档字符串的第一句就写了这一点）。
-- **`elapsed_seconds` 是墙钟时间**，包含解码、校验、邻居生成的开销，但**不含**写文件和绘图。不同 Python 版本、不同平台上的墙钟时间不能直接比较（Week 4 Day 1 会再强调一次）。
+- **`elapsed_seconds` 是墙钟时间**，包含解码、校验、邻居生成的开销，但**不含**写文件和绘图。不同 Python 版本、不同平台上的墙钟时间不能直接比较。
 
 ### 3.1 月度批次里的同一张表（三个 `seed` 的均值）
 
@@ -340,7 +340,7 @@ if config.algorithm == "best":
     trace[-1] = TracePoint(last.evaluation, last.proposed, value, last.best, moved, None)
 ```
 
-读轨迹 CSV 时，`best` 的那一行 `current` 是**回填值**，不是扫描当时的当前值。这是 Week 4 逐行分析时必须记住的一个例外。
+读轨迹 CSV 时，`best` 的那一行 `current` 是**回填值**，不是扫描当时的当前值。这是逐行分析轨迹时必须记住的一个例外。
 
 ### 6.5 温度记录在「用完之前」
 
@@ -349,7 +349,7 @@ record(candidate, schedule, score, accepted, temperature if config.algorithm == 
 temperature *= config.cooling
 ```
 
-所以第 `i` 次评价（`i >= 2`）记录的温度是 `T0 × cooling^(i-2)`，`random` / `first` / `best` / `multistart` 的温度列恒为空。Week 4 的 `runs/*.trace.csv` 直接照这个语义落盘，实测表头与前三行：
+所以第 `i` 次评价（`i >= 2`）记录的温度是 `T0 × cooling^(i-2)`，`random` / `first` / `best` / `multistart` 的温度列恒为空。`runs/*.trace.csv` 就照这个语义落盘，实测表头与前三行：
 
 ```text
 evaluation,proposed,current,best,accepted,temperature

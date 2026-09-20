@@ -74,7 +74,7 @@ Instance ──┬─→ Candidate ─→ decode ─→ Schedule ──┬─→
 
 再补一条容易忽略的：**验证器也不假设 `Schedule` 里的工序 ID 在输入中存在。** 遇到未知 ID 时它先记一条 `unknown operation`，然后 `continue`，而不是直接崩溃——诊断信息比异常栈更有用。
 
-三类语句必须分开（沿用 Day 7 第 6 节的约定）：
+三类语句必须分开（沿用 Week 1 Day 7 第 6 节的约定）：
 
 | 内容 | 类型 |
 |---|---|
