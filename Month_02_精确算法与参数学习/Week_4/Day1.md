@@ -359,6 +359,12 @@ python examples/m2w4d1_symmetry.py
 
 必须写进笔记的一句：**月验收明确要求「无改进也如实分析」**，所以这一节的价值恰恰在于它没有美化结果。把负收益写清楚，比报一个「最优值不变，强化有效」有用得多——前者是证据，后者是口号。
 
+四个变体并排看，负收益的形状就清楚了——柱子只涨不跌，而目标值从头到尾没动过：
+
+![对称破缺消融：最优值不变，代价上升](../../projects/02_optimization_models/artifacts/figures/symmetry_ablation.png)
+
+图由 [m2_figures.py](../../projects/02_optimization_models/examples/m2_figures.py) 读 `artifacts/month2_w4/results.csv` 的消融组生成。注意第 3 条说的那个例外在图上是可见的：`par_10x3` 的第二根柱子**比第一根矮**，这是本批里唯一一例冗余约束的正收益。
+
 ---
 
 ## 8. 今日练习

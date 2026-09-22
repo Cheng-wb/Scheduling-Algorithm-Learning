@@ -60,6 +60,7 @@ python -m opt_experiments.benchmark --config configs/month2.json --output artifa
 ├── examples/            # 按学习日组织的运行入口
 ├── tests/               # 自动化验收
 └── artifacts/           # 实际输入、运行记录与汇总
+    └── figures/         # 笔记引用的图（由 examples/m2_figures.py 生成）
 ```
 
 依赖方向：`opt_models` 依赖 `opt_solvers` 与 `opt_common`；`opt_experiments` 依赖前两者；`opt_common` 不依赖任何 M2 模块。**周模块不得互相导入**——四周共享的是注册表与结果接口，不是彼此的实现。
@@ -118,6 +119,18 @@ python projects/02_optimization_models/examples/m2w4d5_unified_result.py        
 python projects/02_optimization_models/examples/m2w4d6_selection_matrix.py       # 选择矩阵
 python projects/02_optimization_models/examples/m2w4d7_review.py                 # 月度复盘
 ```
+
+## 图
+
+```powershell
+python projects/02_optimization_models/examples/m2_figures.py   # 重新生成全部图
+```
+
+图写入 `artifacts/figures/`（**与 `artifacts/month2` 分开**，后者是被封存的批次，不应混入非批次产物）。脚本只读已提交的 artifacts，不手写数值；只有 `feasible_region.png` 例外，它是纯数学对象，顶点由约束系数两两求交解出、再筛可行，因此与笔记里的手算构成两条独立路径的互证。
+
+笔记用相对路径引用这些图，例如从 `Month_02_.../Week_1/Day1.md` 写作 `../../projects/02_optimization_models/artifacts/figures/feasible_region.png`。
+
+**注意：不要用字符拼坐标图。** 用 `│ ＼ ●` 画出来的图不按比例、无法复用，读者也没法从图上量出斜率或区间。表格能表达结论，但表达不了形状——需要图就写代码生成 PNG，再在笔记里引用。绘图代码在 `examples/` 下，**不在 `SOURCE_PACKAGES` 里**，所以改图或加图不会改变已封存批次的 `source_sha256`。
 
 各周的独立实验驱动（写入 `artifacts/month2_wN/`）：
 
