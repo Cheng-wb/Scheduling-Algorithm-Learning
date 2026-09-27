@@ -10,6 +10,11 @@ Week W+k 或后续月份的引用——否则读者必须跳着看才能理解�
 唯一豁免：月度总纲计划 ``Month_XX/README.md`` 与月度报告 ``MONTH*REPORT.md``
 （前者本就要铺开整月，后者写于月末）。
 
+**链接目标是目录，不算正文。** 检查前会先抹掉 markdown 链接 `](...)` 里的
+目标（``mask_link_targets``）。M2 的笔记顶部有导航栏 ``[后一天](Day2.md)``，
+其中的 ``Day2`` 是文件名；不抹掉的话这 27 篇会常年顶着 24 条假阳性，真正
+的问题反而看不见。链接**文字**不抹——``[下一周导读](../week3.md)`` 照旧命中。
+
 ## 为什么要区分「向后」与「向前」
 
 `Week 1 Day 4 第 5 节`（在第 2 周的笔记里）是**向后**引用，完全合法；
@@ -58,7 +63,26 @@ PHRASE = re.compile(
     r"下周|下一天|下一周|后续月份|以后会|将在.{0,12}(实现|介绍|学习|讲|讨论)"
 )
 
+# markdown 链接的**目标**部分：`]` 与 `( ... )` 之间的内容。
+# 见 mask_link_targets 的说明——这一段不是正文，不进检查。
+LINK_TARGET = re.compile(r"\]\([^)]*\)")
+
 SKIP_NAMES = {"README.md"}
+
+
+def mask_link_targets(line: str) -> str:
+    """把链接目标挖成等长空格，让字符下标保持不变。
+
+    M2 的笔记顶部有一条导航栏 `... · [后一天](Day2.md)`。里面的 `Day2` 是
+    **文件名**，不是正文里的前瞻引用；读者看到的是链接文字「后一天」。
+    规则管的是「正文要求读者往后翻才能读懂当前内容」，不是把目录也一起禁掉
+    ——否则 M2 这 27 篇会常年报 24 条假阳性，真正的问题反而被淹没。
+
+    **链接文字照常检查**：`[下一周导读](../week3.md)` 里的「下一周」仍会被
+    PHRASE 命中，`[Day 5 的推导](Day5.md)` 里的 `Day 5` 仍是前瞻引用。
+    换句话说，禁的是「往后指的正文」，放的是「往后指的目录」。
+    """
+    return LINK_TARGET.sub(lambda m: "]" + " " * (len(m.group(0)) - 1), line)
 
 
 def scan_file(path: Path, month: int, include_fences: bool = False) -> list[tuple[int, str, str]]:
@@ -72,13 +96,22 @@ def scan_file(path: Path, month: int, include_fences: bool = False) -> list[tupl
 
     # 先标出「反向锚点」的跨度，例如 "Week 1 Day 4 第 5 节" / "M1 Day 5" / "M2 Week 1 Day 7"。
     # 这些是**向后**引用，完全合法，但朴素的 Day 正则会把它们当成当周的前瞻引用。
-    # 两种形式：
+    # 三种形式：
     #   A) 带月份前缀：M1 Day 5 / Month 2 Week 1 Day 7 —— 月份早于当月即向后
     #   B) 带周前缀：  Week 1 Day 4 / Week_1/Day1.md —— 周次早于本文件所在周即向后
+    #   C) 中文周前缀：第 3 周 Day 4 —— 同 B，只是周次写成中文
+    #
+    # 少了 C 会漏掉跨度：`第 3 周` 只被下面的 Week 检查识别，不构成排除区间，
+    # 于是紧跟其后的 `Day 4` 会按本文件的天数去比。Week_4/Day3.md 的
+    # 「（第 3 周 Day 4 的 Cumulative 容量）」就是这样被误报的——它明明是回看。
     ANCHOR_MONTH = re.compile(
         r"(?:M|Month\s+)(\d+)\s+(?:Week\s*(\d+)\s+)?Day\s*(\d+)"
     )
-    ANCHOR_WEEK = re.compile(r"Week\s*(\d+)\s+Day\s*(\d+)|Week_(\d+)/Day(\d+)")
+    ANCHOR_WEEK = re.compile(
+        r"Week\s*(\d+)\s+Day\s*(\d+)"
+        r"|Week_(\d+)/Day(\d+)"
+        r"|第\s*(\d+)\s*周\s*Day\s*(\d+)"
+    )
 
     hits: list[tuple[int, str, str]] = []
     fenced = False
@@ -90,38 +123,41 @@ def scan_file(path: Path, month: int, include_fences: bool = False) -> list[tupl
         if fenced and not include_fences:
             continue
 
+        # 挖掉链接目标后再扫；报告仍然用原行，读者看到的是他真正会读到的文字
+        scan = mask_link_targets(line)
+
         # 计算本行里属于「向后引用」的字符区间，后面从 Day 检查里排除
         excluded: list[tuple[int, int]] = []
         current_week = summary_week or week
-        for anchor in ANCHOR_MONTH.finditer(line):
+        for anchor in ANCHOR_MONTH.finditer(scan):
             anchor_month = int(anchor.group(1))
             if anchor_month < month:
                 excluded.append(anchor.span())
-        for anchor in ANCHOR_WEEK.finditer(line):
-            anchor_week = int(anchor.group(1) or anchor.group(3) or 0)
+        for anchor in ANCHOR_WEEK.finditer(scan):
+            anchor_week = int(anchor.group(1) or anchor.group(3) or anchor.group(5) or 0)
             if anchor_week and current_week and anchor_week < current_week:
                 excluded.append(anchor.span())
 
         def is_backward(span: tuple[int, int]) -> bool:
             return any(a <= span[0] and span[1] <= b for a, b in excluded)
 
-        for found in re.finditer(r"Day\s*(\d+)|第\s*(\d+)\s*天", line):
+        for found in re.finditer(r"Day\s*(\d+)|第\s*(\d+)\s*天", scan):
             if is_backward(found.span()):
                 continue
             ref = int(found.group(1) or found.group(2))
             if day and ref > day:
                 hits.append((index, f"Day{ref}", line.strip()))
-        for found in re.finditer(r"Week\s*(\d+)|第\s*(\d+)\s*周", line):
+        for found in re.finditer(r"Week\s*(\d+)|第\s*(\d+)\s*周", scan):
             ref = int(found.group(1) or found.group(2))
             current = summary_week or week
             if current and ref > current:
                 hits.append((index, f"Week{ref}", line.strip()))
-        found = MONTH_CTX.search(line)
+        found = MONTH_CTX.search(scan)
         if found:
             ref = int(found.group(1) or found.group(2) or found.group(4) or 0)
             if ref and ref > month:
                 hits.append((index, f"Month{ref}", line.strip()))
-        if PHRASE.search(line):
+        if PHRASE.search(scan):
             hits.append((index, "PHRASE", line.strip()))
     return hits
 
